@@ -1,0 +1,84 @@
+DROP TABLE IF EXISTS Kwa2Bo_profil CASCADE;
+DROP TABLE IF EXISTS Kwa2Bo_utilisateur CASCADE;
+DROP TABLE IF EXISTS Kwa2Bo_contacts CASCADE;
+DROP TABLE IF EXISTS Kwa2Bo_groupe CASCADE;
+DROP TABLE IF EXISTS Kwa2Bo_appartient CASCADE;
+DROP TABLE IF EXISTS Kwa2Bo_message CASCADE;
+
+CREATE TABLE IF NOT EXISTS Kwa2Bo_profil(
+	idProfil SERIAL,
+	nom TEXT,
+	prenom TEXT,
+	photo TEXT NOT NULL DEFAULT './ressources/default.jpg',
+	CONSTRAINT pk_profil
+	PRIMARY KEY(idProfil)
+);
+
+CREATE TABLE IF NOT EXISTS Kwa2Bo_utilisateur(
+	login VARCHAR(16), 
+	mdp TEXT NOT NULL, 
+	pseudo TEXT NOT NULL, 
+	idProfil SERIAL,
+	CONSTRAINT pk_utilisateur
+	PRIMARY KEY(login),
+	CONSTRAINT fk_utilisateur FOREIGN KEY(idProfil)
+	REFERENCES Kwa2Bo_profil(idProfil) 
+	ON UPDATE CASCADE
+	ON DELETE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS Kwa2Bo_contacts(
+	login1 VARCHAR(16),
+	login2 VARCHAR(16),
+	CONSTRAINT pk_contacts 
+	PRIMARY KEY(login1,login2),
+	CONSTRAINT fk_contacts FOREIGN KEY(login1)
+	REFERENCES Kwa2Bo_utilisateur (login)
+	ON UPDATE CASCADE
+	ON DELETE RESTRICT,
+	CONSTRAINT fk_contacts2 FOREIGN KEY(login2)
+	REFERENCES Kwa2Bo_utilisateur (login)
+	ON UPDATE CASCADE
+	ON DELETE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS Kwa2Bo_groupe (
+	idGroupe SERIAL,
+	nomGroupe TEXT,
+	CONSTRAINT pk_groupe 
+	PRIMARY KEY(idGroupe)
+);
+
+CREATE TABLE IF NOT EXISTS Kwa2Bo_appartient(
+	login VARCHAR(16),
+	idGroupe SERIAL,
+	CONSTRAINT pk_appartient 
+	PRIMARY KEY(login, idGroupe),
+	CONSTRAINT fk_appartient FOREIGN KEY(login)
+	REFERENCES Kwa2Bo_utilisateur(login)
+	ON UPDATE CASCADE
+	ON DELETE RESTRICT,
+	CONSTRAINT fk_appartient2 FOREIGN KEY(idGroupe)
+	REFERENCES Kwa2Bo_groupe(idGroupe)
+	ON UPDATE CASCADE
+	ON DELETE RESTRICT
+);
+
+CREATE TABLE IF NOT EXISTS Kwa2Bo_message(
+	idMessage SERIAL,
+	idGroupe SERIAL,
+	login VARCHAR(16),
+	dateMessage DATE NOT NULL DEFAULT CURRENT_DATE,
+	image TEXT,
+	texte TEXT,
+	CONSTRAINT pk_message
+	PRIMARY KEY(idMessage),
+	CONSTRAINT fk_message FOREIGN KEY(idGroupe)
+	REFERENCES Kwa2Bo_groupe(idGroupe)
+	ON UPDATE CASCADE
+	ON DELETE RESTRICT,
+	CONSTRAINT fk_message2 FOREIGN KEY(login)
+	REFERENCES Kwa2Bo_utilisateur(login)
+	ON UPDATE CASCADE
+	ON DELETE RESTRICT
+);
