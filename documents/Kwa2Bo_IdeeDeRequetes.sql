@@ -22,17 +22,17 @@ SELECT * FROM Kwa2Bo_contacts WHERE login1='moi' OR login2='moi' ;
 
 -------------------------------------------------------------------------------
 
--- Créer un groupe (A revoir) :
-INSERT INTO Kwa2Bo_groupe(nomGroupe) VALUES ('Groupe Test');
+-- Créer un groupe (avec un nom par defaut):
+INSERT INTO Kwa2Bo_groupe(nomGroupe) VALUES ('Conversation');
 
--- Ajouter des personnes à un groupe (A revoir) :
-INSERT INTO Kwa2Bo_appartient VALUES ('moi',(SELECT idGroupe FROM Kwa2Bo_groupe WHERE nomGroupe='Groupe Test'));
+-- Ajouter une personne au groupe précédement créer :
+INSERT INTO Kwa2Bo_appartient VALUES ('moi',(SELECT max(idGroupe) FROM Kwa2Bo_groupe));
 
--- Insertion d'un message dans un groupe (A revoir) :
-INSERT INTO Kwa2Bo_message(idGroupe,login,texte) VALUES ((SELECT idGroupe FROM Kwa2Bo_groupe WHERE nomGroupe='Groupe Test'),'moi','Bonjour');
+-- Insertion d'un message dans un groupe (A revoir):
+INSERT INTO Kwa2Bo_message(idGroupe,login,texte) VALUES ((SELECT idGroupe FROM Kwa2Bo_groupe WHERE nomGroupe='nomDuGroupe'),'moi','Bonjour');
 
 -- Selection de tous les messages d'un groupe (A revoir) :
-SELECT login,dateMessage,texte,image FROM Kwa2Bo_message WHERE idGroupe=(SELECT idGroupe FROM Kwa2Bo_groupe WHERE nomGroupe='Groupe Test') ORDER BY dateMessage DESC;
+SELECT login,dateMessage,texte,image FROM Kwa2Bo_message WHERE idGroupe=(SELECT idGroupe FROM Kwa2Bo_groupe WHERE nomGroupe='nomDuGroupe') ORDER BY dateMessage DESC;
 
 -- Selection de tous les groupes dont fait parti un utilisateur :
 SELECT groupe.idGroupe,groupe.nomGroupe FROM Kwa2Bo_appartient AS appartient INNER JOIN Kwa2Bo_groupe AS groupe ON appartient.idGroupe = groupe.idGroupe WHERE login ='moi';
