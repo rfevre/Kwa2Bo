@@ -1,4 +1,4 @@
-# Projet WEB - Kwa2Bo
+# Projet WEB - Kwa2Bo : La messagerie de l'université
 ## Par LELEU Julien et FEVRE Rémy
 
 ---
