@@ -15,14 +15,14 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_profil(
 );
 
 CREATE TABLE IF NOT EXISTS Kwa2Bo_utilisateur(
-	login VARCHAR(16), 
-	mdp TEXT NOT NULL, 
-	pseudo TEXT NOT NULL, 
+	login VARCHAR(16) NOT NULL,
+	mdp TEXT NOT NULL,
+	pseudo TEXT NOT NULL,
 	idProfil INTEGER,
 	CONSTRAINT pk_utilisateur
 	PRIMARY KEY(login),
 	CONSTRAINT fk_utilisateur FOREIGN KEY(idProfil)
-	REFERENCES Kwa2Bo_profil(idProfil) 
+	REFERENCES Kwa2Bo_profil(idProfil)
 	ON UPDATE CASCADE
 	ON DELETE RESTRICT
 );
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_utilisateur(
 CREATE TABLE IF NOT EXISTS Kwa2Bo_contacts(
 	login1 VARCHAR(16),
 	login2 VARCHAR(16),
-	CONSTRAINT pk_contacts 
+	CONSTRAINT pk_contacts
 	PRIMARY KEY(login1,login2),
 	CONSTRAINT fk_contacts FOREIGN KEY(login1)
 	REFERENCES Kwa2Bo_utilisateur (login)
@@ -45,14 +45,14 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_contacts(
 CREATE TABLE IF NOT EXISTS Kwa2Bo_groupe (
 	idGroupe SERIAL,
 	nomGroupe TEXT,
-	CONSTRAINT pk_groupe 
+	CONSTRAINT pk_groupe
 	PRIMARY KEY(idGroupe)
 );
 
 CREATE TABLE IF NOT EXISTS Kwa2Bo_appartient(
 	login VARCHAR(16),
 	idGroupe INTEGER,
-	CONSTRAINT pk_appartient 
+	CONSTRAINT pk_appartient
 	PRIMARY KEY(login, idGroupe),
 	CONSTRAINT fk_appartient FOREIGN KEY(login)
 	REFERENCES Kwa2Bo_utilisateur(login)
@@ -93,7 +93,6 @@ INSERT INTO Kwa2Bo_utilisateur VALUES ('catez','rocher','Gros-Connard');
 
 INSERT INTO Kwa2Bo_contacts VALUES ('ferrot','fevrer');
 INSERT INTO Kwa2Bo_contacts VALUES ('ferrot','leleu');
-INSERT INTO Kwa2Bo_contacts VALUES ('fevrer','ferrot');
 
 INSERT INTO Kwa2Bo_groupe (nomGroupe) VALUES ('Le paradis sur Terre');
 INSERT INTO Kwa2Bo_groupe (nomGroupe) VALUES ('Ici c est Paris');
@@ -109,5 +108,3 @@ INSERT INTO Kwa2Bo_message(idGroupe,login,texte) VALUES (1,'ferrot','Non c est t
 INSERT INTO Kwa2Bo_message(idGroupe,login,texte) VALUES (2,'ferrot','Bonjour');
 INSERT INTO Kwa2Bo_message(idGroupe,login,texte) VALUES (2,'leleu','Oui bonjour ?');
 INSERT INTO Kwa2Bo_message(idGroupe,login,texte) VALUES (2,'ferrot','Non toi bonjour!');
-INSERT INTO Kwa2Bo_message(idGroupe,login,texte) VALUES (1,'fevrer','Thomas tu pue');
-INSERT INTO Kwa2Bo_message(idGroupe,login,texte) VALUES (1,'ferrot','Non c est toi qui pue');
