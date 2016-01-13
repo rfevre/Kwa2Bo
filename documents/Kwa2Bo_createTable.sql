@@ -15,13 +15,13 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_profil(
 );
 
 CREATE TABLE IF NOT EXISTS Kwa2Bo_utilisateur(
-	login VARCHAR(16) NOT NULL,
+	mail TEXT NOT NULL,
 	mdp TEXT NOT NULL,
 	pseudo TEXT NOT NULL,
 	role TEXT NOT NULL DEFAULT 'undef',
 	idProfil INTEGER,
 	CONSTRAINT pk_utilisateur
-	PRIMARY KEY(login),
+	PRIMARY KEY(mail),
 	CONSTRAINT fk_utilisateur FOREIGN KEY(idProfil)
 	REFERENCES Kwa2Bo_profil(idProfil)
 	ON UPDATE CASCADE
@@ -29,16 +29,16 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_utilisateur(
 );
 
 CREATE TABLE IF NOT EXISTS Kwa2Bo_contacts(
-	login1 VARCHAR(16),
-	login2 VARCHAR(16),
+	mail1 VARCHAR(16),
+	mail2 VARCHAR(16),
 	CONSTRAINT pk_contacts
-	PRIMARY KEY(login1,login2),
-	CONSTRAINT fk_contacts FOREIGN KEY(login1)
-	REFERENCES Kwa2Bo_utilisateur (login)
+	PRIMARY KEY(mail1,mail2),
+	CONSTRAINT fk_contacts FOREIGN KEY(mail1)
+	REFERENCES Kwa2Bo_utilisateur (mail)
 	ON UPDATE CASCADE
 	ON DELETE RESTRICT,
-	CONSTRAINT fk_contacts2 FOREIGN KEY(login2)
-	REFERENCES Kwa2Bo_utilisateur (login)
+	CONSTRAINT fk_contacts2 FOREIGN KEY(mail2)
+	REFERENCES Kwa2Bo_utilisateur (mail)
 	ON UPDATE CASCADE
 	ON DELETE RESTRICT
 );
@@ -51,12 +51,12 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_groupe (
 );
 
 CREATE TABLE IF NOT EXISTS Kwa2Bo_appartient(
-	login VARCHAR(16),
+	mail VARCHAR(16),
 	idGroupe INTEGER,
 	CONSTRAINT pk_appartient
-	PRIMARY KEY(login, idGroupe),
-	CONSTRAINT fk_appartient FOREIGN KEY(login)
-	REFERENCES Kwa2Bo_utilisateur(login)
+	PRIMARY KEY(mail, idGroupe),
+	CONSTRAINT fk_appartient FOREIGN KEY(mail)
+	REFERENCES Kwa2Bo_utilisateur(mail)
 	ON UPDATE CASCADE
 	ON DELETE RESTRICT,
 	CONSTRAINT fk_appartient2 FOREIGN KEY(idGroupe)
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_appartient(
 CREATE TABLE IF NOT EXISTS Kwa2Bo_message(
 	idMessage SERIAL,
 	idGroupe INTEGER,
-	login VARCHAR(16),
+	mail VARCHAR(16),
 	dateMessage TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	image TEXT,
 	texte TEXT,
@@ -78,8 +78,8 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_message(
 	REFERENCES Kwa2Bo_groupe(idGroupe)
 	ON UPDATE CASCADE
 	ON DELETE RESTRICT,
-	CONSTRAINT fk_message2 FOREIGN KEY(login)
-	REFERENCES Kwa2Bo_utilisateur(login)
+	CONSTRAINT fk_message2 FOREIGN KEY(mail)
+	REFERENCES Kwa2Bo_utilisateur(mail)
 	ON UPDATE CASCADE
 	ON DELETE RESTRICT
 );
@@ -87,25 +87,25 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_message(
 INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Ferro','Thomas');
 INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Fevre','Rémy');
 
-INSERT INTO Kwa2Bo_utilisateur(login,mdp,pseudo,idProfil) VALUES ('ferrot','rocher','Ferrot',1);
-INSERT INTO Kwa2Bo_utilisateur(login,mdp,pseudo,idProfil) VALUES ('fevrer','rocher','Psycos',2);
-INSERT INTO Kwa2Bo_utilisateur(login,mdp,pseudo) VALUES ('leleu','rocher','A-La-Queue');
-INSERT INTO Kwa2Bo_utilisateur(login,mdp,pseudo) VALUES ('catez','rocher','Le_Maboule');
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil) VALUES ('ferrot@gmail.com','rocher','Ferrot',1);
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil) VALUES ('fevrer@gmail.com','rocher','Psycos',2);
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo) VALUES ('leleu@gmail.com','rocher','A-La-Queue');
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo) VALUES ('catez@gmail.com','rocher','Le_Maboule');
 
-INSERT INTO Kwa2Bo_contacts VALUES ('ferrot','fevrer');
-INSERT INTO Kwa2Bo_contacts VALUES ('ferrot','leleu');
+INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','fevrer@gmail.com');
+INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','leleu@gmail.com');
 
 INSERT INTO Kwa2Bo_groupe (nomGroupe) VALUES ('Le paradis sur Terre');
 INSERT INTO Kwa2Bo_groupe (nomGroupe) VALUES ('Ici c est Paris');
 
-INSERT INTO Kwa2Bo_appartient VALUES ('ferrot',1);
-INSERT INTO Kwa2Bo_appartient VALUES ('fevrer',1);
-INSERT INTO Kwa2Bo_appartient VALUES ('ferrot',2);
-INSERT INTO Kwa2Bo_appartient VALUES ('fevrer',2);
-INSERT INTO Kwa2Bo_appartient VALUES ('leleu',2);
+INSERT INTO Kwa2Bo_appartient VALUES ('ferrot@gmail.com',1);
+INSERT INTO Kwa2Bo_appartient VALUES ('fevrer@gmail.com',1);
+INSERT INTO Kwa2Bo_appartient VALUES ('ferrot@gmail.com',2);
+INSERT INTO Kwa2Bo_appartient VALUES ('fevrer@gmail.com',2);
+INSERT INTO Kwa2Bo_appartient VALUES ('leleu@gmail.com',2);
 
-INSERT INTO Kwa2Bo_message(idGroupe,login,texte) VALUES (1,'fevrer','Thomas tu pue');
-INSERT INTO Kwa2Bo_message(idGroupe,login,texte) VALUES (1,'ferrot','Non c est toi qui pue');
-INSERT INTO Kwa2Bo_message(idGroupe,login,texte) VALUES (2,'ferrot','Bonjour');
-INSERT INTO Kwa2Bo_message(idGroupe,login,texte) VALUES (2,'leleu','Oui bonjour ?');
-INSERT INTO Kwa2Bo_message(idGroupe,login,texte) VALUES (2,'ferrot','Non toi bonjour!');
+INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (1,'fevrer@gmail.com','Thomas tu pue');
+INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (1,'ferrot@gmail.com','Non c est toi qui pue');
+INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (2,'ferrot@gmail.com','Bonjour');
+INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (2,'leleu@gmail.com','Oui bonjour ?');
+INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (2,'ferrot@gmail.com','Non toi bonjour!');
