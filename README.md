@@ -11,6 +11,28 @@ base donné doit nécessiter le moins de travail possible.
 
 ---
 
+### TODO :
+
+- [x] Faire le MCD/MLD
+- [x] Créer la base de donnée
+- [x] Maquettes du site
+- [ ] Technologies utilisé :
+  - [ ] AJAX
+  - [ ] JSP
+  - [ ] Servlet
+  - [ ] MAIL
+  - [ ] EL expression
+  - [ ] pool
+  - [ ] realm
+  - [ ] Logger
+  - [ ] Valve
+- [ ] Page de login
+- [ ] Page d'inscription
+- [ ] Page validation du compte
+
+
+---
+
 ### Synthèse :
 
 - #### I/ Objectif du travail
