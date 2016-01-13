@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_utilisateur(
 	login VARCHAR(16) NOT NULL,
 	mdp TEXT NOT NULL,
 	pseudo TEXT NOT NULL,
+	role TEXT NOT NULL DEFAULT 'undef',
 	idProfil INTEGER,
 	CONSTRAINT pk_utilisateur
 	PRIMARY KEY(login),
@@ -86,10 +87,10 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_message(
 INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Ferro','Thomas');
 INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Fevre','Rémy');
 
-INSERT INTO Kwa2Bo_utilisateur VALUES ('ferrot','rocher','Ferrot',1);
-INSERT INTO Kwa2Bo_utilisateur VALUES ('fevrer','rocher','Psycos',2);
-INSERT INTO Kwa2Bo_utilisateur VALUES ('leleu','rocher','A-La-Queue');
-INSERT INTO Kwa2Bo_utilisateur VALUES ('catez','rocher','Gros-Connard');
+INSERT INTO Kwa2Bo_utilisateur(login,mdp,pseudo,idProfil) VALUES ('ferrot','rocher','Ferrot',1);
+INSERT INTO Kwa2Bo_utilisateur(login,mdp,pseudo,idProfil) VALUES ('fevrer','rocher','Psycos',2);
+INSERT INTO Kwa2Bo_utilisateur(login,mdp,pseudo) VALUES ('leleu','rocher','A-La-Queue');
+INSERT INTO Kwa2Bo_utilisateur(login,mdp,pseudo) VALUES ('catez','rocher','Le_Maboule');
 
 INSERT INTO Kwa2Bo_contacts VALUES ('ferrot','fevrer');
 INSERT INTO Kwa2Bo_contacts VALUES ('ferrot','leleu');
