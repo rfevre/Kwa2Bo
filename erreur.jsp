@@ -1,11 +1,24 @@
-<!-- erreur.jsp -->
-<%@ page isErrorPage="true" %>
-<html><head>
-<title>page d’affichage d’erreur</title>
-</head>
+<!DOCTYPE HTML>
+<html>
+    <head>
+	<title>Page d'erreur</title>
+        <%@ page
+               contentType="text/html; charset=ISO-8859-15"
+	       isErrorPage="true" %>
+	<link rel="stylesheet" href="style.css" type="text/css">
+    </head>
 <body>
-<center>
-<h3><%= exception.toString() %></h3>
-</center>
+
+   <h1> Page de gestion d'erreur</h1>
+   <h3> Un probleme de type
+"<%
+	String m = request.getParameter("message");
+	if (m!=null) out.print(m);
+	if (exception!=null) out.print(exception.getMessage());
+ %>" est survenu.</h3>
+
+
+<a href=index.html>Retour</a>
+
 </body>
 </html>
