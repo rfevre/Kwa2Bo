@@ -16,7 +16,7 @@ base donné doit nécessiter le moins de travail possible.
 - [x] Faire le MCD/MLD
 - [x] Créer la base de donnée
 - [x] Maquettes du site
-- [ ] Lister les technologie :
+- [ ] Lister les technologies :
   - [ ] AJAX
   - [ ] JSP
   - [ ] Servlet
