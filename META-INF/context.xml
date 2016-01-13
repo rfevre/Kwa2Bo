@@ -1,12 +1,10 @@
-<Context path="/videEvolue" docBase="videEvolue" debug="99">
+<Context path="/Kwa2Bo" docBase="Kwa2Bo" debug="99">
 
   <!-- Definition du pool -->
-  <Resource name="mabase" 
-    auth="Container" type="javax.sql.DataSource"
-    maxActive="8" maxIdle="4" maxWait="10000"
-    username="leleuj" password="moi" driverClassName="org.postgresql.Driver"
-    url="jdbc:postgresql://psqlserv/da2i"
-  />
+  <Resource name="mabase" auth="Container" type="javax.sql.DataSource"
+  maxActive="8" maxIdle="4" maxWait="10000"
+  username="leleuj" password="moi" driverClassName="org.postgresql.Driver"
+  url="jdbc:postgresql://psqlserv/da2i" />
 
   <Realm  className="org.apache.catalina.realm.DataSourceRealm" debug="99"
     dataSourceName="mabase" 
@@ -16,13 +14,6 @@
     userCredCol="mdp"
     userRoleTable="kwa2bo_utilisateur" 
     roleNameCol="role"
-  />
-
-
-  <!-- Definition d'une valve d'acces -->
-  <Valve className="org.apache.catalina.valves.AccessLogValve"
-    prefix="kwa2bo_access1." suffix=".txt"
-    pattern="common"
   />
 
 </Context>

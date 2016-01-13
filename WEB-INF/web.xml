@@ -47,7 +47,7 @@
 </error-page>
 
 <session-config>
-    <session-timeout>10</session-timeout>
+    <session-timeout>15</session-timeout>
 </session-config>
 
 <welcome-file-list>
@@ -88,12 +88,12 @@
 <!-- La maniere dont la page de login est affichee -->
 <login-config>
   <auth-method>FORM</auth-method>
-  <realm-name>Connexion</realm-name>
   <form-login-config>
-    <form-login-page>/login.html</form-login-page/>
-    <form-login-page>/login.html?error="connectionFailed"</form-login-page/>
+    <form-login-page>/login.html</form-login-page>
+    <form-error-page>/login.html?error="connexionFailed"</form-error-page>
   </form-login-config>
 </login-config>
+
 
 <!-- La liste des differents roles -->
 <security-role>
