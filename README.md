@@ -16,7 +16,7 @@ base donné doit nécessiter le moins de travail possible.
 - [x] Faire le MCD/MLD
 - [x] Créer la base de donnée
 - [x] Maquettes du site
-- [ ] Lister les technologies :
+- [ ] Technologies utilisé :
   - [ ] AJAX
   - [ ] JSP
   - [ ] Servlet
@@ -27,6 +27,8 @@ base donné doit nécessiter le moins de travail possible.
   - [ ] Logger
   - [ ] Valve
 - [ ] Page de login
+- [ ] Page d'inscription
+- [ ] Page validation du compte
 
 
 ---
