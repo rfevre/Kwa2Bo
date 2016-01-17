@@ -1,121 +1,130 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!DOCTYPE web-app
-    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
-    "http://java.sun.com/j2ee/dtds/web-app_2.2.dtd">
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN" "http://java.sun.com/j2ee/dtds/web-app_2.2.dtd">
 <web-app>
 
-<!-- Partie obligatoire pour l'acces aux Servlets -->
-<servlet>
-  <servlet-name>invoker</servlet-name>
-  <servlet-class>
-    org.apache.catalina.servlets.InvokerServlet
-  </servlet-class>
-  <init-param>
-    <param-name>debug</param-name>
-    <param-value>0</param-value>
-  </init-param>
-  <load-on-startup>2</load-on-startup>
-</servlet>
+  <!-- Partie obligatoire pour l'acces aux Servlets -->
+  <servlet>
+    <servlet-name>invoker</servlet-name>
+      <servlet-class>
+      org.apache.catalina.servlets.InvokerServlet
+      </servlet-class>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>0</param-value>
+    </init-param>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
 
-<servlet-mapping>
-  <servlet-name>invoker</servlet-name>
-  <url-pattern>/servlet/*</url-pattern>
-</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>invoker</servlet-name>
+    <url-pattern>/servlet/*</url-pattern>
+  </servlet-mapping>
 
-    <!-- Parametrages propres a cette application web -->
-   <context-param>
-      <param-name>concepteur</param-name>
-      <param-value>Remy FEVRE et Julien LELEU, LP DA2I</param-value>
-      <description>
-        Constantes de l'appli accessibles par getServletContext().getInitParameter("name");
-      </description>
-    </context-param>
+  <!-- Parametrages propres a cette application web -->
+  <context-param>
+    <param-name>concepteur</param-name>
+    <param-value>Remy FEVRE et Julien LELEU, LP DA2I</param-value>
+    <description>
+      Constantes de l'appli accessibles par getServletContext().getInitParameter("name");
+    </description>
+  </context-param>
 
-<error-page>
-<error-code>403</error-code>
-<location>/erreur.jsp?message=Cette page ne vous est pas accessible
-</location>
-</error-page>
-<error-page>
-<error-code>404</error-code>
-<location>/erreur.jsp?message=Page inexistante</location>
-</error-page>
-<error-page>
-<error-code>500</error-code>
-<location>/erreur.jsp?message=BDD ou Beans inaccessibles</location>
-</error-page>
+  <error-page>
+    <error-code>403</error-code>
+    <location>/erreur.jsp?message=Cette page ne vous est pas accessible
+    </location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/erreur.jsp?message=Page inexistante</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/erreur.jsp?message=BDD ou Beans inaccessibles</location>
+  </error-page>
 
-<session-config>
+  <session-config>
     <session-timeout>15</session-timeout>
-</session-config>
+  </session-config>
 
-<welcome-file-list>
-  <welcome-file>/classic/conversations.jsp</welcome-file>
-</welcome-file-list>
+  <welcome-file-list>
+    <welcome-file>/classic/conversations.jsp</welcome-file>
+  </welcome-file-list>
 
-<!--  Lien entre les pages et les roles -->
-<security-constraint>
- <web-resource-collection>
-   <web-resource-name>admin</web-resource-name>
-     <url-pattern>/admin/*</url-pattern>
- </web-resource-collection>
-  <auth-constraint>
-     <role-name>admin</role-name>
-  </auth-constraint>
-</security-constraint>
+  <!--  Lien entre les pages et les roles -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>admin</web-resource-name>
+      <url-pattern>/admin/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
 
-<security-constraint>
- <web-resource-collection>
-  <web-resource-name>classic</web-resource-name>
-  <url-pattern>/classic/*</url-pattern>
- </web-resource-collection>
-  <auth-constraint>
-  <role-name>classic</role-name>
-  <role-name>admin</role-name>
-  </auth-constraint>
-</security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+    <web-resource-name>classic</web-resource-name>
+      <url-pattern>/classic/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>classic</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
 
-<security-constraint>
- <web-resource-collection>
-  <web-resource-name>classic</web-resource-name>
-  <url-pattern>/</url-pattern>
- </web-resource-collection>
-  <auth-constraint>
-  <role-name>classic</role-name>
-  <role-name>admin</role-name>
-  </auth-constraint>
-</security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>classic</web-resource-name>
+      <url-pattern>/</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>classic</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
 
-<security-constraint>
-  <web-resource-collection>
-  <web-resource-name>undef</web-resource-name>
-  <url-pattern>/undef.html</url-pattern>
- </web-resource-collection>
-  <auth-constraint>
-  <role-name>undef</role-name>
-  </auth-constraint>
-</security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>css</web-resource-name>
+      <url-pattern>/css/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>classic</role-name>
+      <role-name>admin</role-name>
+      <role-name>undef</role-name>
+    </auth-constraint>
+  </security-constraint>
 
-<!-- La maniere dont la page de login est affichee -->
-<login-config>
-  <auth-method>FORM</auth-method>
-  <form-login-config>
-    <form-login-page>/login.html</form-login-page>
-    <form-error-page>/login.html?error="connexionFailed"</form-error-page>
-  </form-login-config>
-</login-config>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>undef</web-resource-name>
+      <url-pattern>/undef.html</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>undef</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <!-- La maniere dont la page de login est affichee -->
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/login.html</form-login-page>
+      <form-error-page>/login.html?error="La connexion a echouée"</form-error-page>
+    </form-login-config>
+  </login-config>
 
 
-<!-- La liste des differents roles -->
-<security-role>
-  <role-name>admin</role-name>
-</security-role>
-<security-role>
-  <role-name>classic</role-name>
-</security-role>
-<security-role>
-  <role-name>undef</role-name>
-</security-role>
-
+  <!-- La liste des differents roles -->
+  <security-role>
+    <role-name>admin</role-name>
+  </security-role>
+  <security-role>
+    <role-name>classic</role-name>
+  </security-role>
+  <security-role>
+    <role-name>undef</role-name>
+  </security-role>
 </web-app>
