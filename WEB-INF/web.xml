@@ -49,35 +49,23 @@
   </session-config>
 
   <welcome-file-list>
-    <welcome-file>/classic/conversations.jsp</welcome-file>
+    <welcome-file>/login.jsp</welcome-file>
   </welcome-file-list>
 
-  <!--  Lien entre les pages et les roles -->
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>admin</web-resource-name>
-      <url-pattern>./admin/*</url-pattern>
+    <web-resource-name>logged</web-resource-name>
+      <url-pattern>/conversations.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <role-name>admin</role-name>
-    </auth-constraint>
-  </security-constraint>
-
-  <security-constraint>
-    <web-resource-collection>
-    <web-resource-name>classic</web-resource-name>
-      <url-pattern>./classic/*</url-pattern>
-    </web-resource-collection>
-    <auth-constraint>
-      <role-name>classic</role-name>
-      <role-name>admin</role-name>
+      <role-name>logged</role-name>
     </auth-constraint>
   </security-constraint>
 
   <security-constraint>
     <web-resource-collection>
       <web-resource-name>undef</web-resource-name>
-      <url-pattern>./undef.html</url-pattern>
+      <url-pattern>/undef.html</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>undef</role-name>
@@ -88,18 +76,14 @@
   <login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>
-      <form-login-page>/login.html</form-login-page>
-      <form-error-page>/login.html?error="La connexion a echouée"</form-error-page>
+      <form-login-page>/login.jsp</form-login-page>
+      <form-error-page>/login.jsp?error="La connexion a echouée"</form-error-page>
     </form-login-config>
   </login-config>
 
-
   <!-- La liste des differents roles -->
   <security-role>
-    <role-name>admin</role-name>
-  </security-role>
-  <security-role>
-    <role-name>classic</role-name>
+    <role-name>logged</role-name>
   </security-role>
   <security-role>
     <role-name>undef</role-name>
