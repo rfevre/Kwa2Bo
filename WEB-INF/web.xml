@@ -6,7 +6,7 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
   version="3.0">
-  
+
   <!-- Partie obligatoire pour l'acces aux Servlets -->
   <!-- <servlet>
   <servlet-name>invoker</servlet-name>
@@ -26,25 +26,37 @@
 </servlet-mapping> -->
 
 <servlet>
-  <servlet-name>MyServletName</servlet-name>
-  <servlet-class>ServletController</servlet-class>
+  <servlet-name>Servlets</servlet-name>
+  <servlet-class>Controller</servlet-class>
   <init-param>
     <param-name>
       go
     </param-name>
     <param-value>
       test
+      inscription
+      identification
     </param-value>
   </init-param>
 </servlet>
 
 <servlet>
   <servlet-name>ServletTest</servlet-name>
-  <servlet-class>ServletTest</servlet-class>
+  <servlet-class>Test</servlet-class>
+</servlet>
+
+<servlet>
+  <servlet-name>ServletInscription</servlet-name>
+  <servlet-class>Inscription</servlet-class>
+</servlet>
+
+<servlet>
+  <servlet-name>ServletIdentification</servlet-name>
+  <servlet-class>Identification</servlet-class>
 </servlet>
 
 <servlet-mapping>
-  <servlet-name>MyServletName</servlet-name>
+  <servlet-name>Servlets</servlet-name>
   <url-pattern>/servlet/*</url-pattern>
 </servlet-mapping>
 
@@ -76,7 +88,7 @@
 </session-config>
 
 <welcome-file-list>
-  <welcome-file>/login.html</welcome-file>
+  <welcome-file>/login.jsp</welcome-file>
 </welcome-file-list>
 
 <security-constraint>
