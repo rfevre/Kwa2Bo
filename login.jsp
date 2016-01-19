@@ -5,16 +5,16 @@
 <head>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="css/position.css"/>
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/position.css"/>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
 	<title>Connexion - Kwa2Bo</title>
 </head>
 <body>
 	<div class="container">
 		<header class="row">
 			<div class="home col-md-4">
-				<img id="logoDuSite" alt="logo du site" src="res/img/logoWA.png"/>
+				<img id="logoDuSite" alt="logo du site" src="${pageContext.request.contextPath}/res/img/logoWA.png"/>
 				<label>Kwa2Bo</label>
 			</div>
 			<div id = "log" class="col-md-offset-3 col-md-5">
@@ -27,7 +27,7 @@
 			</div>
 		</header>
 		<section class="row">
-			<img src="res/img/logoUniv.svg" alt="logo de l'université de Lille 1" class="col-md-7 hidden-xs"/>
+			<img src="${pageContext.request.contextPath}/res/img/logoUniv.svg" alt="logo de l'université de Lille 1" class="col-md-7 hidden-xs"/>
 			<div id="inscription" class="col-md-5">
 				<legend><h1>Inscription</h1></legend>
 				<form action="#" method="POST" class="form-group">

@@ -5,22 +5,22 @@
 <head>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="css/position.css"/>
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/position.css"/>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
+	<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 	<title>Conversation - Kwa2Bo</title>
 </head>
 <body>
 	<div class="container">
 		<header class="row">
 			<div class="home col-md-4">
-				<img id="logoDuSite" alt="logo du site" src="res/img/logoWA.png"/>
+				<img id="logoDuSite" alt="logo du site" src="${pageContext.request.contextPath}/res/img/logoWA.png"/>
 				<label>Kwa2Bo</label>
 			</div>
 			<div id = "log" class="col-md-offset-3 col-md-5">
-				
+
 			</div>
 		</header>
 		<section class="row">
