@@ -5,7 +5,7 @@
         <%@ page
                contentType="text/html; charset=ISO-8859-15"
 	       isErrorPage="true" %>
-	<link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
 <body>
 
@@ -16,9 +16,6 @@
 	if (m!=null) out.print(m);
 	if (exception!=null) out.print(exception.getMessage());
  %>" est survenu.</h3>
-
-
-<a href=index.html>Retour</a>
 
 </body>
 </html>
