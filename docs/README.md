@@ -18,17 +18,22 @@ base donné doit nécessiter le moins de travail possible.
 - [x] Maquettes du site
 - [ ] Technologies utilisé :
   - [ ] AJAX
-  - [ ] JSP
-  - [ ] Servlet
+  - [x] JSP
+  - [x] Servlet
   - [ ] MAIL
-  - [ ] EL expression
-  - [ ] pool
-  - [ ] realm
+  - [x] EL expression
+  - [x] pool
+  - [x] realm
   - [ ] Logger
   - [ ] Valve
-- [ ] Page de login
-- [ ] Page d'inscription
-- [ ] Page validation du compte
+- [ ] Page JSP/HTML
+  - [x] Page de login
+  - [ ] Page d'inscription
+  - [ ] Page validation du compte
+- [ ] Servlets
+  - [ ] Servlet controller
+  - [ ] Servlet identification
+  - [x] Servlet inscription
 
 
 ---
@@ -44,7 +49,7 @@ base donné doit nécessiter le moins de travail possible.
 - #### IV/ En quoi ce projet était difficile
 
 - #### V/ Conclusion
-  
+
 ---
 
 ### Description technique du projet :
