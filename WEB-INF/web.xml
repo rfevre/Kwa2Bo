@@ -35,7 +35,6 @@
     <param-value>
       test
       inscription
-      identification
     </param-value>
   </init-param>
 </servlet>
@@ -48,11 +47,6 @@
 <servlet>
   <servlet-name>ServletInscription</servlet-name>
   <servlet-class>Inscription</servlet-class>
-</servlet>
-
-<servlet>
-  <servlet-name>ServletIdentification</servlet-name>
-  <servlet-class>Identification</servlet-class>
 </servlet>
 
 <servlet-mapping>
@@ -88,26 +82,27 @@
 </session-config>
 
 <welcome-file-list>
-  <welcome-file>/login.jsp</welcome-file>
+  <welcome-file>/logged/conversations.jsp</welcome-file>
 </welcome-file-list>
 
 <security-constraint>
   <web-resource-collection>
-    <web-resource-name>logged</web-resource-name>
-    <url-pattern>/conversations.jsp</url-pattern>
+    <web-resource-name>autorisationAll</web-resource-name>
+    <url-pattern>/css/*</url-pattern>
+    <url-pattern>/res/*</url-pattern>
+    <url-pattern>/js/*</url-pattern>
+    <url-pattern>/erreur.jsp</url-pattern>
+    <url-pattern>/confirmation.jsp</url-pattern>
   </web-resource-collection>
-  <auth-constraint>
-    <role-name>logged</role-name>
-  </auth-constraint>
 </security-constraint>
 
 <security-constraint>
   <web-resource-collection>
-    <web-resource-name>undef</web-resource-name>
-    <url-pattern>/undef.html</url-pattern>
+    <web-resource-name>autorisationLogged</web-resource-name>
+    <url-pattern>/*</url-pattern>
   </web-resource-collection>
   <auth-constraint>
-    <role-name>undef</role-name>
+    <role-name>logged</role-name>
   </auth-constraint>
 </security-constraint>
 
@@ -116,7 +111,7 @@
   <auth-method>FORM</auth-method>
   <form-login-config>
     <form-login-page>/login.jsp</form-login-page>
-    <form-error-page>/login.jsp?error="La connexion a echouée"</form-error-page>
+    <form-error-page>/login.jsp?message="La connexion a echouée"</form-error-page>
   </form-login-config>
 </login-config>
 

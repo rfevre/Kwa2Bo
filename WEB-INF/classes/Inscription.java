@@ -47,8 +47,8 @@ public class Inscription extends HttpServlet {
 
       ps.executeUpdate();
 
-      request.setAttribute("message","Un mail de confirmation vous à été envoyé");
-      rd = getServletContext().getRequestDispatcher("/login.jsp");
+      request.setAttribute("message","OK");
+      rd = getServletContext().getRequestDispatcher("/confirmation.jsp");
     }catch (Exception e) {
       request.setAttribute("message","Mail déjà utilisé");
       rd = getServletContext().getRequestDispatcher("/erreur.jsp");
