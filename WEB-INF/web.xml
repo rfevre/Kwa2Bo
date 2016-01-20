@@ -93,6 +93,7 @@
     <url-pattern>/js/*</url-pattern>
     <url-pattern>/erreur.jsp</url-pattern>
     <url-pattern>/confirmation.jsp</url-pattern>
+    <url-pattern>/servlet/Controller</url-pattern>
   </web-resource-collection>
 </security-constraint>
 
