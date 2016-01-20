@@ -1,5 +1,29 @@
 header
 {
-	color : red;
-	background: red;
+	background: rgb(180,20,117);
+}
+
+header div label
+{
+	color: white;
+	font-size: 2em;
+}
+
+#log a
+{
+	color: white;
+}
+
+section table tr td button {
+	width: 100%;
+	text-align: left;
+}
+
+section table tr td .btn {
+	text-align: left;
+}
+
+footer nav div ul li a {
+	background: rgb(180,20,117);
+	color: white;
 }

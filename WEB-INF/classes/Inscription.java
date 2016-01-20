@@ -22,6 +22,14 @@ public class Inscription extends HttpServlet {
 
     String mail = request.getParameter("mail");
     String mdp = request.getParameter("mdp");
+    String mail1 = request.getParameter("mail1");
+    String mail2 = request.getParameter("mail2");
+    if (!mail1.equals(mail2)) throw new ServletException("Les deux mails renseigné ne sont pas identiques.");
+
+    String mdp1 = request.getParameter("mdp1");
+    String mdp2 = request.getParameter("mdp2");
+    if (!mdp1.equals(mdp2)) throw new ServletException("Les deux mots de passe renseigné ne sont pas identiques.");
+
     String pseudo = request.getParameter("pseudo");
 
     // mail = "test@gmail.com";
@@ -41,14 +49,15 @@ public class Inscription extends HttpServlet {
       con = ds.getConnection();
       ps = con.prepareStatement("INSERT INTO kwa2bo_utilisateur(mail,mdp,pseudo) VALUES (?,?,?)");
 
-      ps.setString(1, mail);
-      ps.setString(2, mdp);
+
+      ps.setString(1, mail1);
+      ps.setString(2, mdp1);
       ps.setString(3, pseudo);
 
       ps.executeUpdate();
 
-      request.setAttribute("message","Un mail de confirmation vous à été envoyé");
-      rd = getServletContext().getRequestDispatcher("/login.jsp");
+      request.setAttribute("message","OK");
+      rd = getServletContext().getRequestDispatcher("/confirmation.jsp");
     }catch (Exception e) {
       request.setAttribute("message","Mail déjà utilisé");
       rd = getServletContext().getRequestDispatcher("/erreur.jsp");
