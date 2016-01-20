@@ -3,14 +3,25 @@ function isNotEmpty(input) {
 	return pseudo != "";
 }
 
-function updateStateOf(div) {
+function addInfo(input, info) {
+	$("#" + input.id).append("<div class=\"alert alert-warning\" role=\"alert\">"+ info +"</div>");
+}
+
+function removeInfo(input, info) {
+	$("#" + input.id).children(".alert-warning").remove();
+}
+
+function updateStateOf(div,errorMsg) {
 	if (isNotEmpty(div.firstElementChild.firstElementChild)) {
 		div.className="has-success has-feedback";
-		div.lastElementChild.className="glyphicon glyphicon-ok form-control-feedback";
+		div.getElementsByTagName("span")[0].className="glyphicon glyphicon-ok form-control-feedback";
+		removeInfo(div);
 	}
 	else {
 		div.className="has-error has-feedback";
-		div.lastElementChild.className="glyphicon glyphicon-remove form-control-feedback";
+		div.getElementsByTagName("span")[0].className="glyphicon glyphicon-remove form-control-feedback";
+		removeInfo(div);
+		addInfo(div, errorMsg);
 	}
 }
 
@@ -20,13 +31,16 @@ function isMail(input) {
 	return regex.test(mail);
 }
 
-function updateStateMail(div) {
+function updateStateMail(div, errorMsg) {
 	if (isMail(div.firstElementChild.firstElementChild)) {
 		div.className="has-success has-feedback";
-		div.lastElementChild.className="glyphicon glyphicon-ok form-control-feedback";
+		div.getElementsByTagName("span")[0].className="glyphicon glyphicon-ok form-control-feedback";
+		removeInfo(div);
 	}
 	else {
 		div.className="has-error has-feedback";
-		div.lastElementChild.className="glyphicon glyphicon-remove form-control-feedback";
+		div.getElementsByTagName("span")[0].className="glyphicon glyphicon-remove form-control-feedback";
+		removeInfo(div);
+		addInfo(div, errorMsg);
 	}
 }

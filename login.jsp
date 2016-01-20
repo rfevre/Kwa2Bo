@@ -33,25 +33,35 @@
 			<img src="${pageContext.request.contextPath}/res/img/logoUniv.svg" alt="logo de l'université de Lille 1" class="col-md-7 hidden-xs"/>
 			<div id="inscription" class="col-md-5">
 				<legend><h1>Inscription</h1></legend>
-				<form action="#" method="POST" class="form-group">
+				<form action="#" method="POST" id="inscription" class="form-group">
 					<div id="divPseudo" class="">
-						<p><input type="text" class="form-control" placeholder="Pseudo" name="pseudo" onKeyUp="updateStateOf(divPseudo);"/></p>
+						<p>
+							<input type="text" class="form-control" placeholder="Pseudo" name="pseudo" onKeyUp="updateStateOf(divPseudo, 'Pseudo trop court');"/>
+						</p>
 						<span class="" aria-hidden="true"></span>
 					</div>
 					<div id="divMail1" class="">
-						<p><input type="text" id="mail1" class="form-control" placeholder="Adresse mail" name="mail1" onKeyUp="updateStateMail(divMail1);"/></p>
+						<p>
+							<input type="text" id="mail1" class="form-control" placeholder="Adresse mail" name="mail1" onKeyUp="updateStateMail(divMail1, 'Adresse mail incorrecte');"/>
+						</p>
 						<span class="" aria-hidden="true"></span>
 					</div>
 					<div id="divMail2" class="">
-						<p><input type="text" id="mail2" class="form-control" placeholder="Confirmez l'adresse mail" name="mail2" onKeyUp="updateStateMail(divMail2);checkMail1EqualsMail2(mail1,mail2)"/></p>
+						<p>
+							<input type="text" id="mail2" class="form-control" placeholder="Confirmez l'adresse mail" name="mail2" onKeyUp="updateStateMail(divMail2, 'Adresse mail incorrecte');checkMail1EqualsMail2(mail1,mail2)"/>
+						</p>
 						<span class="" aria-hidden="true"></span>
 					</div>
 					<div id="divMdp1" class="">
-						<p><input type="text" class="form-control" placeholder="Mot de passe" name="mdp1" onKeyUp="updateStateOf(divMdp1);"/></p>
+						<p>
+							<input type="text" class="form-control" placeholder="Mot de passe" name="mdp1" onKeyUp="updateStateOf(divMdp1, 'Mot de passe trop court');"/>
+						</p>
 						<span class="" aria-hidden="true"></span>
 					</div>
 					<div id="divMdp2" class="">
-	          			<p><input type="text" class="form-control" placeholder="Confirmez mot de passe" name="mdp2" onKeyUp="updateStateOf(divMdp2);"/></p>
+	          			<p>
+	          				<input type="text" class="form-control" placeholder="Confirmez mot de passe" name="mdp2" onKeyUp="updateStateOf(divMdp2, 'Mot de passe trop court');"/>
+	          			</p>
 	          			<span class="" aria-hidden="true"></span>
 					</div>
 					<input type="submit" value="Inscription" class="btn btn-success"/>
