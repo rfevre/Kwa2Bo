@@ -31,10 +31,11 @@
 			<div id="inscription" class="col-md-5">
 				<legend><h1>Inscription</h1></legend>
 				<form action="#" method="POST" class="form-group">
-					<p><input type="text" class="form-control" placeholder="Pseudo"/></p>
-					<p><input type="text" class="form-control" placeholder="Adresse mail"/></p>
-					<p><input type="text" class="form-control" placeholder="Confirmez l'adresse e-mail"/></p>
-					<p><input type="text" class="form-control" placeholder="Mot de passe"/></p>
+					<p><input type="text" class="form-control" placeholder="Pseudo" name="pseudo"/></p>
+					<p><input type="text" class="form-control" placeholder="Adresse mail" name="mail1"/></p>
+					<p><input type="text" class="form-control" placeholder="Confirmez l'adresse" name="mail2"/></p>
+					<p><input type="text" class="form-control" placeholder="Mot de passe" name="mdp1"/></p>
+          <p><input type="text" class="form-control" placeholder="Confirmez mot de passe" name="mdp2"/></p>
 					<input type="submit" value="Inscription" class="btn btn-success"/>
 				</form>
 			</div>
