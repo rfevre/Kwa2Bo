@@ -27,25 +27,6 @@
 
 <servlet>
   <servlet-name>Servlets</servlet-name>
-  <servlet-class>Controller</servlet-class>
-  <init-param>
-    <param-name>
-      go
-    </param-name>
-    <param-value>
-      test
-      inscription
-    </param-value>
-  </init-param>
-</servlet>
-
-<servlet>
-  <servlet-name>ServletTest</servlet-name>
-  <servlet-class>Test</servlet-class>
-</servlet>
-
-<servlet>
-  <servlet-name>ServletInscription</servlet-name>
   <servlet-class>Inscription</servlet-class>
 </servlet>
 
@@ -93,7 +74,7 @@
     <url-pattern>/js/*</url-pattern>
     <url-pattern>/erreur.jsp</url-pattern>
     <url-pattern>/confirmation.jsp</url-pattern>
-    <url-pattern>/servlet/Controller</url-pattern>
+    <url-pattern>/servlet/Inscription</url-pattern>
   </web-resource-collection>
 </security-constraint>
 
