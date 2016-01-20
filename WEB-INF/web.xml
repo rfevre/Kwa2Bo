@@ -91,6 +91,7 @@
     <url-pattern>/css/*</url-pattern>
     <url-pattern>/res/*</url-pattern>
     <url-pattern>/js/*</url-pattern>
+    <url-pattern>/lib/*</url-pattern>
     <url-pattern>/erreur.jsp</url-pattern>
     <url-pattern>/confirmation.jsp</url-pattern>
     <url-pattern>/servlet/Controller</url-pattern>
