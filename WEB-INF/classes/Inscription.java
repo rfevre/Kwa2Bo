@@ -20,8 +20,6 @@ public class Inscription extends HttpServlet {
 
     RequestDispatcher rd = null;
 
-    String mail = request.getParameter("mail");
-    String mdp = request.getParameter("mdp");
     String mail1 = request.getParameter("mail1");
     String mail2 = request.getParameter("mail2");
     if (!mail1.equals(mail2)) throw new ServletException("Les deux mails renseigné ne sont pas identiques.");
@@ -48,7 +46,6 @@ public class Inscription extends HttpServlet {
     try {
       con = ds.getConnection();
       ps = con.prepareStatement("INSERT INTO kwa2bo_utilisateur(mail,mdp,pseudo) VALUES (?,?,?)");
-
 
       ps.setString(1, mail1);
       ps.setString(2, mdp1);
