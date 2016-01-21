@@ -55,7 +55,7 @@ public class Inscription extends HttpServlet {
 
       ps.executeUpdate();
 
-      request.setAttribute("message","Le compte utilisateur a été créé.");
+      request.setAttribute("message","Le compte utilisateur a été créé. Un courrier vous a été envoyez à l'adresse indiqué, afin de confirmer votre mail.");
       rd = getServletContext().getRequestDispatcher("/confirmation.jsp");
       rd.forward(request, response);
     }catch (Exception e) {
