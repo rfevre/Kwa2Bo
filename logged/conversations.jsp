@@ -41,63 +41,63 @@
 					</tr>
 					<tr>
 						<td class="row">
-							<button class="btn btn-default">
+							<a class="btn btn-default">
 								<h3>Petite bouffe jeudi soir</h3>
 								<h4>Remy Fevre :</h4>
 								<h5>Putain mais trop mon gars !!!</h5>
-							</button>
+							</a>
 						</td>
 					</tr>
 					<tr>
 						<td class="row">
-							<button class="btn btn-default">
+							<a class="btn btn-default">
 								<h3>Edouard Cattez</h3>
 								<h5>A la fin Han Solo meurt</h5>
-							</button>
+							</a>
 						</td>
 					</tr>
 					<tr>
 						<td class="row">
-							<button class="btn btn-default">
+							<a class="btn btn-default">
 								<h3>Edouard Cattez</h3>
 								<h5>A la fin Han Solo meurt</h5>
-							</button>
+							</a>
 						</td>
 					</tr>
 					<tr>
 						<td class="row">
-							<button class="btn btn-default">
+							<a class="btn btn-default">
 								<h3>Projet com' ! de la mort qui tue</h3>
 								<h4>Thomas Ferro</h4>
 								<h5>Rocket League ?</h5>
-							</button>
+							</a>
 						</td>
 					</tr>
 					<tr>
 						<td class="row">
-							<button class="btn btn-default">
+							<a class="btn btn-default">
 								<h3>Projet com' ! de la mort qui tue</h3>
 								<h4>Thomas Ferro</h4>
 								<h5>Rocket League ?</h5>
-							</button>
+							</a>
 						</td>
 					</tr>
 					<tr>
 						<td class="row">
-							<button class="btn btn-default">
+							<a class="btn btn-default">
 								<h3>Projet com' ! de la mort qui tue</h3>
 								<h4>Thomas Ferro</h4>
 								<h5>Rocket League ?</h5>
-							</button>
+							</a>
 						</td>
 					</tr>
 					<tr>
 						<td class="row">
-							<button class="btn btn-default">
+							<a class="btn btn-default">
 								<h3>Projet com' ! de la mort qui tue !!!!!!!</h3>
 								<h4>Thomas Ferro</h4>
 								<h5>Rocket League ?</h5>
-							</button>
+							</a>
 						</td>
 					</tr>
 				</table>
@@ -108,11 +108,18 @@
 				</h3>
 				<div class="panel panel-default">
 					<div class="panel-body">
-						Basic panel example
+						<div class="alert alert-info" role="alert">
+							<strong>Remy :</strong>
+							<label>Bonjour !</label>
+						</div>
+						<div class="alert alert-success" role="alert">
+							<strong>Vous :</strong>
+							<label>Ca va ?</label>
+						</div>
 					</div>
 				</div>
 				<form class="form-horizontal">
-					<textarea class="form-control"></textarea>
+					<textarea class="form-control" placeholder="Tapez votre message ici ..."></textarea>
 					<br/>
 					<input type="submit" value="Envoyer" class="btn btn-default"/>
 				</form>
