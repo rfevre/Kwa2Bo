@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/lib/bootstrap/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/position.css"/>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bubble.css"/>
 	<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 	<script src="${pageContext.request.contextPath}/js/verifForm.js"></script>
 	<script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
@@ -20,8 +21,15 @@
 				<img id="logoDuSite" alt="logo du site" src="${pageContext.request.contextPath}/res/img/logoWA.png"/>
 				<label>Kwa2Bo</label>
 			</div>
-			<div id = "log" class="col-md-offset-3 col-md-5">
-
+			<div id = "log" class="pull-right">
+				<div class="dropdown">
+					<button class="btn btn-default dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+	    				<span class="caret"></span>
+	  				</button>
+	  				<ul class="dropdown-menu dropdown-menu-right">
+	    				<li><a href="#">Déconnexion</a></li>
+	 				</ul>
+				</div>
 			</div>
 		</header>
 		<section class="row">
@@ -32,101 +40,103 @@
 			<button class="pull-right btn btn-md btn-success">Nouveau Groupe</button>
 		</section>
 		<section class="row">
-			<section id="discussions" class="col-md-4">
+			<h3>Discussions</h3>
+			<section id="discussions" class="col-md-5">
 				<table class="table">
-					<tr>
-						<th>
-							Discussions
-						</th>
-					</tr>
-					<tr>
-						<td class="row">
-							<a class="btn btn-default">
-								<h3>Petite bouffe jeudi soir</h3>
-								<h4>Remy Fevre :</h4>
-								<h5>Putain mais trop mon gars !!!</h5>
-							</a>
-						</td>
-					</tr>
-					<tr>
-						<td class="row">
-							<a class="btn btn-default">
-								<h3>Edouard Cattez</h3>
-								<h5>A la fin Han Solo meurt</h5>
-							</a>
-						</td>
-					</tr>
-					<tr>
-						<td class="row">
-							<a class="btn btn-default">
-								<h3>Edouard Cattez</h3>
-								<h5>A la fin Han Solo meurt</h5>
-							</a>
-						</td>
-					</tr>
-					<tr>
-						<td class="row">
-							<a class="btn btn-default">
-								<h3>Projet com' ! de la mort qui tue</h3>
-								<h4>Thomas Ferro</h4>
-								<h5>Rocket League ?</h5>
-							</a>
-						</td>
-					</tr>
-					<tr>
-						<td class="row">
-							<a class="btn btn-default">
-								<h3>Projet com' ! de la mort qui tue</h3>
-								<h4>Thomas Ferro</h4>
-								<h5>Rocket League ?</h5>
-							</a>
-						</td>
-					</tr>
-					<tr>
-						<td class="row">
-							<a class="btn btn-default">
-								<h3>Projet com' ! de la mort qui tue</h3>
-								<h4>Thomas Ferro</h4>
-								<h5>Rocket League ?</h5>
-							</a>
-						</td>
-					</tr>
-					<tr>
-						<td class="row">
-							<a class="btn btn-default">
-								<h3>Projet com' ! de la mort qui tue !!!!!!!</h3>
-								<h4>Thomas Ferro</h4>
-								<h5>Rocket League ?</h5>
-							</a>
-						</td>
-					</tr>
+					<tbody>
+						<tr>
+							<td class="row">
+								<a class="btn">
+									<h3>Petite bouffe jeudi soir</h3>
+									<h4 class="hidden-xs">Remy Fevre :</h4>
+									<h5 class="hidden-xs">Putain mais trop mon gars !!!</h5>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="row">
+								<a class="btn">
+									<h3>Edouard Cattez</h3>
+									<h5 class="hidden-xs">A la fin Han Solo meurt</h5>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="row">
+								<a class="btn">
+									<h3>Edouard Cattez</h3>
+									<h5 class="hidden-xs">A la fin Han Solo meurt</h5>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="row">
+								<a class="btn">
+									<h3>Projet com' ! de la mort qui tue</h3>
+									<h4 class="hidden-xs">Thomas Ferro</h4>
+									<h5 class="hidden-xs">Rocket League ?</h5>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="row">
+								<a class="btn">
+									<h3>Projet com' ! de la mort qui tue</h3>
+									<h4 class="hidden-xs">Thomas Ferro</h4>
+									<h5 class="hidden-xs">Rocket League ?</h5>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="row">
+								<a class="btn">
+									<h3>Projet com' ! de la mort qui tue</h3>
+									<h4 class="hidden-xs">Thomas Ferro</h4>
+									<h5 class="hidden-xs">Rocket League ?</h5>
+								</a>
+							</td>
+						</tr>
+						<tr>
+							<td class="row">
+								<a class="btn">
+									<h3>Projet com' ! de la mort qui tue !!!!!!!!!!!!!!!!!!!!!</h3>
+									<h4 class="hidden-xs">Thomas Ferro</h4>
+									<h5 class="hidden-xs">Rocket League ?</h5>
+								</a>
+							</td>
+						</tr>
+					</tbody>
 				</table>
 			</section>
-			<section id="conversation" class="col-md-8">
+			<section id="conversation" class="col-md-offset-1 col-md-6">
 				<h3>
 					Conversation en cours
 				</h3>
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<div class="alert alert-info" role="alert">
-							<strong>Remy :</strong>
-							<label>Bonjour !</label>
-						</div>
-						<div class="alert alert-success" role="alert">
-							<strong>Vous :</strong>
-							<label>Ca va ?</label>
+						Remy Fevre
+						<div class="alert alert-info commentArea" role="alert">
+							<div class="bubbledLeft">
+								Remy :
+							</div>
+							<div class="bubbledRight">
+								Vous :
+							</div>
 						</div>
 					</div>
 				</div>
 				<form class="form-horizontal">
 					<textarea class="form-control" placeholder="Tapez votre message ici ..."></textarea>
 					<br/>
+					<button class="btn btn-default">
+						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+					</button>
 					<input type="submit" value="Envoyer" class="btn btn-default"/>
 				</form>
 			</section>
 		</section>
 		<footer>
-			<nav class="navbar-fixed-bottom">
+			<nav class="">
 				<div class="container">
 					<ul class="nav nav-bar nav-justified nav-collapse">
 						<li class="col-md"><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>

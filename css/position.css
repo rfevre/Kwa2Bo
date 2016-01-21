@@ -19,18 +19,24 @@ footer {
 
 section table tr td a {
   width: 100%;
-  text-align: left;
 }
 
 #discussions {
   height: 550px;
-  overflow: hidden;
   overflow-x: hidden;
   overflow-y: auto;
+  word-wrap: break-word;
+}
+
+#conversation {
+  border-radius: 10px;
+  padding-bottom: 10px;
 }
 
 #conversation .panel {
   height: 350px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 #conversation .panel .panel-body .alert-success{
@@ -39,6 +45,31 @@ section table tr td a {
 
 #conversation form textarea {
   resize:none;
+}
+
+@media only screen and (max-device-width:800px) {
+  #discussions {
+    height: 150px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    word-wrap: break-word;
+  }
+
+  #discussions h3 {
+    font-size: 1em;
+  }
+
+  section table tr td a {
+  }
+
+  #conversation .panel {
+    height: 150px;
+  }
+}
+
+#log button
+{
+  margin-bottom: 0px;
 }
 /*
 body {
