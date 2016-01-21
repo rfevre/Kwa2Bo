@@ -18,8 +18,7 @@
 	if (exception!=null) out.print(exception.getMessage());
  %>" est survenu.</h3>
 
-
-<a href=${pageContext.request.contextPath}/login.html>Retour</a>
+<a href="javascript:history.back()">Retour</a>
 
 </body>
 </html>

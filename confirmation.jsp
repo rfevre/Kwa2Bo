@@ -14,5 +14,10 @@
 	<title>Confirmation - Kwa2Bo</title>
 </head>
 <body>
+
+  ${message}
+
+  <a href="javascript:history.back()">Retour</a>
+
 </body>
 </html>
