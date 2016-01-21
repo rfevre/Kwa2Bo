@@ -19,7 +19,7 @@
  %>" est survenu.</h3>
 
 
-<a href=login.html>Retour</a>
+<a href=${pageContext.request.contextPath}/login.html>Retour</a>
 
 </body>
 </html>

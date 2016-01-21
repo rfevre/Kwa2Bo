@@ -9,15 +9,12 @@ import javax.naming.*;
 
 @WebServlet("/servlet/Inscription")
 public class Inscription extends HttpServlet {
-  public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+  public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
     Context initCtx = null;
     Context envCtx = null;
     DataSource ds = null;
-
     Connection con = null;
-
     PreparedStatement ps = null;
-
     RequestDispatcher rd = null;
 
     String mail1 = request.getParameter("mail1");
@@ -35,6 +32,7 @@ public class Inscription extends HttpServlet {
     String pseudo = request.getParameter("pseudo");
     if (pseudo.equals("") || pseudo==null) throw new ServletException("Champs de pseudo vide.");
 
+    // ligne de test
     // mail1 = "test@gmail.com";
     // mdp1 = "testmdp";
     // pseudo = "testpseudo";

@@ -8,9 +8,9 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/lib/bootstrap/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/position.css"/>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
-	<script src="js/jquery.js"></script>
-	<script src="js/verifForm.js"></script>
-	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+	<script src="${pageContext.request.contextPath}/js/verifForm.js"></script>
+	<script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
 	<title>Connexion - Kwa2Bo</title>
 </head>
 <body>
@@ -33,7 +33,7 @@
 			<img src="${pageContext.request.contextPath}/res/img/logoUniv.svg" alt="logo de l'université de Lille 1" class="col-md-7 hidden-xs"/>
 			<div id="inscription" class="col-md-5">
 				<legend><h1>Inscription</h1></legend>
-				<form action="#" method="POST" id="inscription" class="form-group">
+				<form action="${pageContext.request.contextPath}/servlet/Inscription" method="POST" id="inscription" class="form-group">
 					<div id="divPseudo" class="">
 						<p>
 							<input type="text" class="form-control" placeholder="Pseudo" name="pseudo" onKeyUp="updateStateOf(divPseudo, 'Pseudo trop court');"/>
