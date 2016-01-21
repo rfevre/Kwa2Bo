@@ -26,12 +26,12 @@
 </servlet-mapping> -->
 
 <servlet>
-  <servlet-name>Servlets</servlet-name>
-  <servlet-class>Inscription</servlet-class>
+  <servlet-name>invoker</servlet-name>
+  <servlet-class>org.apache.catalina.servlets.InvokerServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>
-  <servlet-name>Servlets</servlet-name>
+  <servlet-name>invoker</servlet-name>
   <url-pattern>/servlet/*</url-pattern>
 </servlet-mapping>
 
@@ -58,12 +58,12 @@
   <location>/erreur.jsp?message=BDD ou Beans inaccessibles</location>
 </error-page>
 
-<resource-ref>
+<!-- <resource-ref>
   <description>Connexion a un serveur SMTP</description>
   <res-ref-name>mail/Session</res-ref-name>
   <res-type>javax.mail.Session</res-type>
   <res-auth>Container</res-auth>
-</resource-ref>
+</resource-ref> -->
 
 <session-config>
   <session-timeout>15</session-timeout>
@@ -83,6 +83,8 @@
     <url-pattern>/erreur.jsp</url-pattern>
     <url-pattern>/confirmation.jsp</url-pattern>
     <url-pattern>/servlet/Inscription</url-pattern>
+    <url-pattern>/servlet/Test</url-pattern>
+    <url-pattern>/servlet/TestMail</url-pattern>
   </web-resource-collection>
 </security-constraint>
 
