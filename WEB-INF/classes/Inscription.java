@@ -22,29 +22,33 @@ public class Inscription extends HttpServlet {
 
     String mail1 = request.getParameter("mail1");
     String mail2 = request.getParameter("mail2");
+    if (mail1.equals("") || mail1==null) throw new ServletException("Champs de mail vide.");
+    if (mail2.equals("") || mail2==null) throw new ServletException("Champs de mail vide.");
     if (!mail1.equals(mail2)) throw new ServletException("Les deux mails renseigné ne sont pas identiques.");
 
     String mdp1 = request.getParameter("mdp1");
     String mdp2 = request.getParameter("mdp2");
+    if (mdp1.equals("") || mdp1==null) throw new ServletException("Champs de mot de passe vide.");
+    if (mdp2.equals("") || mdp2==null) throw new ServletException("Champs de mot de passe vide.");
     if (!mdp1.equals(mdp2)) throw new ServletException("Les deux mots de passe renseigné ne sont pas identiques.");
 
     String pseudo = request.getParameter("pseudo");
+    if (pseudo.equals("") || pseudo==null) throw new ServletException("Champs de pseudo vide.");
 
-    // mail = "test@gmail.com";
-    // mdp = "testmdp";
+    // mail1 = "test@gmail.com";
+    // mdp1 = "testmdp";
     // pseudo = "testpseudo";
 
     try {
       initCtx = new InitialContext();
       envCtx = (Context) initCtx.lookup("java:comp/env");
       ds = (DataSource) envCtx.lookup("mabase");
+      con = ds.getConnection();
     }catch(Exception e) {
-      request.setAttribute("message","Erreur connection");
-      rd = getServletContext().getRequestDispatcher("/erreur.jsp");
+      throw new ServletException("Erreur lors de la connection à la BDD.");
     }
 
     try {
-      con = ds.getConnection();
       ps = con.prepareStatement("INSERT INTO kwa2bo_utilisateur(mail,mdp,pseudo) VALUES (?,?,?)");
 
       ps.setString(1, mail1);
@@ -53,19 +57,17 @@ public class Inscription extends HttpServlet {
 
       ps.executeUpdate();
 
-      request.setAttribute("message","OK");
+      request.setAttribute("message","Le compte utilisateur a été créé.");
       rd = getServletContext().getRequestDispatcher("/confirmation.jsp");
+      rd.forward(request, response);
     }catch (Exception e) {
-      request.setAttribute("message","Mail déjà utilisé");
-      rd = getServletContext().getRequestDispatcher("/erreur.jsp");
+      throw new ServletException("Mail déjà utilisé.");
     }finally {
       try {
         con.close();
       }catch(Exception e) {
-        request.setAttribute("message","Erreur fermeture de connection");
-        rd = getServletContext().getRequestDispatcher("/erreur.jsp");
+        throw new ServletException("Erreur lors de la fermeture de connection à la BDD.");
       }
-      rd.forward(request, response);
     }
   }
 }
