@@ -1,22 +1,37 @@
 header #logoDuSite
 {
-	width: 100px;
+  width: 100px;
 }
 
 header div label
 {
-	display: inline;
+  display: inline;
 }
 
 section
 {
-	margin-top: 15px;
+  margin-top: 15px;
 }
 
 footer {
-	margin-top: 50px;
+  margin-top: 50px;
 }
 
+section table tr td button {
+  width: 100%;
+  text-align: left;
+}
+
+#discussions {
+  height: 550px;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#conversation .panel {
+  height: 350px;
+}
 /*
 body {
   padding-top: 10px;

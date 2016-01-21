@@ -14,16 +14,21 @@ header div label
 	color: white;
 }
 
-section table tr td button {
-	width: 100%;
-	text-align: left;
-}
-
 section table tr td .btn {
 	text-align: left;
 }
 
 footer nav div ul li a {
 	background: rgb(180,20,117);
+	color: white;
+}
+
+#conversation {
+ 	background-color: rgb(180,20,117);
+ 	border-radius: 10px;
+ 	padding-bottom: 10px;
+}
+
+#conversation h3 {
 	color: white;
 }

@@ -32,50 +32,99 @@
 			<button class="pull-right btn btn-md btn-success">Nouveau Groupe</button>
 		</section>
 		<section class="row">
-			<table class="table">
-				<tr>
-					<td class="row">
-						<button class="btn btn-default">
-							<h3>Petite bouffe jeudi soir</h3>
-							<h4>Remy Fevre :</h4>
-							<h5>Putain mais trop mon gars !!!</h5>
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td class="row">
-						<button class="btn btn-default">
-							<h3>Edouard Cattez</h3>
-							<h5>A la fin Han Solo meurt</h5>
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td class="row">
-						<button class="btn btn-default">
-							<h3>Edouard Cattez</h3>
-							<h5>A la fin Han Solo meurt</h5>
-						</button>
-					</td>
-				</tr>
-				<tr>
-					<td class="row">
-						<button class="btn btn-default">
-							<h3>Projet com' ! de la mort qui tue</h3>
-							<h4>Thomas Ferro</h4>
-							<h5>Rocket League ?</h5>
-						</button>
-					</td>
-				</tr>
-			</table>
+			<section id="discussions" class="col-md-4">
+				<table class="table">
+					<tr>
+						<th>
+							Discussions
+						</th>
+					</tr>
+					<tr>
+						<td class="row">
+							<button class="btn btn-default">
+								<h3>Petite bouffe jeudi soir</h3>
+								<h4>Remy Fevre :</h4>
+								<h5>Putain mais trop mon gars !!!</h5>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td class="row">
+							<button class="btn btn-default">
+								<h3>Edouard Cattez</h3>
+								<h5>A la fin Han Solo meurt</h5>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td class="row">
+							<button class="btn btn-default">
+								<h3>Edouard Cattez</h3>
+								<h5>A la fin Han Solo meurt</h5>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td class="row">
+							<button class="btn btn-default">
+								<h3>Projet com' ! de la mort qui tue</h3>
+								<h4>Thomas Ferro</h4>
+								<h5>Rocket League ?</h5>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td class="row">
+							<button class="btn btn-default">
+								<h3>Projet com' ! de la mort qui tue</h3>
+								<h4>Thomas Ferro</h4>
+								<h5>Rocket League ?</h5>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td class="row">
+							<button class="btn btn-default">
+								<h3>Projet com' ! de la mort qui tue</h3>
+								<h4>Thomas Ferro</h4>
+								<h5>Rocket League ?</h5>
+							</button>
+						</td>
+					</tr>
+					<tr>
+						<td class="row">
+							<button class="btn btn-default">
+								<h3>Projet com' ! de la mort qui tue !!!!!!!</h3>
+								<h4>Thomas Ferro</h4>
+								<h5>Rocket League ?</h5>
+							</button>
+						</td>
+					</tr>
+				</table>
+			</section>
+			<section id="conversation" class="col-md-8">
+				<h3>
+					Conversation en cours
+				</h3>
+				<div class="panel panel-default">
+					<div class="panel-body">
+						Basic panel example
+					</div>
+				</div>
+				<form class="form-horizontal">
+					<textarea class="form-control"></textarea>
+					<br/>
+					<input type="submit" value="Envoyer" class="btn btn-default"/>
+				</form>
+			</section>
 		</section>
 		<footer>
 			<nav class="navbar-fixed-bottom">
 				<div class="container">
 					<ul class="nav nav-bar nav-justified nav-collapse">
-						<li class="col-md-4"><a href="#">Contacts</a></li>
-						<li class="col-md-4"><a href="#">Discussion</a></li>
-						<li class="col-md-4"><a href="#">Réglages</a></li>
+						<li class="col-md"><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+						<li class="col-md"><a href="#"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a></li>
+						<li class="col-md"><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></li>
 					</ul>
 				</div>
 			</nav>
