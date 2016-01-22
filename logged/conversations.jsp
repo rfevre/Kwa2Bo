@@ -144,15 +144,44 @@
 					Conversation en cours
 				</h3>
 				<div class="panel panel-default">
+					<button class="btn btn-default btn-xs">
+						<span class="glyphicon glyphicon-plus"></span>
+					</button> 
+					<label>Remy Fevre</label>
+				</div>
+				<div id="messageArea" class="panel panel-default">
 					<div class="panel-body">
-						<button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></button></span> Remy Fevre
-						<div class="alert alert-info commentArea" role="alert">
-							<div class="bubbledLeft">
-								Remy :
-							</div>
-							<div class="bubbledRight">
-								Vous :
-							</div>
+						<div class="bubbledLeft">
+							Remy :
+							Salut mon pote ça va ?
+						</div>
+						<div class="bubbledRight">
+							Vous :
+							Bien bien et toi ?
+						</div>
+						<div class="bubbledLeft">
+							Remy :
+							Ouais !!
+						</div>
+						<div class="bubbledRight">
+							Vous :
+							J'ai commit des trucs pour le projet
+						</div>
+						<div class="bubbledLeft">
+							Remy :
+							Ouais j'ai vu c'est trop styléé !!
+						</div>
+						<div class="bubbledRight">
+							Vous :
+							Merci ^^
+						</div>
+						<div class="bubbledLeft">
+							Remy :
+							Bon je vais dormir, a demain ! :p
+						</div>
+						<div class="bubbledRight">
+							Vous :
+							Bonne nuit mon bon remy 
 						</div>
 					</div>
 				</div>
