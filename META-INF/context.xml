@@ -7,16 +7,17 @@
     maxActive="8"
     maxIdle="4"
     maxWait="10000"
-    username="julien"
+    username="leleuj"
     password="moi"
     driverClassName="org.postgresql.Driver"
-    url="jdbc:postgresql:kwa2bo"
+    url="jdbc:postgresql://psqlserv/da2i"
   />
   <!-- Definition gmail -->
   <Resource
-  name="mail/Session" auth="Container"
-  type="javax.mail.Session"
-  mail.smtp.host="smtp.gmail.com"
+    auth="Container"
+    mail.smtp.host=" smtp.yopmail.com"
+    name="mail/Session"
+    type="javax.mail.Session"/>
   />
 
   <Realm

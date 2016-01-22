@@ -8,9 +8,15 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/position.css"/>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
-	<title>Connexion - Kwa2Bo</title>
+	<title>Groupe - Kwa2Bo</title>
 </head>
 <body>
-
+  <form action="${pageContext.request.contextPath}/servlet/Groupe" method="POST">
+    <input type="hidden" name="mail" value="ferrot@gmail.com"/>
+    <input type="hidden" name="jspName" value="/test.jsp"/>
+    <input type="submit"/>
+  </form>
+  </br>
+  ${groupes}
 </body>
 </html>

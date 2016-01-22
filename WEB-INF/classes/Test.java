@@ -7,7 +7,6 @@ import javax.sql.*;
 import java.util.Properties;
 import javax.naming.*;
 
-
 @WebServlet("/servlet/Test")
 public class Test extends HttpServlet {
   public void service(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {

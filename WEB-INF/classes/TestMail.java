@@ -6,7 +6,6 @@ import java.sql.*;
 import javax.sql.*;
 import java.util.Properties;
 import javax.naming.*;
-import mail.SendMail;
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
