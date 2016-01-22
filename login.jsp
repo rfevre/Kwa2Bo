@@ -16,7 +16,7 @@
 <body>
 	<div class="container">
 		<header class="row">
-			<div class="home col-md-4">
+			<!--<div class="home col-md-4">
 				<img id="logoDuSite" alt="logo du site" src="${pageContext.request.contextPath}/res/img/logoWA.png"/>
 				<label>Kwa2Bo</label>
 			</div>
@@ -27,7 +27,26 @@
 							<input type = "submit" value="Connexion" class="btn btn-success btn-sm"/>
 					</form>
 					<a href="#">Mot de passe oublié ?</a>
-			</div>
+			</div>-->
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+				<!-- Pour les ecrans de telephone-->
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">
+							<span>Koi2Bo</span>
+						</a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div id = "log" class="pull-right">
+						<form action="j_security_check" method="POST" class="form-horizontal">
+								<input type = "text" name="j_username" placeholder="Adresse mail"/>
+								<input type = "password" name="j_password" placeholder="Mot de passe"/>
+								<input type = "submit" value="Connexion" class="btn btn-success btn-sm"/>
+						</form>
+						<a href="#">Mot de passe oublié ?</a>
+					</div>
+				</div>
+			</nav>
 		</header>
 		<section class="row">
 			<img src="${pageContext.request.contextPath}/res/img/logoUniv.svg" alt="logo de l'université de Lille 1" class="col-md-7 hidden-xs"/>

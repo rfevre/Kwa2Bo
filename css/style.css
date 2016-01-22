@@ -1,17 +1,32 @@
-header
+.container header nav div
 {
 	background: rgb(180,20,117);
 }
 
-header div label
+.container header nav div div :focus span
+{
+	color: blue;
+}
+
+.container header nav div div span
+{
+	color: white;
+}
+
+.container header nav div div .active span
+{
+	color: rgb(180,20,117);
+}
+
+/*header div label
 {
 	color: white;
 	font-size: 2em;
-}
+}*/
 
 #log a
 {
-	color: black;
+	color: white;
 }
 
 section table tr td .btn {

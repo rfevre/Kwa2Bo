@@ -17,27 +17,58 @@
 <body>
 	<div class="container">
 		<header class="row">
-			<div class="home col-md-4">
-				<img id="logoDuSite" alt="logo du site" src="${pageContext.request.contextPath}/res/img/logoWA.png"/>
-				<label>Kwa2Bo</label>
-			</div>
-			<div id = "log" class="pull-right">
-				<div class="dropdown">
-					<button class="btn btn-default dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-	    				<span class="caret"></span>
-	  				</button>
-	  				<ul class="dropdown-menu dropdown-menu-right">
-	    				<li><a href="#">Déconnexion</a></li>
-	 				</ul>
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+				<!-- Pour les ecrans de telephone-->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-1">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">
+							<span>Koi2Bo</span>
+						</a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="col-md">
+								<a href="#">
+									<span class="glyphicon glyphicon-user"></span>
+								</a>
+							</li>
+							<li class="active">
+								<a href="#">
+									<span class="glyphicon glyphicon-comment"></span>
+								</a>
+							</li>
+							<li class="col-md">
+								<a href="#">
+									<span class="glyphicon glyphicon-cog"></span>
+								</a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+									<span>Julien Leleu </span>
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="#">Déconnexion</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
-			</div>
+			</nav>
 		</header>
 		<section class="row">
-			<form class="col-md-3">
-				<input type="submit" value="Search" class="btn btn-success"/>
-				<input type="text" placeholder="Chercher un contact"/>
-			</form>
-			<button class="pull-right btn btn-md btn-success">Nouveau Groupe</button>
+			<button class="pull-left btn btn-md btn-success">
+				<span class="glyphicon glyphicon-plus"></span> 
+				Nouveau Message
+			</button>
 		</section>
 		<section class="row">
 			<h3>Discussions</h3>
@@ -114,7 +145,7 @@
 				</h3>
 				<div class="panel panel-default">
 					<div class="panel-body">
-						Remy Fevre
+						<button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></button></span> Remy Fevre
 						<div class="alert alert-info commentArea" role="alert">
 							<div class="bubbledLeft">
 								Remy :
@@ -135,17 +166,6 @@
 				</form>
 			</section>
 		</section>
-		<footer>
-			<nav class="">
-				<div class="container">
-					<ul class="nav nav-bar nav-justified nav-collapse">
-						<li class="col-md"><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-						<li class="col-md"><a href="#"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span></a></li>
-						<li class="col-md"><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></li>
-					</ul>
-				</div>
-			</nav>
-		</footer>
 	</div>
 </body>
 </html>
