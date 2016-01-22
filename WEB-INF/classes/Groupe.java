@@ -7,6 +7,9 @@ import javax.sql.*;
 import java.util.Properties;
 import javax.naming.*;
 
+import beans.*;
+import java.util.*;
+
 @WebServlet("/servlet/Groupe")
 public class Groupe extends HttpServlet {
   public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
@@ -20,16 +23,16 @@ public class Groupe extends HttpServlet {
     ResultSet rs=null;
     RequestDispatcher rd = null;
 
-    String mail = request.getParameter("mail");
-    //if (mail.equals("") || mail==null) throw new ServletException("Mail vide.");
+    // Création du bean
+    BeanGroupe groupe = null;
+    // Création liste de groupes
+    ArrayList<BeanGroupe> listeGroupes = new ArrayList<BeanGroupe>();
 
-    //String pageRedirect = request.getParameter("pageRedirect");
-    //if (pageRedirect.equals("") || pageRedirect==null) throw new ServletException("pageRedirect vide.");
+    String mail = request.getParameter("mail");
+    if (mail.equals("") || mail==null) throw new ServletException("Mail vide.");
 
     String jspName = request.getParameter("jspName");
-
-    // ligne de test
-    // mail = "leleu@gmail.com";
+    if (jspName.equals("") || jspName==null) throw new ServletException("Page de redirection vide.");
 
     try {
       initCtx = new InitialContext();
@@ -50,12 +53,16 @@ public class Groupe extends HttpServlet {
 
       String result="";
       while (rs.next()){
-        // result = rs.getString("nomgroupe") + " " + Integer.parseInt(rs.getString("idgroupe"));
-        // out.println(result+"\n");
-        result += rs.getString("nomgroupe") + " " + Integer.parseInt(rs.getString("idgroupe")) + "\n";
+        // On créer et on remplie un BeanGroupe
+        groupe = new BeanGroupe();
+        groupe.setNomGroupe(rs.getString("nomgroupe"));
+        groupe.setIdGroupe(Integer.parseInt(rs.getString("idgroupe")));
+        // Puis on l'ajoute à la liste de Groupes
+        listeGroupes.add(groupe);
       }
 
-      request.setAttribute("groupes",result);
+      // On envoie cette liste à la JSP voulu
+      request.setAttribute("listeGroupes",listeGroupes);
       rd = getServletContext().getRequestDispatcher(jspName);
       rd.forward(request, response);
     }catch (Exception e) {
