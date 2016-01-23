@@ -10,8 +10,8 @@ import javax.naming.*;
 import beans.*;
 import java.util.*;
 
-@WebServlet("/servlet/Groupe")
-public class Groupe extends HttpServlet {
+@WebServlet("/servlet/Contact")
+public class Contact extends HttpServlet {
   public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 
     Context initCtx = null;
@@ -19,13 +19,15 @@ public class Groupe extends HttpServlet {
     DataSource ds = null;
     Connection con = null;
     PreparedStatement ps = null;
+    Statement st = null;
     ResultSet rs=null;
+    ResultSet rs2=null;
     RequestDispatcher rd = null;
 
     // Création du bean
-    BeanGroupe groupe = null;
+    BeanUtilisateur utilisateur = null;
     // Création liste de groupes
-    ArrayList<BeanGroupe> listeGroupes = new ArrayList<BeanGroupe>();
+    ArrayList<BeanUtilisateur> listeUtilisateurs = new ArrayList<BeanUtilisateur>();
 
     String mail = request.getParameter("mail");
     if (mail.equals("") || mail==null) throw new ServletException("Mail vide.");
@@ -43,29 +45,47 @@ public class Groupe extends HttpServlet {
     }
 
     try {
-      String selectSQL = "SELECT nomgroupe,groupe.idgroupe" +
-                          " FROM kwa2bo_appartient AS appartient" +
-                          " INNER JOIN kwa2bo_groupe AS groupe" +
-                          " ON appartient.idGroupe = groupe.idGroupe" +
-                          " WHERE mail = ?";
+      String selectSQL = "SELECT mail1,mail2 FROM Kwa2Bo_contacts WHERE mail1 = ? OR mail2 = ?";
 
       ps = con.prepareStatement(selectSQL);
 
       ps.setString(1,mail);
+      ps.setString(2,mail);
 
       rs = ps.executeQuery();
 
+      String mail1 = "";
+      String mail2 = "";
+      String pseudo= "";
       while (rs.next()){
-        // On créer et on remplie un BeanGroupe
-        groupe = new BeanGroupe();
-        groupe.setNomGroupe(rs.getString("nomgroupe"));
-        groupe.setIdGroupe(Integer.parseInt(rs.getString("idgroupe")));
-        // Puis on l'ajoute à la liste de Groupes
-        listeGroupes.add(groupe);
+        // On créer et on remplie un BeanUtilisateur
+        utilisateur = new BeanUtilisateur();
+
+        mail1 = rs.getString("mail1");
+        mail2 = rs.getString("mail2");
+
+        if (!mail1.equals(mail)) {
+          st = con.createStatement();
+          rs2=st.executeQuery("select pseudo from kwa2bo_utilisateur where mail='"+mail1+"';");
+          rs2.next();
+          pseudo= rs2.getString("pseudo");
+          utilisateur.setMailUtilisateur(mail1);
+          utilisateur.setPseudoUtilisateur(pseudo);
+        } else {
+          st = con.createStatement();
+          rs2=st.executeQuery("select pseudo from kwa2bo_utilisateur where mail='"+mail2+"';");
+          rs2.next();
+          pseudo= rs2.getString("pseudo");
+          utilisateur.setMailUtilisateur(mail2);
+          utilisateur.setPseudoUtilisateur(pseudo);
+        }
+
+        // Puis on l'ajoute à la liste d'Utilisateurs
+        listeUtilisateurs.add(utilisateur);
       }
 
       // On envoie cette liste à la JSP voulu
-      request.setAttribute("listeGroupes",listeGroupes);
+      request.setAttribute("listeUtilisateurs",listeUtilisateurs);
       rd = getServletContext().getRequestDispatcher(jspName);
       rd.forward(request, response);
     }catch (Exception e) {

@@ -80,12 +80,15 @@
     <url-pattern>/res/*</url-pattern>
     <url-pattern>/js/*</url-pattern>
     <url-pattern>/lib/*</url-pattern>
-    <url-pattern>/test.jsp</url-pattern>
+    <url-pattern>/testGroupe.jsp</url-pattern>
+    <url-pattern>/testContact.jsp</url-pattern>
     <url-pattern>/erreur.jsp</url-pattern>
     <url-pattern>/confirmation.jsp</url-pattern>
     <url-pattern>/servlet/Inscription</url-pattern>
     <url-pattern>/servlet/Test</url-pattern>
     <url-pattern>/servlet/TestMail</url-pattern>
+    <url-pattern>/servlet/Groupe</url-pattern>
+    <url-pattern>/servlet/Contact</url-pattern>
   </web-resource-collection>
 </security-constraint>
 

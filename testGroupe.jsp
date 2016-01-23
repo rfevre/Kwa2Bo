@@ -18,7 +18,7 @@
 <body>
   <form action="${pageContext.request.contextPath}/servlet/Groupe" method="POST">
     <input type="hidden" name="mail" value="ferrot@gmail.com"/>
-    <input type="hidden" name="jspName" value="/test.jsp"/>
+    <input type="hidden" name="jspName" value="/testGroupe.jsp"/>
     <input type="submit"/>
   </form>
   </br>
