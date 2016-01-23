@@ -24,7 +24,7 @@ public class TestMail extends HttpServlet {
 
 
     final String username = "dashdu59@gmail.com";
-    final String password = "lapin310";
+    final String password = "chouette";
 
     Properties props = new Properties();
     props.put("mail.smtp.auth", "true");
