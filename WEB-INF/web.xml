@@ -86,7 +86,6 @@
     <url-pattern>/servlet/Inscription</url-pattern>
     <url-pattern>/servlet/Test</url-pattern>
     <url-pattern>/servlet/TestMail</url-pattern>
-    <url-pattern>/servlet/Groupe</url-pattern>
   </web-resource-collection>
 </security-constraint>
 
