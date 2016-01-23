@@ -27,11 +27,13 @@ public class Groupe extends HttpServlet {
     // Création liste de groupes
     ArrayList<BeanGroupe> listeGroupes = new ArrayList<BeanGroupe>();
 
-    String mail = request.getParameter("mail");
-    if (mail.equals("") || mail==null) throw new ServletException("Mail vide.");
+    // String mail = request.getParameter("mail");
+    // if (mail.equals("") || mail==null) throw new ServletException("Mail vide.");
 
     String jspName = request.getParameter("jspName");
     if (jspName.equals("") || jspName==null) throw new ServletException("Page de redirection vide.");
+
+    String mail = request.getRemoteUser();
 
     try {
       initCtx = new InitialContext();

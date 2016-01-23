@@ -12,7 +12,7 @@ import java.util.*;
 
 @WebServlet("/servlet/Contact")
 public class Contact extends HttpServlet {
-  public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+  public void service(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 
     Context initCtx = null;
     Context envCtx = null;
@@ -29,11 +29,13 @@ public class Contact extends HttpServlet {
     // Création liste de groupes
     ArrayList<BeanUtilisateur> listeUtilisateurs = new ArrayList<BeanUtilisateur>();
 
-    String mail = request.getParameter("mail");
-    if (mail.equals("") || mail==null) throw new ServletException("Mail vide.");
+    // String mail = request.getParameter("mail");
+    // if (mail.equals("") || mail==null) throw new ServletException("Mail vide.");
 
     String jspName = request.getParameter("jspName");
     if (jspName.equals("") || jspName==null) throw new ServletException("Page de redirection vide.");
+
+    String mail = request.getRemoteUser();
 
     try {
       initCtx = new InitialContext();

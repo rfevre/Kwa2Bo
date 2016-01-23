@@ -17,7 +17,6 @@
 </head>
 <body>
   <form action="${pageContext.request.contextPath}/servlet/Contact" method="POST">
-    <input type="hidden" name="mail" value="ferrot@gmail.com"/>
     <input type="hidden" name="jspName" value="/testContact.jsp"/>
     <input type="submit"/>
   </form>
