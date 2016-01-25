@@ -8,8 +8,7 @@ import java.util.Properties;
 import javax.naming.*;
 
 import beans.*;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 @WebServlet("/servlet/SelectGroupe")
 public class SelectGroupe extends HttpServlet {

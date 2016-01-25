@@ -77,9 +77,6 @@
 			<section id="discussions" class="col-md-5">
 				<table class="table">
 					<tbody>
-						<%
-							out.print(request.getRemoteUser());
-						%>
 					</tbody>
 				</table>
 			</section>
@@ -91,7 +88,7 @@
 					<button class="btn btn-default btn-xs">
 						<span class="glyphicon glyphicon-plus"></span>
 					</button> 
-					<label>Remy Fevre</label>
+					<!--<label>Remy Fevre</label>-->
 				</div>
 				<div id="messageArea" class="panel panel-default">
 					<div class="panel-body">

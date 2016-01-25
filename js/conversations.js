@@ -15,4 +15,9 @@ function displayGroupes(data) {
 	}
 }
 
-getGroupes(displayGroupes);
+/*function displayConversation(data) {
+	// TODO
+}
+*/
+requeteAjax("servlet/SelectGroupe", displayGroupes);
+//requeteAjax("servlet/SelectConversation", displayConversation);
