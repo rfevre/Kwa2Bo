@@ -1,8 +1,6 @@
 
 function displayGroupes(data) {
 		var line;
-		console.log('lol');
-		console.log(data);
 	for (var i = 0; i < data.Groupes.length; i++) {
 		line = "<tr>\n";
 		line += "\t<td class=\"row\">\n";
@@ -15,9 +13,18 @@ function displayGroupes(data) {
 	}
 }
 
-/*function displayConversation(data) {
-	// TODO
+function displayConversation(data) {
+	console.log(data);
+	for (var i = 0; i < data.Messages.length; i++) {
+		line = "<div class=\"bubbledLeft\">";
+		line += data.Messages[i].expediteur.pseudo + " : \n";
+		line += data.Messages[i].contenu;
+		line += "</div>\n";
+		$("#messageArea .panel-body").append(line);
+	}
 }
-*/
+
 requeteAjax("servlet/SelectGroupe", displayGroupes);
-//requeteAjax("servlet/SelectConversation", displayConversation);
+//Avec paramètres
+var parameters = { idGroupe : 1 };
+requeteAjaxParam("servlet/SelectMessage", parameters,  displayConversation);

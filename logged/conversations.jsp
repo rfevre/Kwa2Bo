@@ -92,7 +92,7 @@
 				</div>
 				<div id="messageArea" class="panel panel-default">
 					<div class="panel-body">
-						<div class="bubbledLeft">
+						<!--<div class="bubbledLeft">
 							Remy :
 							Salut mon pote ça va ?
 						</div>
@@ -123,7 +123,7 @@
 						<div class="bubbledRight">
 							Vous :
 							Bonne nuit mon bon remy 
-						</div>
+						</div>-->
 					</div>
 				</div>
 				<form class="form-horizontal">
