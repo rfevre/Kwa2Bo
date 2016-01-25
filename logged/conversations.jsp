@@ -6,11 +6,13 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/lib/bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bubble.css"/>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/position.css"/>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css"/>
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bubble.css"/>
+
 	<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
-	<script src="${pageContext.request.contextPath}/js/verifForm.js"></script>
+	<script src="${pageContext.request.contextPath}/js/requetesAjax.js" async="false"></script>
+	<script src="${pageContext.request.contextPath}/js/conversations.js" async="false"></script>
 	<script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
 	<title>Conversation - Kwa2Bo</title>
 </head>
@@ -75,67 +77,9 @@
 			<section id="discussions" class="col-md-5">
 				<table class="table">
 					<tbody>
-						<tr>
-							<td class="row">
-								<a class="btn">
-									<h3>Petite bouffe jeudi soir</h3>
-									<h4 class="hidden-xs">Remy Fevre :</h4>
-									<h5 class="hidden-xs">Putain mais trop mon gars !!!</h5>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td class="row">
-								<a class="btn">
-									<h3>Edouard Cattez</h3>
-									<h5 class="hidden-xs">A la fin Han Solo meurt</h5>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td class="row">
-								<a class="btn">
-									<h3>Edouard Cattez</h3>
-									<h5 class="hidden-xs">A la fin Han Solo meurt</h5>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td class="row">
-								<a class="btn">
-									<h3>Projet com' ! de la mort qui tue</h3>
-									<h4 class="hidden-xs">Thomas Ferro</h4>
-									<h5 class="hidden-xs">Rocket League ?</h5>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td class="row">
-								<a class="btn">
-									<h3>Projet com' ! de la mort qui tue</h3>
-									<h4 class="hidden-xs">Thomas Ferro</h4>
-									<h5 class="hidden-xs">Rocket League ?</h5>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td class="row">
-								<a class="btn">
-									<h3>Projet com' ! de la mort qui tue</h3>
-									<h4 class="hidden-xs">Thomas Ferro</h4>
-									<h5 class="hidden-xs">Rocket League ?</h5>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td class="row">
-								<a class="btn">
-									<h3>Projet com' ! de la mort qui tue !!!!!!!!!!!!!!!!!!!!!</h3>
-									<h4 class="hidden-xs">Thomas Ferro</h4>
-									<h5 class="hidden-xs">Rocket League ?</h5>
-								</a>
-							</td>
-						</tr>
+						<%
+							out.print(request.getRemoteUser());
+						%>
 					</tbody>
 				</table>
 			</section>

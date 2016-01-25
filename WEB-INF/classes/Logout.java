@@ -10,9 +10,7 @@ import javax.naming.*;
 @WebServlet("/servlet/Logout")
 public class Logout extends HttpServlet {
   public void service(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
-    PrintWriter out = response.getWriter();
-    HttpSession session = request.getSession(true);
-    //out.println(request.getRemoteUser());
+    HttpSession session = request.getSession();
     session.invalidate();
     response.sendRedirect("..");
   }

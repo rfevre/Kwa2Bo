@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bubble.css"/>
 	<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 	<script src="${pageContext.request.contextPath}/js/verifForm.js"></script>
+  <script src="${pageContext.request.contextPath}/js/requetesAjax.js"></script>
 	<script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
 	<title>Groupe - Kwa2Bo</title>
 </head>
@@ -21,6 +22,8 @@
     <input type="submit"/>
   </form>
   </br>
+
+  <button onclick="getGroupes()">Test SelectGroupe</button>
 
   <c:forEach items="${listeGroupes}" var="elem">
     <c:out value="${elem.nomGroupe}" />
