@@ -34,7 +34,7 @@ public class SelectMessage extends HttpServlet {
       String query = "SELECT utilisateur.pseudo, message.mail, message.texte, message.datemessage from kwa2bo_appartient AS appartient, " + 
                      "kwa2bo_groupe AS groupe, kwa2bo_message AS message, kwa2bo_utilisateur as utilisateur " +
                      "WHERE appartient.mail = ? AND " + 
-                     "groupe.idGroupe = ? AND appartient.idGroupe = groupe.idGroupe AND utilisateur.mail = message.mail " +
+                     "groupe.idGroupe = ? AND utilisateur.mail = message.mail " +
                      "ORDER BY datemessage ASC";
 
       /*SELECT utilisateur.pseudo, message.mail, message.texte, message.datemessage from kwa2bo_appartient AS appartient,  
