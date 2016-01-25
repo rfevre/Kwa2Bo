@@ -57,18 +57,18 @@ public class SelectContact extends HttpServlet {
         st = con.createStatement();
 
         if (!mail1.equals(mail)) {
-          rs2=st.executeQuery("select mail,pseudo,mdp,role from kwa2bo_utilisateur where mail='"+mail1+"';");
+          rs2=st.executeQuery("select mail,pseudo,role from kwa2bo_utilisateur where mail='"+mail1+"';");
         } else {
-          rs2=st.executeQuery("select mail,pseudo,mdp,role from kwa2bo_utilisateur where mail='"+mail2+"';");
+          rs2=st.executeQuery("select mail,pseudo,role from kwa2bo_utilisateur where mail='"+mail2+"';");
         }
         rs2.next();
-        contacts.add(new Utilisateur(rs2.getString("mail"),rs2.getString("mdp"),rs2.getString("pseudo"),rs2.getString("role")));
+        contacts.add(new Utilisateur(rs2.getString("mail"),null,rs2.getString("pseudo"),rs2.getString("role")));
 
       }
 
-      rs2=st.executeQuery("select mail,pseudo,mdp,role from kwa2bo_utilisateur where mail='"+mail+"';");
+      rs2=st.executeQuery("select mail,pseudo,role from kwa2bo_utilisateur where mail='"+mail+"';");
       rs2.next();
-      Utilisateur utilisateur = new Utilisateur(rs2.getString("mail"),rs2.getString("mdp"),rs2.getString("pseudo"),rs2.getString("role"),contacts);
+      Utilisateur utilisateur = new Utilisateur(rs2.getString("mail"),null,rs2.getString("pseudo"),rs2.getString("role"),contacts);
 
       //réponse en format JSON
       response.setContentType("application/json");
