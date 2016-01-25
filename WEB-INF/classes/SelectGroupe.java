@@ -54,6 +54,9 @@ public class SelectGroupe extends HttpServlet {
       out.print("\"Groupes\" : [");
       for (int i = 0; i < groupes.size(); i++) {
         out.print(groupes.get(i).getJSON());
+        if (i != groupes.size()-1) {
+          out.print(",");
+        }
       }
       out.print("]");
       out.print("}");
