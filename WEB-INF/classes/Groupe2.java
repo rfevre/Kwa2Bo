@@ -10,8 +10,8 @@ import javax.naming.*;
 import beans.*;
 import java.util.*;
 
-@WebServlet("/servlet/Groupe")
-public class Groupe extends HttpServlet {
+@WebServlet("/servlet/Groupe2")
+public class Groupe2 extends HttpServlet {
   public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 
     Context initCtx = null;
