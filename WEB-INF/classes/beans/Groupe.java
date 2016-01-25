@@ -70,11 +70,17 @@ public class Groupe {
 		builder.append("\"participants\" : [");
 		for (int i = 0; i < participants.size(); i++) {
 			builder.append(participants.get(i).getJSON());
+			if (i != participants.size()-1) {
+				builder.append(",");
+			}
 		}
 		builder.append("],");
 		builder.append("\"messages\" : [");
 		for (int i = 0; i < messages.size(); i++) {
 			builder.append(messages.get(i).getJSON());
+			if (i != messages.size()-1) {
+				builder.append(",");
+			}
 		}
 		builder.append("]");
 		builder.append("}");
