@@ -17,15 +17,15 @@ function displayConversation(data) {
 	console.log(data);
 	$("#messageArea .panel-body").empty();
 	var line;
-	for (var i = 0; i < data.Messages.length; i++) {
-		if (data.Messages[i].expediteur.email === data.remoteUser) {
+	for (var i = 0; i < data.Groupe.messages.length; i++) {
+		if (data.Groupe.messages[i].expediteur.email === data.remoteUser) {
 			line = "<div class=\"bubbledRight\">";
 		}
 		else {
 			line = "<div class=\"bubbledLeft\">";
 		}
-		line += data.Messages[i].expediteur.pseudo + " : \n";
-		line += data.Messages[i].contenu;
+		line += data.Groupe.messages[i].expediteur.pseudo + " : \n";
+		line += data.Groupe.messages[i].contenu;
 		line += "</div>\n";
 		$("#messageArea .panel-body").append(line);
 	}

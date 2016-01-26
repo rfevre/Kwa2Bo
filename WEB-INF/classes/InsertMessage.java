@@ -10,62 +10,50 @@ import javax.naming.*;
 @WebServlet("/servlet/InsertMessage")
 public class InsertMessage extends HttpServlet {
   public void service(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
-    Context initCtx = null;
-    Context envCtx = null;
-    ResultSet rs = null;
-    DataSource ds = null;
     Connection con = null;
     PreparedStatement ps = null;
-    RequestDispatcher rd = null;
-
-
-    String texte = request.getParameter("texte");
-
-    String image = request.getParameter("image");
-
-    Integer idGroupe = Integer.parseInt(request.getParameter("idGroupe"));
-    if (idGroupe==null) throw new ServletException("Id groupe vide.");
+    ResultSet rs = null;
 
     String mail = request.getRemoteUser();
-
+    String texte = request.getParameter("texte");
+    String image = request.getParameter("image");
+    Integer idGroupe;
+    
     try {
-      initCtx = new InitialContext();
-      envCtx = (Context) initCtx.lookup("java:comp/env");
-      ds = (DataSource) envCtx.lookup("mabase");
-      con = ds.getConnection();
+      idGroupe = Integer.parseInt(request.getParameter("idGroupe"));
     }catch(Exception e) {
-      throw new ServletException("Erreur lors de la connection à la BDD.");
+      throw new ServletException("Format incorrect pour idGroupe (entier requis) : " + e);
     }
 
     try {
+      Context initCtx = new InitialContext();
+      Context envCtx = (Context) initCtx.lookup("java:comp/env");
+      DataSource ds = (DataSource) envCtx.lookup("mabase");
+      con = ds.getConnection();
+    }catch(Exception e) {
+      throw new ServletException("Erreur de connexion à la BDD : " + e);
+    }
 
-      String query = "SELECT mail FROM kwa2bo_appartient WHERE idgroupe=?;";
+    try {
+      String query = "SELECT mail FROM kwa2bo_appartient WHERE idgroupe=? AND mail=?;";
       ps = con.prepareStatement(query);
-      ps.setInt(1,idGroupe);
-
+      ps.setInt(1, idGroupe);
+      ps.setString(1, mail);
       rs = ps.executeQuery();
 
-      boolean tmp = false;
-      while (rs.next()){
-        if(rs.getString("mail").equals(mail)) {
-          tmp = true;
-          break;
-        }
+      if(!rs.next()) {
+        throw new ServletException("Vous n'appartenez pas à cette discussion");
       }
 
-      if(!tmp) throw new ServletException("Vous n'appartenez point à cette discution !");
-
-      query = "INSERT INTO Kwa2Bo_message(idGroupe,mail,texte,image) " +
-              "VALUES (?,?,?,?);";
+      query = "INSERT INTO Kwa2Bo_message(idGroupe,mail,texte,image) VALUES (?,?,?,?);";
 
       ps = con.prepareStatement(query);
-
       ps.setInt(1, idGroupe);
       ps.setString(2, mail);
       ps.setString(3, texte);
       ps.setString(4, image);
-
       ps.executeUpdate();
+    
     }catch (Exception e) {
       throw new ServletException("Erreur lors de la requête SQL.");
     }finally {

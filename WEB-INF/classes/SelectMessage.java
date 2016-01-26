@@ -18,7 +18,7 @@ public class SelectMessage extends HttpServlet {
     PreparedStatement ps = null;
     ResultSet rs = null;
     // Création liste de groupes
-    List<Message> messages = new ArrayList<Message>();
+    Groupe groupe;
 
     String mail = request.getRemoteUser();
     Integer idGroupe;
@@ -37,7 +37,7 @@ public class SelectMessage extends HttpServlet {
     }
 
     try {
-      String query = "SELECT pseudo,utilisateur.mail,dateMessage,texte,image " +
+      String query = "SELECT pseudo,utilisateur.mail, dateMessage, texte, image " +
               "FROM kwa2bo_message AS message INNER JOIN kwa2bo_utilisateur AS utilisateur " +
               "ON message.mail = utilisateur.mail WHERE idGroupe IN (SELECT idGroupe FROM kwa2bo_appartient WHERE idgroupe=? AND mail=?)" +
               "ORDER BY dateMessage ASC;";
@@ -47,23 +47,33 @@ public class SelectMessage extends HttpServlet {
       ps.setString(2,mail);
       rs = ps.executeQuery();
 
+      List<Message> messages = new ArrayList<Message>();
       while (rs.next()){
         Utilisateur u = new Utilisateur(rs.getString("mail"), "", rs.getString("pseudo"), "");
         messages.add(new Message(u, rs.getString("texte"), "lol", rs.getDate("datemessage")));
       }
 
+      query = "SELECT nomgroupe, u.* FROM kwa2bo_groupe as g INNER JOIN kwa2bo_appartient as a " +
+              "ON g.idGroupe = a.idGroupe INNER JOIN kwa2bo_utilisateur as u ON a.mail = u.mail WHERE g.idGroupe=?";
+
+      ps = con.prepareStatement(query);
+      ps.setInt(1,idGroupe);
+      rs = ps.executeQuery();
+
+      List<Utilisateur> participants = new ArrayList<Utilisateur>();
+      String nomgroupe = null;
+      while (rs.next()){
+        participants.add(new Utilisateur(rs.getString("mail"), "x", rs.getString("pseudo"), rs.getString("role")));
+        if (nomgroupe != null)
+            nomgroupe = rs.getString("nomgroupe");
+      }
+      Groupe g = new Groupe(idGroupe, nomgroupe, participants, messages);
+
       //réponse en format JSON
       response.setContentType("application/json");
       out.print("{");
       out.print("\"remoteUser\" : \"" + mail + "\",");
-      out.print("\"Messages\" : [");
-      for (int i = 0; i < messages.size(); i++) {
-        out.print(messages.get(i).getJSON());
-        if (i != messages.size()-1) {
-          out.print(",");
-        }
-      }
-      out.print("]");
+      out.print("\"Groupe\" : " + g.getJSON());
       out.print("}");
 
     }catch (Exception e) {

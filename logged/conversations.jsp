@@ -114,12 +114,13 @@
 					<div class="panel-body">
 					</div>
 				</div>
-				<form class="form-horizontal">
-					<textarea class="form-control" placeholder="Tapez votre message ici ..."></textarea>
+				<form id="formConversation" class="form-horizontal">
+					<textarea class="form-control" placeholder="Tapez votre message ici ..." name="contenu"></textarea>
 					<br/>
 					<button class="btn btn-default">
 						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
 					</button>
+					<input type="hidden" value="" name="idGroupe"/>
 					<input type="submit" value="Envoyer" class="btn btn-default"/>
 				</form>
 			</section>
