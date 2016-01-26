@@ -14,10 +14,16 @@ function displayGroupes(data) {
 }
 
 function displayConversation(data) {
-	//console.log(data);
+	console.log(data);
 	$("#messageArea .panel-body").empty();
+	var line;
 	for (var i = 0; i < data.Messages.length; i++) {
-		line = "<div class=\"bubbledLeft\">";
+		if (data.Messages[i].expediteur.email === data.remoteUser) {
+			line = "<div class=\"bubbledRight\">";
+		}
+		else {
+			line = "<div class=\"bubbledLeft\">";
+		}
 		line += data.Messages[i].expediteur.pseudo + " : \n";
 		line += data.Messages[i].contenu;
 		line += "</div>\n";

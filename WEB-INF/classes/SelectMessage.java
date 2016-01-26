@@ -55,6 +55,7 @@ public class SelectMessage extends HttpServlet {
       //réponse en format JSON
       response.setContentType("application/json");
       out.print("{");
+      out.print("\"remoteUser\" : \"" + mail + "\",");
       out.print("\"Messages\" : [");
       for (int i = 0; i < messages.size(); i++) {
         out.print(messages.get(i).getJSON());
