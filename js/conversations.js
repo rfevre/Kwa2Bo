@@ -1,10 +1,12 @@
+timer = undefined;
+requeteAjax("servlet/SelectGroupe", displayGroupes);
 
 function displayGroupes(data) {
 		var line;
 	for (var i = 0; i < data.Groupes.length; i++) {
 		line = "<tr>\n";
 		line += "\t<td class=\"row\">\n";
-		line += "\t\t<a onclick=\"setInterval('majConversation({idGroupe : " + data.Groupes[i].idGroupe +"})', 1000)\" class=\"btn\">\n";
+		line += "\t\t<a onclick=\"majConversation(" + data.Groupes[i].idGroupe + ")\" class=\"btn\">\n";
 		line += "\t\t\t<h3>" + data.Groupes[i].nom + "</h3>\n";
 		line += "\t\t</a>\n";
 		line += "\t</td>\n";
@@ -33,7 +35,11 @@ function displayConversation(data) {
 }
 
 function majConversation(parameters) {
-	requeteAjaxParam('servlet/SelectMessage', parameters,  displayConversation);
+	if (timer != undefined) {
+		clearInterval(timer);
+	}
+	requeteAjaxParam('servlet/SelectMessage', { idGroupe : parameters },  displayConversation);
+	timer = setInterval("requeteAjaxParam('servlet/SelectMessage', { idGroupe : " + parameters + "},  displayConversation)", 1000);
 }
 
 function doInsert(form) {
@@ -45,7 +51,6 @@ function doInsert(form) {
 	requeteAjaxParam("servlet/InsertMessage", parameters);
 }
 
-requeteAjax("servlet/SelectGroupe", displayGroupes);
 //Avec paramètres
 /*var parameters = { idGroupe : 1 };
 requeteAjaxParam("servlet/SelectMessage", parameters,  displayConversation);*/
