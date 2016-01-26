@@ -27,5 +27,5 @@ function displayConversation(data) {
 
 requeteAjax("servlet/SelectGroupe", displayGroupes);
 //Avec paramètres
-var parameters = { idGroupe : 1 };
-requeteAjaxParam("servlet/SelectMessage", parameters,  displayConversation);
+/*var parameters = { idGroupe : 1 };
+requeteAjaxParam("servlet/SelectMessage", parameters,  displayConversation);*/

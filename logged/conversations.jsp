@@ -67,10 +67,30 @@
 			</nav>
 		</header>
 		<section class="row">
-			<button class="pull-left btn btn-md btn-success">
+			<button type="button" class="pull-left btn btn-md btn-success" data-toggle="modal" data-target="#myModal">
 				<span class="glyphicon glyphicon-plus"></span> 
-				Nouveau Message
+				Nouveau groupe
 			</button>
+		<!-- Fenêtre modale pour la création d'un nouveau message -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">Nouveau groupe</h4>
+					</div>
+					<div class="modal-body">
+						<form method="POST" class="form-group">
+							<input type="text" placeholder="Nom du groupe" class="form-control"/>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+						<button type="button" class="btn btn-success">Créer</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		</section>
 		<section class="row">
 			<h3>Discussions</h3>
@@ -92,38 +112,6 @@
 				</div>
 				<div id="messageArea" class="panel panel-default">
 					<div class="panel-body">
-						<!--<div class="bubbledLeft">
-							Remy :
-							Salut mon pote ça va ?
-						</div>
-						<div class="bubbledRight">
-							Vous :
-							Bien bien et toi ?
-						</div>
-						<div class="bubbledLeft">
-							Remy :
-							Ouais !!
-						</div>
-						<div class="bubbledRight">
-							Vous :
-							J'ai commit des trucs pour le projet
-						</div>
-						<div class="bubbledLeft">
-							Remy :
-							Ouais j'ai vu c'est trop styléé !!
-						</div>
-						<div class="bubbledRight">
-							Vous :
-							Merci ^^
-						</div>
-						<div class="bubbledLeft">
-							Remy :
-							Bon je vais dormir, a demain ! :p
-						</div>
-						<div class="bubbledRight">
-							Vous :
-							Bonne nuit mon bon remy 
-						</div>-->
 					</div>
 				</div>
 				<form class="form-horizontal">
