@@ -86,11 +86,13 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_message(
 
 INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Ferro','Thomas');
 INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Fevre','Rémy');
+INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Leleu','Julien');
+INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Cattez','Edouard');
 
-INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil) VALUES ('ferrot@gmail.com','rocher','Ferrot',1);
-INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil) VALUES ('fevrer@gmail.com','rocher','Psycos',2);
-INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo) VALUES ('leleu@gmail.com','rocher','A-La-Queue');
-INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo) VALUES ('catez@gmail.com','rocher','Le_Maboule');
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role) VALUES ('ferrot@gmail.com',md5('rocher'),'Ferrot',1,'logged');
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role) VALUES ('fevrer@gmail.com',md5('rocher'),'Psycos',2,'logged');
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role) VALUES ('leleu@gmail.com',md5('rocher'),'A-La-Queue',3,'logged');
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role) VALUES ('catez@gmail.com',md5('rocher'),'Le_Maboule',4,'logged');
 
 INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','fevrer@gmail.com');
 INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','leleu@gmail.com');

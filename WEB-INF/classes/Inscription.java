@@ -14,6 +14,8 @@ public class Inscription extends HttpServlet {
     Context envCtx = null;
     DataSource ds = null;
     Connection con = null;
+    Statement st = null;
+    ResultSet rs = null;
     PreparedStatement ps = null;
     RequestDispatcher rd = null;
 
@@ -47,12 +49,26 @@ public class Inscription extends HttpServlet {
     }
 
     try {
-      ps = con.prepareStatement("INSERT INTO kwa2bo_utilisateur(mail,mdp,pseudo) VALUES (?,?,?)");
+      // On créer le profil de l'utilisateur
+      String query = "INSERT INTO Kwa2Bo_profil (prenom) VALUES (?);";
+      ps = con.prepareStatement(query);
+      ps.setString(1, pseudo);
+      ps.executeUpdate();
 
+      // On récupére l'id du dernier Profil créer
+      query = "SELECT MAX(idProfil) as idProfil FROM kwa2bo_profil;";
+      st = con.createStatement();
+      rs = st.executeQuery(query);
+      rs.next();
+      int idProfil = rs.getInt("idProfil");
+
+      // On créer l'utilisateur
+      query = "INSERT INTO kwa2bo_utilisateur(mail,mdp,pseudo,idProfil) VALUES (?,md5(?),?,?)";
+      ps = con.prepareStatement(query);
       ps.setString(1, mail1);
       ps.setString(2, mdp1);
       ps.setString(3, pseudo);
-
+      ps.setInt(4, idProfil);
       ps.executeUpdate();
 
       request.setAttribute("message","Le compte utilisateur a été créé. Un courrier vous a été envoyez à l'adresse indiqué, afin de confirmer votre mail.");
@@ -62,6 +78,8 @@ public class Inscription extends HttpServlet {
       throw new ServletException("Mail déjà utilisé.");
     }finally {
       try {
+        st.close();
+        ps.close();
         con.close();
       }catch(Exception e) {
         throw new ServletException("Erreur lors de la fermeture de connection à la BDD.");
