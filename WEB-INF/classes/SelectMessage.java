@@ -21,50 +21,30 @@ public class SelectMessage extends HttpServlet {
     List<Message> messages = new ArrayList<Message>();
 
     String mail = request.getRemoteUser();
-
-    Integer idGroupe = Integer.parseInt(request.getParameter("idGroupe"));
-    if (idGroupe==null) throw new ServletException("Id groupe vide.");
-
+    Integer idGroupe;
+    try {
+      idGroupe = Integer.parseInt(request.getParameter("idGroupe"));
+    }catch(Exception e) {
+      throw new ServletException("Format incorrect pour idGroupe (entier requis) : " + e);
+    }
     try {
       Context initCtx = new InitialContext();
       Context envCtx = (Context) initCtx.lookup("java:comp/env");
       DataSource ds = (DataSource) envCtx.lookup("mabase");
       con = ds.getConnection();
     }catch(Exception e) {
-      throw new ServletException("Erreur lors de la connection à la BDD.");
+      throw new ServletException("Erreur de connexion à la BDD : " + e);
     }
 
     try {
-      // String query = "SELECT utilisateur.pseudo, message.mail, message.texte, message.datemessage from kwa2bo_appartient AS appartient, " +
-      //                "kwa2bo_groupe AS groupe, kwa2bo_message AS message, kwa2bo_utilisateur as utilisateur " +
-      //                "WHERE appartient.mail = ? AND " +
-      //                "groupe.idGroupe = ? AND utilisateur.mail = message.mail " +
-      //                "ORDER BY datemessage ASC";
-
-      String query = "SELECT mail FROM kwa2bo_appartient WHERE idgroupe=?;";
-      ps = con.prepareStatement(query);
-      ps.setInt(1,idGroupe);
-
-      rs = ps.executeQuery();
-
-      boolean tmp = false;
-      while (rs.next()){
-        if(rs.getString("mail").equals(mail)) {
-          tmp = true;
-          break;
-        }
-      }
-
-      if(!tmp) throw new ServletException("Vous n'appartenez point à cette discution !");
-
-      query = "SELECT pseudo,utilisateur.mail,dateMessage,texte,image " +
-                      "FROM kwa2bo_message AS message INNER JOIN kwa2bo_utilisateur AS utilisateur " +
-                      "ON message.mail = utilisateur.mail WHERE idGroupe=?" +
-                      "ORDER BY dateMessage ASC;";
+      String query = "SELECT pseudo,utilisateur.mail,dateMessage,texte,image " +
+              "FROM kwa2bo_message AS message INNER JOIN kwa2bo_utilisateur AS utilisateur " +
+              "ON message.mail = utilisateur.mail WHERE idGroupe IN (SELECT idGroupe FROM kwa2bo_appartient WHERE idgroupe=? AND mail=?)" +
+              "ORDER BY dateMessage ASC;";
 
       ps = con.prepareStatement(query);
       ps.setInt(1,idGroupe);
-
+      ps.setString(2,mail);
       rs = ps.executeQuery();
 
       while (rs.next()){
@@ -84,14 +64,15 @@ public class SelectMessage extends HttpServlet {
       }
       out.print("]");
       out.print("}");
+
     }catch (Exception e) {
-      throw new ServletException("Erreur lors de la requête SQL. : " + e);
+      throw new ServletException("Erreur de requête SQL : " + e);
     }finally {
       try {
         ps.close();
         con.close();
       }catch(Exception e) {
-        throw new ServletException("Erreur lors de la fermeture de connection à la BDD.");
+        throw new ServletException("Erreur de fermeture de la BDD : " + e);
       }
     }
   }
