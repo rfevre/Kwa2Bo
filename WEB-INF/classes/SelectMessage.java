@@ -59,7 +59,7 @@ public class SelectMessage extends HttpServlet {
       query = "SELECT pseudo,utilisateur.mail,dateMessage,texte,image " +
                       "FROM kwa2bo_message AS message INNER JOIN kwa2bo_utilisateur AS utilisateur " +
                       "ON message.mail = utilisateur.mail WHERE idGroupe=?" +
-                      "ORDER BY dateMessage DESC;";
+                      "ORDER BY dateMessage ASC;";
 
       ps = con.prepareStatement(query);
       ps.setInt(1,idGroupe);
