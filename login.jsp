@@ -73,13 +73,13 @@
 					</div>
 					<div id="divMdp1" class="">
 						<p>
-							<input type="text" class="form-control" placeholder="Mot de passe" name="mdp1" onKeyUp="updateStateOf(divMdp1, 'Mot de passe trop court');"/>
+							<input type="password" class="form-control" placeholder="Mot de passe" name="mdp1" onKeyUp="updateStateOf(divMdp1, 'Mot de passe trop court');"/>
 						</p>
 						<span class="" aria-hidden="true"></span>
 					</div>
 					<div id="divMdp2" class="">
 	          			<p>
-	          				<input type="text" class="form-control" placeholder="Confirmez mot de passe" name="mdp2" onKeyUp="updateStateOf(divMdp2, 'Mot de passe trop court');"/>
+	          				<input type="password" class="form-control" placeholder="Confirmez mot de passe" name="mdp2" onKeyUp="updateStateOf(divMdp2, 'Mot de passe trop court');"/>
 	          			</p>
 	          			<span class="" aria-hidden="true"></span>
 					</div>
