@@ -12,7 +12,7 @@ import java.util.*;
 
 @WebServlet("/servlet/SelectMessage")
 public class SelectMessage extends HttpServlet {
-  public void service(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+  public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
     PrintWriter out = response.getWriter();
     Connection con = null;
     PreparedStatement ps = null;
