@@ -81,6 +81,7 @@ public class SelectContact extends HttpServlet {
       throw new ServletException("Erreur lors de la requête SQL.");
     }finally {
       try {
+        st.close();
         ps.close();
         con.close();
       }catch(Exception e) {
