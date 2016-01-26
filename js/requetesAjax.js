@@ -7,7 +7,9 @@ function requeteAjax(url, callback) {
 
 function requeteAjaxParam(url, parameters, callback) {
 	$.get(url, parameters, function(data) {
-  		callback(data);
+      if (callback) {
+        callback(data);
+      }
 	});
 }
 

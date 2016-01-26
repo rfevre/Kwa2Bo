@@ -18,7 +18,7 @@ public class InsertMessage extends HttpServlet {
     String texte = request.getParameter("texte");
     String image = request.getParameter("image");
     Integer idGroupe;
-    
+
     try {
       idGroupe = Integer.parseInt(request.getParameter("idGroupe"));
     }catch(Exception e) {
@@ -38,7 +38,7 @@ public class InsertMessage extends HttpServlet {
       String query = "SELECT mail FROM kwa2bo_appartient WHERE idgroupe=? AND mail=?;";
       ps = con.prepareStatement(query);
       ps.setInt(1, idGroupe);
-      ps.setString(1, mail);
+      ps.setString(2, mail);
       rs = ps.executeQuery();
 
       if(!rs.next()) {
@@ -55,13 +55,13 @@ public class InsertMessage extends HttpServlet {
       ps.executeUpdate();
     
     }catch (Exception e) {
-      throw new ServletException("Erreur lors de la requête SQL.");
+      throw new ServletException("Erreur SQL : " + e);
     }finally {
       try {
         ps.close();
         con.close();
       }catch(Exception e) {
-        throw new ServletException("Erreur lors de la fermeture de connection à la BDD.");
+        throw new ServletException("Erreur de fermeture de BDD : " + e);
       }
     }
   }

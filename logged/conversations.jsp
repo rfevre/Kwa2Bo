@@ -114,7 +114,7 @@
 					<div class="panel-body">
 					</div>
 				</div>
-				<form id="formConversation" class="form-horizontal">
+				<form id="formConversation" class="form-horizontal" action="javascript:doInsert('#formConversation')">
 					<textarea class="form-control" placeholder="Tapez votre message ici ..." name="contenu"></textarea>
 					<br/>
 					<button class="btn btn-default">
