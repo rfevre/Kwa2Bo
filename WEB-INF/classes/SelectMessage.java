@@ -21,6 +21,7 @@ public class SelectMessage extends HttpServlet {
     List<Message> messages = new ArrayList<Message>();
 
     String mail = request.getRemoteUser();
+
     Integer idGroupe = Integer.parseInt(request.getParameter("idGroupe"));
     if (idGroupe==null) throw new ServletException("Id groupe vide.");
 
