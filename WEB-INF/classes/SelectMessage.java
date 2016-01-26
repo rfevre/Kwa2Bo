@@ -16,10 +16,13 @@ public class SelectMessage extends HttpServlet {
     PrintWriter out = response.getWriter();
     Connection con = null;
     PreparedStatement ps = null;
+    ResultSet rs = null;
     // Création liste de groupes
     List<Message> messages = new ArrayList<Message>();
 
     String mail = request.getRemoteUser();
+    Integer idGroupe = Integer.parseInt(request.getParameter("idGroupe"));
+    if (idGroupe==null) throw new ServletException("Id groupe vide.");
 
     try {
       Context initCtx = new InitialContext();
@@ -31,26 +34,39 @@ public class SelectMessage extends HttpServlet {
     }
 
     try {
-      String query = "SELECT utilisateur.pseudo, message.mail, message.texte, message.datemessage from kwa2bo_appartient AS appartient, " + 
-                     "kwa2bo_groupe AS groupe, kwa2bo_message AS message, kwa2bo_utilisateur as utilisateur " +
-                     "WHERE appartient.mail = ? AND " + 
-                     "groupe.idGroupe = ? AND utilisateur.mail = message.mail " +
-                     "ORDER BY datemessage ASC";
+      // String query = "SELECT utilisateur.pseudo, message.mail, message.texte, message.datemessage from kwa2bo_appartient AS appartient, " +
+      //                "kwa2bo_groupe AS groupe, kwa2bo_message AS message, kwa2bo_utilisateur as utilisateur " +
+      //                "WHERE appartient.mail = ? AND " +
+      //                "groupe.idGroupe = ? AND utilisateur.mail = message.mail " +
+      //                "ORDER BY datemessage ASC";
 
-      /*SELECT utilisateur.pseudo, message.mail, message.texte, message.datemessage from kwa2bo_appartient AS appartient,  
-      kwa2bo_groupe AS groupe, kwa2bo_message AS message, kwa2bo_utilisateur as utilisateur 
-      WHERE appartient.mail = 'ferrot@gmail.com' AND 
-      appartient.idGroupe = 1 AND appartient.idGroupe = groupe.idGroupe  AND utilisateur.mail = message.mail 
-      ORDER BY datemessage ASC;*/
+      String query = "SELECT mail FROM kwa2bo_appartient WHERE idgroupe=?;";
+      ps = con.prepareStatement(query);
+      ps.setInt(1,idGroupe);
+
+      rs = ps.executeQuery();
+
+      boolean tmp = false;
+      while (rs.next()){
+        if(rs.getString("mail").equals(mail)) {
+          tmp = true;
+          break;
+        }
+      }
+
+      if(!tmp) throw new ServletException("Vous n'appartenez point à cette discution !");
+
+      query = "SELECT pseudo,utilisateur.mail,dateMessage,texte,image " +
+                      "FROM kwa2bo_message AS message INNER JOIN kwa2bo_utilisateur AS utilisateur " +
+                      "ON message.mail = utilisateur.mail WHERE idGroupe=?" +
+                      "ORDER BY dateMessage DESC;";
 
       ps = con.prepareStatement(query);
-      ps.setString(1,mail);
-      ps.setInt(2,Integer.parseInt(request.getParameter("idGroupe")));
+      ps.setInt(1,idGroupe);
 
-      ResultSet rs = ps.executeQuery();
+      rs = ps.executeQuery();
 
       while (rs.next()){
-        // On ajoute à la liste de Groupes
         Utilisateur u = new Utilisateur(rs.getString("mail"), "", rs.getString("pseudo"), "");
         messages.add(new Message(u, rs.getString("texte"), "lol", rs.getDate("datemessage")));
       }
