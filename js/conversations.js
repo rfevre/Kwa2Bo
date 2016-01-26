@@ -16,7 +16,6 @@ function displayGroupes(data) {
 }
 
 function displayConversation(data) {
-	console.log(data);
 	$("#messageArea .panel-body").empty();
 	var line;
 	for (var i = 0; i < data.Groupe.messages.length; i++) {
@@ -34,12 +33,12 @@ function displayConversation(data) {
 	$('#formConversation input[name="idGroupe"]').val(data.Groupe.idGroupe);
 }
 
-function majConversation(parameters) {
+function majConversation(parameter) {
 	if (timer != undefined) {
 		clearInterval(timer);
 	}
-	requeteAjaxParam('servlet/SelectMessage', { idGroupe : parameters },  displayConversation);
-	timer = setInterval("requeteAjaxParam('servlet/SelectMessage', { idGroupe : " + parameters + "},  displayConversation)", 1000);
+	requeteAjaxParam('servlet/SelectMessage', { idGroupe : parameter },  displayConversation);
+	timer = setInterval("requeteAjaxParam('servlet/SelectMessage', { idGroupe : " + parameter + "},  displayConversation)", 1000);
 }
 
 function doInsert(form) {
@@ -50,7 +49,3 @@ function doInsert(form) {
 	}
 	requeteAjaxParam("servlet/InsertMessage", parameters);
 }
-
-//Avec paramètres
-/*var parameters = { idGroupe : 1 };
-requeteAjaxParam("servlet/SelectMessage", parameters,  displayConversation);*/
