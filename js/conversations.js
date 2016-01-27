@@ -33,8 +33,6 @@ function displayConversation(data) {
 		$('#messageArea .panel-body').append(line);
 	}
 	$('#formConversation input[name="idGroupe"]').val(data.Groupe.idGroupe);
-	var scrollBar = document.getElementById("messageArea");
-	scrollBar.scrollTop = scrollBar.scrollHeight;
 }
 
 function majConversation(parameter) {
@@ -53,6 +51,11 @@ function doInsert(form) {
 	}
 	requeteAjaxParam("servlet/InsertMessage", parameters);
 	$("#formConversation textarea").val('');
+}
+
+function scrollDown() {
+	var scrollBar = document.getElementById("messageArea");
+	scrollBar.scrollTop = scrollBar.scrollHeight;
 }
 
 function checkEnter(form) {

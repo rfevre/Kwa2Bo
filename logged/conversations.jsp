@@ -66,41 +66,42 @@
 				</div>
 			</nav>
 		</header>
-		<section class="row">
+		<!--<section class="row">
 			<button type="button" class="pull-left btn btn-md btn-success" data-toggle="modal" data-target="#myModal">
 				<span class="glyphicon glyphicon-plus"></span>
 				Nouveau groupe
-			</button>
-		<!-- Fenêtre modale pour la création d'un nouveau message -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">Nouveau groupe</h4>
+			</button>-->
+			<!-- Fenêtre modale pour la création d'un nouveau message -->
+			<!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h4 class="modal-title" id="myModalLabel">Nouveau groupe</h4>
+						</div>
+						<form action="servlet/InsertGroupe" method="POST" class="form-group">
+							<div class="modal-body">
+									<input type="text" placeholder="Nom du groupe" class="form-control" name="nomGroupe"/>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+								<input type="submit" class="btn btn-success" value="Créer"/>
+							</div>
+						</form>
 					</div>
-					<form action="servlet/InsertGroupe" method="POST" class="form-group">
-						<div class="modal-body">
-								<input type="text" placeholder="Nom du groupe" class="form-control" name="nomGroupe"/>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-							<input type="submit" class="btn btn-success" value="Créer"/>
-						</div>
-					</form>
 				</div>
 			</div>
-		</div>
-		</section>
+		</section>-->
 		<section class="row">
-			<h3>Discussions</h3>
-			<section id="discussions" class="col-md-5">
-				<table class="table">
-					<tbody>
-					</tbody>
-				</table>
-			</section>
-
+			<aside class="col-md-6">
+				<h3>Discussions</h3>
+				<div id="discussions">
+					<table class="table">
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</aside>
 			<div id="conversation" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
@@ -112,14 +113,14 @@
 							<button class="btn btn-default btn-xs">
 								<span class="glyphicon glyphicon-plus"></span>
 							</button>
-							<!--<label>Remy Fevre</label>-->
+							<label>Remy Fevre</label>
 						</div>
 						<div id="messageArea" class="panel panel-default">
 							<div class="panel-body">
 							</div>
 						</div>
 						<form id="formConversation" class="form-horizontal" action="javascript:doInsert('#formConversation')">
-							<textarea class="form-control" placeholder="Tapez votre message ici ..." name="contenu" onKeyDown="javascript:checkEnter('#formConversation')" onKeyUp="javascript:delArea();"></textarea>
+							<textarea class="form-control" placeholder="Tapez votre message ici ..." name="contenu" onKeyDown="checkEnter('#formConversation');scrollDown()" onKeyUp="delArea();"></textarea>
 							<br/>
 							<button class="btn btn-default">
 								<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
@@ -130,6 +131,61 @@
 					</div>
 				</div>
 			</div>
+			<aside id="formGroupe" class="col-md-6">
+				<h3>Nouveau groupe</h3>
+				<form>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Nom du groupe</label>
+						<input type="email" class="form-control" placeholder="Exemple : La dream-team"/>
+					</div>
+					<label for="exampleInputEmail1">Ajouter des membres</label>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Search for...">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button">
+											<span class="glyphicon glyphicon-search text-muted"></span>
+										</button>
+									</span>
+								</div>
+								<ul class="list-group" id="contact-list">
+				                    <li class="list-group-item">
+				                        <div class="col-sm-3">
+				                            <img src="res/profil/default.jpg" class="img-responsive img-circle hidden-xs" />
+				                        </div>
+				                        <div class="col-xs-10 col-sm-7">
+											<label>Alexandre</label>
+											<label>Fevre</label>
+				                        </div>
+				                        <div>
+				                        	<button class="btn btn-success btn-sm col-xs-2 col-sm-2">
+												<span class="glyphicon glyphicon-plus-sign"/>
+											</button>
+				                        </div>
+				                        <div class="clearfix"></div>
+				                    </li>
+				                </ul>
+							</div>
+							<div class="col-lg-6">
+								<div class="label label-danger">
+									<a onclick="console.log('lol')">
+										<span class="btn-danger glyphicon glyphicon glyphicon-remove-sign"></span>
+									</a>
+									Alexandre Vastra
+								</div>
+								<div class="label label-danger">
+									<a>
+										<span class="btn-danger glyphicon glyphicon glyphicon-remove-sign"></span>
+									</a>
+									Remy Fevre
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</aside>
 		</section>
 	</div>
 </body>
