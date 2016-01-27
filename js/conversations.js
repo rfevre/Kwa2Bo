@@ -1,8 +1,10 @@
 timer = undefined;
 requeteAjax("servlet/SelectGroupe", displayGroupes);
+setInterval("requeteAjax('servlet/SelectGroupe', displayGroupes)", 10000);
 
 function displayGroupes(data) {
 		var line;
+		$("#discussions table tbody").empty();
 	for (var i = 0; i < data.Groupes.length; i++) {
 		line = "<tr>\n";
 		line += "\t<td class=\"row\">\n";
