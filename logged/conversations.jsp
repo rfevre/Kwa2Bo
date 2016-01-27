@@ -103,29 +103,31 @@
 
 			<div id="conversation" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h3 class="modal-title" id="myModalLabel">Conversation en cours</h3>
-					</div>
-					<div class="panel panel-default">
-						<button class="btn btn-default btn-xs">
-							<span class="glyphicon glyphicon-plus"></span>
-						</button>
-						<!--<label>Remy Fevre</label>-->
-					</div>
-					<div id="messageArea" class="panel panel-default">
-						<div class="panel-body">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h3 class="modal-title" id="myModalLabel">Conversation en cours</h3>
 						</div>
+						<div class="panel panel-default">
+							<button class="btn btn-default btn-xs">
+								<span class="glyphicon glyphicon-plus"></span>
+							</button>
+							<!--<label>Remy Fevre</label>-->
+						</div>
+						<div id="messageArea" class="panel panel-default">
+							<div class="panel-body">
+							</div>
+						</div>
+						<form id="formConversation" class="form-horizontal" action="javascript:doInsert('#formConversation')">
+							<textarea class="form-control" placeholder="Tapez votre message ici ..." name="contenu" onKeyDown="javascript:checkEnter('#formConversation')" onKeyUp="javascript:delArea();"></textarea>
+							<br/>
+							<button class="btn btn-default">
+								<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+							</button>
+							<input type="hidden" value="" name="idGroupe"/>
+							<input type="submit" value="Envoyer" class="btn btn-default"/>
+						</form>
 					</div>
-					<form id="formConversation" class="form-horizontal" action="javascript:doInsert('#formConversation')">
-						<textarea class="form-control" placeholder="Tapez votre message ici ..." name="contenu" onKeyDown="javascript:checkEnter('#formConversation')" onKeyUp="javascript:delArea();"></textarea>
-						<br/>
-						<button class="btn btn-default">
-							<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-						</button>
-						<input type="hidden" value="" name="idGroupe"/>
-						<input type="submit" value="Envoyer" class="btn btn-default"/>
-					</form>
 				</div>
 			</div>
 		</section>
