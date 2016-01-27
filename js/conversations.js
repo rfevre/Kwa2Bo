@@ -8,7 +8,7 @@ function displayGroupes(data) {
 	for (var i = 0; i < data.Groupes.length; i++) {
 		line = "<tr>\n";
 		line += "\t<td class=\"row\">\n";
-		line += "\t\t<a onclick=\"majConversation(" + data.Groupes[i].idGroupe + ")\" class=\"btn\">\n";
+		line += "\t\t<a onclick=\"majConversation(" + data.Groupes[i].idGroupe + ")\" class=\"btn\" data-toggle=\"modal\" data-target=\"#conversation\">\n";
 		line += "\t\t\t<h3>" + data.Groupes[i].nom + "</h3>\n";
 		line += "\t\t</a>\n";
 		line += "\t</td>\n";

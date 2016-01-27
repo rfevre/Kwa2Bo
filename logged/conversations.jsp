@@ -36,12 +36,12 @@
 					<div class="collapse navbar-collapse" id="collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="col-md">
-								<a href="#">
+								<a href="${pageContext.request.contextPath}/logged/">
 									<span class="glyphicon glyphicon-user"></span>
 								</a>
 							</li>
 							<li class="active">
-								<a href="#">
+								<a href="${pageContext.request.contextPath}">
 									<span class="glyphicon glyphicon-comment"></span>
 								</a>
 							</li>
@@ -100,30 +100,34 @@
 					</tbody>
 				</table>
 			</section>
-			<section id="conversation" class="col-md-offset-1 col-md-6">
-				<h3>
-					Conversation en cours
-				</h3>
-				<div class="panel panel-default">
-					<button class="btn btn-default btn-xs">
-						<span class="glyphicon glyphicon-plus"></span>
-					</button>
-					<!--<label>Remy Fevre</label>-->
-				</div>
-				<div id="messageArea" class="panel panel-default">
-					<div class="panel-body">
+
+			<div id="conversation" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+				<div class="modal-dialog" role="document">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h3 class="modal-title" id="myModalLabel">Conversation en cours</h3>
 					</div>
+					<div class="panel panel-default">
+						<button class="btn btn-default btn-xs">
+							<span class="glyphicon glyphicon-plus"></span>
+						</button>
+						<!--<label>Remy Fevre</label>-->
+					</div>
+					<div id="messageArea" class="panel panel-default">
+						<div class="panel-body">
+						</div>
+					</div>
+					<form id="formConversation" class="form-horizontal" action="javascript:doInsert('#formConversation')">
+						<textarea class="form-control" placeholder="Tapez votre message ici ..." name="contenu" onKeyDown="javascript:checkEnter('#formConversation')" onKeyUp="javascript:delArea();"></textarea>
+						<br/>
+						<button class="btn btn-default">
+							<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+						</button>
+						<input type="hidden" value="" name="idGroupe"/>
+						<input type="submit" value="Envoyer" class="btn btn-default"/>
+					</form>
 				</div>
-				<form id="formConversation" class="form-horizontal" action="javascript:doInsert('#formConversation')">
-					<textarea class="form-control" placeholder="Tapez votre message ici ..." name="contenu" onKeyDown="javascript:checkEnter('#formConversation')" onKeyUp="javascript:delArea();"></textarea>
-					<br/>
-					<button class="btn btn-default">
-						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-					</button>
-					<input type="hidden" value="" name="idGroupe"/>
-					<input type="submit" value="Envoyer" class="btn btn-default"/>
-				</form>
-			</section>
+			</div>
 		</section>
 	</div>
 </body>
