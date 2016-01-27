@@ -12,13 +12,12 @@
     driverClassName="org.postgresql.Driver"
     url="jdbc:postgresql://psqlserv/da2i"
   />
-  <!-- Definition gmail -->
-  <Resource
-    auth="Container"
-    mail.smtp.host=" smtp.yopmail.com"
-    name="mail/Session"
-    type="javax.mail.Session"/>
-  />
+  	<!-- Définition des mails -->
+   	<Resource name="mail/Session" auth="Container" type="javax.mail.Session"
+   		mail.smtp.host="mailserv.univ-lille1.fr"
+   		username="remy.fevre"
+   		password=""
+   	/>
 
   <Realm
     className="org.apache.catalina.realm.DataSourceRealm"
