@@ -31,6 +31,8 @@ function displayConversation(data) {
 		$('#messageArea .panel-body').append(line);
 	}
 	$('#formConversation input[name="idGroupe"]').val(data.Groupe.idGroupe);
+	var scrollBar = document.getElementById("messageArea");
+	scrollBar.scrollTop = scrollBar.scrollHeight;
 }
 
 function majConversation(parameter) {

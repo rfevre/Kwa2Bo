@@ -7,10 +7,10 @@
     maxActive="8"
     maxIdle="4"
     maxWait="10000"
-    username="fevrer"
+    username="leleuj"
     password="moi"
     driverClassName="org.postgresql.Driver"
-    url="jdbc:postgresql:fevrer"
+    url="jdbc:postgresql://psqlserv/da2i"
   />
   <!-- Definition gmail -->
   <Resource
