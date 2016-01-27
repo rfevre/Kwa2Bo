@@ -52,7 +52,7 @@
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-									<span>Julien Leleu </span>
+									<span>${pageContext.request.remoteUser}</span>
 									<span class="caret"></span>
 								</a>
 								<ul class="dropdown-menu">
@@ -79,15 +79,15 @@
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h4 class="modal-title" id="myModalLabel">Nouveau groupe</h4>
 					</div>
-					<div class="modal-body">
-						<form method="POST" class="form-group">
-							<input type="text" placeholder="Nom du groupe" class="form-control"/>
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-						<button type="button" class="btn btn-success">Créer</button>
-					</div>
+					<form action="servlet/InsertGroupe" method="POST" class="form-group">
+						<div class="modal-body">
+								<input type="text" placeholder="Nom du groupe" class="form-control" name="nomGroupe"/>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+							<input type="submit" class="btn btn-success" value="Créer"/>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
