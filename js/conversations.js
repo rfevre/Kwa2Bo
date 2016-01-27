@@ -48,4 +48,5 @@ function doInsert(form) {
 		image : ''
 	}
 	requeteAjaxParam("servlet/InsertMessage", parameters);
+	$("#formConversation textarea").val('');
 }
