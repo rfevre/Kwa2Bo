@@ -36,7 +36,7 @@
 					<div class="collapse navbar-collapse" id="collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="col-md">
-								<a href="${pageContext.request.contextPath}/logged/">
+								<a href="${pageContext.request.contextPath}/logged/contacts.jsp">
 									<span class="glyphicon glyphicon-user"></span>
 								</a>
 							</li>
@@ -46,7 +46,7 @@
 								</a>
 							</li>
 							<li class="col-md">
-								<a href="#">
+								<a href="${pageContext.request.contextPath}/logged/parametres.jsp">
 									<span class="glyphicon glyphicon-cog"></span>
 								</a>
 							</li>
