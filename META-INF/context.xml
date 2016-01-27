@@ -7,10 +7,10 @@
     maxActive="8"
     maxIdle="4"
     maxWait="10000"
-    username="leleuj"
+    username="fevrer"
     password="moi"
     driverClassName="org.postgresql.Driver"
-    url="jdbc:postgresql://psqlserv/da2i"
+    url="jdbc:postgresql:fevrer"
   />
   	<!-- Définition des mails -->
    	<Resource name="mail/Session" auth="Container" type="javax.mail.Session"
@@ -18,6 +18,15 @@
    		username="remy.fevre"
    		password=""
    	/>
+
+    <!-- a tester -->
+    <!-- <Resource name="mail/Session" auth="Container" type="javax.mail.Session"
+      mail.smtp.auth="true"
+      mail.smtp.host="smtp-relay.sendinblue.com"
+      mail.smtp.port="587"
+      mail.smtp.user="dashdu59@gmail.com"
+      password="OVja1SLWgvw76sp0"
+    /> -->
 
   <Realm
     className="org.apache.catalina.realm.DataSourceRealm"
