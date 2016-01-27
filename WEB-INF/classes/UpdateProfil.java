@@ -6,7 +6,7 @@ import java.sql.*;
 import javax.sql.*;
 import java.util.Properties;
 import javax.naming.*;
-
+import org.apache.commons.lang3.StringEscapeUtils;
 import beans.*;
 import java.util.*;
 
@@ -17,12 +17,12 @@ public class UpdateProfil extends HttpServlet {
     Connection con = null;
     PreparedStatement ps = null;
 
-    String nom = request.getParameter("nom");
-    String prenom = request.getParameter("prenom");
-    String pseudo = request.getParameter("pseudo");
+    String nom = StringEscapeUtils.escapeHtml4(request.getParameter("nom"));
+    String prenom = StringEscapeUtils.escapeHtml4(request.getParameter("prenom"));
+    String pseudo = StringEscapeUtils.escapeHtml4(request.getParameter("pseudo"));
     String photo = "/ressources/default.jpg";
-    if (request.getParameter("photo") != null) { photo = request.getParameter("photo");  }
-    String mail = request.getRemoteUser();
+    if (request.getParameter("photo") != null) { photo = StringEscapeUtils.escapeHtml4(request.getParameter("photo")); }
+    String mail = StringEscapeUtils.escapeHtml4(request.getRemoteUser());
 
     try {
       Context initCtx = new InitialContext();

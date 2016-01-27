@@ -6,17 +6,19 @@ import java.sql.*;
 import javax.sql.*;
 import java.util.Properties;
 import javax.naming.*;
+import org.apache.commons.lang3.StringEscapeUtils;
 
 @WebServlet("/servlet/InsertMessage")
 public class InsertMessage extends HttpServlet {
   public void service(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+    PrintWriter out = response.getWriter();
     Connection con = null;
     PreparedStatement ps = null;
     ResultSet rs = null;
 
-    String mail = request.getRemoteUser();
-    String texte = request.getParameter("texte");
-    String image = request.getParameter("image");
+    String mail = StringEscapeUtils.escapeHtml4(request.getRemoteUser());
+    String texte = StringEscapeUtils.escapeHtml4(request.getParameter("texte"));
+    String image = StringEscapeUtils.escapeHtml4(request.getParameter("image"));
     Integer idGroupe;
 
     try {
@@ -53,7 +55,7 @@ public class InsertMessage extends HttpServlet {
       ps.setString(3, texte);
       ps.setString(4, image);
       ps.executeUpdate();
-    
+
     }catch (Exception e) {
       throw new ServletException("Erreur SQL : " + e);
     }finally {

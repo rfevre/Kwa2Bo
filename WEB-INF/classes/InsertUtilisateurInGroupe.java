@@ -6,6 +6,7 @@ import java.sql.*;
 import javax.sql.*;
 import java.util.Properties;
 import javax.naming.*;
+import org.apache.commons.lang3.StringEscapeUtils;
 
 @WebServlet("/servlet/InsertUtilisateurInGroupe")
 public class InsertUtilisateurInGroupe extends HttpServlet {
@@ -20,19 +21,19 @@ public class InsertUtilisateurInGroupe extends HttpServlet {
 
     Integer idGroupe;
     try {
-      idGroupe = Integer.parseInt(request.getParameter("idGroupe"));
+      idGroupe = Integer.parseInt(StringEscapeUtils.escapeHtml4(request.getParameter("idGroupe")));
     }catch(Exception e) {
       throw new ServletException("Format incorrect pour idGroupe (entier requis) : " + e);
     }
 
     String mail;
     try{
-      mail = request.getParameter("mail");
+      mail = StringEscapeUtils.escapeHtml4(request.getParameter("mail"));
     }catch(Exception e) {
       throw new ServletException("Aucun utilisateur à ajouter.");
     }
 
-    String mailCreateur = request.getRemoteUser();
+    String mailCreateur = StringEscapeUtils.escapeHtml4(request.getRemoteUser());
 
     try {
       initCtx = new InitialContext();

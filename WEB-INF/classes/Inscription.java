@@ -6,6 +6,7 @@ import java.sql.*;
 import javax.sql.*;
 import java.util.Properties;
 import javax.naming.*;
+import org.apache.commons.lang3.StringEscapeUtils;
 
 @WebServlet("/servlet/Inscription")
 public class Inscription extends HttpServlet {
@@ -14,30 +15,24 @@ public class Inscription extends HttpServlet {
     Context envCtx = null;
     DataSource ds = null;
     Connection con = null;
-    Statement st = null;
     ResultSet rs = null;
     PreparedStatement ps = null;
     RequestDispatcher rd = null;
 
-    String mail1 = request.getParameter("mail1");
-    String mail2 = request.getParameter("mail2");
+    String mail1 = StringEscapeUtils.escapeHtml4(request.getParameter("mail1"));
+    String mail2 = StringEscapeUtils.escapeHtml4(request.getParameter("mail2"));
     if (mail1.equals("") || mail1==null) throw new ServletException("Champs de mail vide.");
     if (mail2.equals("") || mail2==null) throw new ServletException("Champs de mail vide.");
     if (!mail1.equals(mail2)) throw new ServletException("Les deux mails renseigné ne sont pas identiques.");
 
-    String mdp1 = request.getParameter("mdp1");
-    String mdp2 = request.getParameter("mdp2");
+    String mdp1 = StringEscapeUtils.escapeHtml4(request.getParameter("mdp1"));
+    String mdp2 = StringEscapeUtils.escapeHtml4(request.getParameter("mdp2"));
     if (mdp1.equals("") || mdp1==null) throw new ServletException("Champs de mot de passe vide.");
     if (mdp2.equals("") || mdp2==null) throw new ServletException("Champs de mot de passe vide.");
     if (!mdp1.equals(mdp2)) throw new ServletException("Les deux mots de passe renseigné ne sont pas identiques.");
 
-    String pseudo = request.getParameter("pseudo");
+    String pseudo = StringEscapeUtils.escapeHtml4(request.getParameter("pseudo"));
     if (pseudo.equals("") || pseudo==null) throw new ServletException("Champs de pseudo vide.");
-
-    // ligne de test
-    // mail1 = "test@gmail.com";
-    // mdp1 = "testmdp";
-    // pseudo = "testpseudo";
 
     try {
       initCtx = new InitialContext();
@@ -55,20 +50,12 @@ public class Inscription extends HttpServlet {
       ps.setString(1, pseudo);
       ps.executeUpdate();
 
-      // On récupére l'id du dernier Profil créer
-      query = "SELECT MAX(idProfil) as idProfil FROM kwa2bo_profil;";
-      st = con.createStatement();
-      rs = st.executeQuery(query);
-      rs.next();
-      int idProfil = rs.getInt("idProfil");
-
       // On créer l'utilisateur
-      query = "INSERT INTO kwa2bo_utilisateur(mail,mdp,pseudo,idProfil) VALUES (?,md5(?),?,?)";
+      query = "INSERT INTO kwa2bo_utilisateur(mail,mdp,pseudo,idProfil) VALUES (?,md5(?),?,(SELECT MAX(idProfil) as idProfil FROM kwa2bo_profil))";
       ps = con.prepareStatement(query);
       ps.setString(1, mail1);
       ps.setString(2, mdp1);
       ps.setString(3, pseudo);
-      ps.setInt(4, idProfil);
       ps.executeUpdate();
 
       request.setAttribute("message","Le compte utilisateur a été créé. Un courrier vous a été envoyez à l'adresse indiqué, afin de confirmer votre mail.");
@@ -78,7 +65,6 @@ public class Inscription extends HttpServlet {
       throw new ServletException("Mail déjà utilisé.");
     }finally {
       try {
-        st.close();
         ps.close();
         con.close();
       }catch(Exception e) {

@@ -6,6 +6,7 @@ import java.sql.*;
 import javax.sql.*;
 import java.util.Properties;
 import javax.naming.*;
+import org.apache.commons.lang3.StringEscapeUtils;
 
 @WebServlet("/servlet/InsertGroupe")
 public class InsertGroupe extends HttpServlet {
@@ -20,12 +21,12 @@ public class InsertGroupe extends HttpServlet {
 
     String nomGroupe;
     try{
-      nomGroupe = request.getParameter("nomGroupe");
+      nomGroupe = StringEscapeUtils.escapeHtml4(request.getParameter("nomGroupe"));
     }catch(Exception e) {
       throw new ServletException("Champs du nom de groupe vide.");
     }
 
-    String mail = request.getRemoteUser();
+    String mail = StringEscapeUtils.escapeHtml4(request.getRemoteUser());
 
     try {
       initCtx = new InitialContext();
