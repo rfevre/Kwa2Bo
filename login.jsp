@@ -12,6 +12,13 @@
 	<script src="${pageContext.request.contextPath}/js/verifForm.js"></script>
 	<script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
 	<title>Connexion - Kwa2Bo</title>
+  <%
+    if (request.getRemoteUser() != null) {
+      RequestDispatcher rd = null;
+      rd = getServletContext().getRequestDispatcher("/logged/conversations.jsp");
+      rd.forward(request, response);
+    }
+  %>
 </head>
 <body>
 	<div class="container">
