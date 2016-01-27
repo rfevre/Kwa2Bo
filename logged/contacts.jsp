@@ -55,7 +55,7 @@
 								</a>
 								<ul class="dropdown-menu">
 									<li>
-										<a href="servlet/Logout">Déconnexion</a>
+										<a href="${pageContext.request.contextPath}/servlet/Logout">Déconnexion</a>
 									</li>
 								</ul>
 							</li>
