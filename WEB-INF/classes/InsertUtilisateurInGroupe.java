@@ -18,11 +18,19 @@ public class InsertUtilisateurInGroupe extends HttpServlet {
     PreparedStatement ps = null;
     RequestDispatcher rd = null;
 
-    Integer idGroupe = Integer.parseInt(request.getParameter("idGroupe"));
-    if (idGroupe==null) throw new ServletException("Id groupe vide.");
+    Integer idGroupe;
+    try {
+      idGroupe = Integer.parseInt(request.getParameter("idGroupe"));
+    }catch(Exception e) {
+      throw new ServletException("Format incorrect pour idGroupe (entier requis) : " + e);
+    }
 
-    String mail = request.getParameter("mail");
-    if (mail.equals("") || mail==null) throw new ServletException("Aucun utilisateur à ajouter.");
+    String mail;
+    try{
+      mail = request.getParameter("mail");
+    }catch(Exception e) {
+      throw new ServletException("Aucun utilisateur à ajouter.");
+    }
 
     String mailCreateur = request.getRemoteUser();
 

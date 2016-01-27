@@ -54,3 +54,15 @@ function doInsert(form) {
 	requeteAjaxParam("servlet/InsertMessage", parameters);
 	$("#formConversation textarea").val('');
 }
+
+function checkEnter(form) {
+	if (event.keyCode == 13) {
+		doInsert(form);
+	}
+}
+
+function delArea() {
+	if (event.keyCode == 13) {
+		$("#formConversation textarea").val('');
+	}
+}

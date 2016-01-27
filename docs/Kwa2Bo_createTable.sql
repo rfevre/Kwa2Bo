@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_profil(
 	idProfil SERIAL,
 	nom TEXT,
 	prenom TEXT,
-	photo TEXT NOT NULL DEFAULT './ressources/default.jpg',
+	photo TEXT NOT NULL DEFAULT '/ressources/default.jpg',
 	CONSTRAINT pk_profil
 	PRIMARY KEY(idProfil)
 );

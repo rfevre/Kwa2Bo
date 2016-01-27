@@ -18,8 +18,12 @@ public class InsertGroupe extends HttpServlet {
     PreparedStatement ps = null;
     RequestDispatcher rd = null;
 
-    String nomGroupe = request.getParameter("nomGroupe");
-    if (nomGroupe.equals("") || nomGroupe==null) throw new ServletException("Champs du nom de groupe vide.");
+    String nomGroupe;
+    try{
+      nomGroupe = request.getParameter("nomGroupe");
+    }catch(Exception e) {
+      throw new ServletException("Champs du nom de groupe vide.");
+    }
 
     String mail = request.getRemoteUser();
 

@@ -68,7 +68,7 @@
 		</header>
 		<section class="row">
 			<button type="button" class="pull-left btn btn-md btn-success" data-toggle="modal" data-target="#myModal">
-				<span class="glyphicon glyphicon-plus"></span> 
+				<span class="glyphicon glyphicon-plus"></span>
 				Nouveau groupe
 			</button>
 		<!-- Fenêtre modale pour la création d'un nouveau message -->
@@ -107,7 +107,7 @@
 				<div class="panel panel-default">
 					<button class="btn btn-default btn-xs">
 						<span class="glyphicon glyphicon-plus"></span>
-					</button> 
+					</button>
 					<!--<label>Remy Fevre</label>-->
 				</div>
 				<div id="messageArea" class="panel panel-default">
@@ -115,7 +115,7 @@
 					</div>
 				</div>
 				<form id="formConversation" class="form-horizontal" action="javascript:doInsert('#formConversation')">
-					<textarea class="form-control" placeholder="Tapez votre message ici ..." name="contenu"></textarea>
+					<textarea class="form-control" placeholder="Tapez votre message ici ..." name="contenu" onKeyDown="javascript:checkEnter('#formConversation')" onKeyUp="javascript:delArea();"></textarea>
 					<br/>
 					<button class="btn btn-default">
 						<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>

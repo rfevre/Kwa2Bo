@@ -19,7 +19,9 @@ public class UpdateProfil extends HttpServlet {
 
     String nom = request.getParameter("nom");
     String prenom = request.getParameter("prenom");
-    String photo = request.getParameter("photo");
+    String pseudo = request.getParameter("pseudo");
+    String photo = "/ressources/default.jpg";
+    if (request.getParameter("photo") != null) { photo = request.getParameter("photo");  }
     String mail = request.getRemoteUser();
 
     try {
@@ -34,7 +36,7 @@ public class UpdateProfil extends HttpServlet {
     try {
       // Update de la table profil avec jointure sur utilisateur
       String query = "UPDATE kwa2bo_profil AS p " +
-                      "SET nom=?,prenom=?,photo=? " +
+                      "SET nom=?,prenom=?,photo=?" +
                       "FROM kwa2bo_utilisateur AS u " +
                       "WHERE p.idProfil=u.idProfil AND mail=?";
 
@@ -43,6 +45,16 @@ public class UpdateProfil extends HttpServlet {
       ps.setString(2,prenom);
       ps.setString(3,photo);
       ps.setString(4,mail);
+
+      ps.executeUpdate();
+
+      query = "UPDATE kwa2bo_utilisateur " +
+                "SET pseudo=?" +
+                "WHERE mail=?";
+
+      ps = con.prepareStatement(query);
+      ps.setString(1,pseudo);
+      ps.setString(2,mail);
 
       ps.executeUpdate();
     }catch (Exception e) {
