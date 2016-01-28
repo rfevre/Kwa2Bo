@@ -72,6 +72,7 @@
     <url-pattern>/erreur.jsp</url-pattern>
     <url-pattern>/confirmation.jsp</url-pattern>
     <url-pattern>/servlet/Inscription</url-pattern>
+    <url-pattern>/servlet/ValidationCompte</url-pattern>
     <url-pattern>/servlet/Test</url-pattern>
   </web-resource-collection>
 </security-constraint>

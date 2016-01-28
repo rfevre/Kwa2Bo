@@ -7,6 +7,8 @@ import javax.sql.*;
 import java.util.Properties;
 import javax.naming.*;
 import org.apache.commons.lang3.StringEscapeUtils;
+import javax.mail.*;
+import javax.mail.internet.*;
 
 @WebServlet("/servlet/Inscription")
 public class Inscription extends HttpServlet {
@@ -51,18 +53,44 @@ public class Inscription extends HttpServlet {
       ps.executeUpdate();
 
       // On créer l'utilisateur
-      query = "INSERT INTO kwa2bo_utilisateur(mail,mdp,pseudo,idProfil) VALUES (?,md5(?),?,(SELECT MAX(idProfil) as idProfil FROM kwa2bo_profil))";
+      query = "INSERT INTO kwa2bo_utilisateur(mail,mdp,pseudo,codeVerif,idProfil) VALUES (?,md5(?),?,md5(?),(SELECT MAX(idProfil) as idProfil FROM kwa2bo_profil))";
       ps = con.prepareStatement(query);
       ps.setString(1, mail1);
       ps.setString(2, mdp1);
       ps.setString(3, pseudo);
+      ps.setString(4, pseudo);
       ps.executeUpdate();
 
-      request.setAttribute("message","Le compte utilisateur a été créé. Un courrier vous a été envoyez à l'adresse indiqué, afin de confirmer votre mail.");
+      // On récupére le codeVerif
+      query = "SELECT codeVerif FROM kwa2bo_utilisateur WHERE mail=?";
+      ps = con.prepareStatement(query);
+      ps.setString(1, mail1);
+      rs = ps.executeQuery();
+      rs.next();
+      
+      String codeVerif = rs.getString("codeVerif");
+      String lien = "http://localhost:8080/Kwa2Bo/confirmation.jsp?codeVerif="+codeVerif;
+
+      try {
+        javax.mail.Session sess = (javax.mail.Session) envCtx.lookup("mail/Session");
+        Message message = new MimeMessage(sess);
+        message.setFrom(new InternetAddress("r.fevre184@gmail.com"));
+        InternetAddress to[] = new InternetAddress[1];
+        to[0] = new InternetAddress(mail1);
+        message.setRecipients(Message.RecipientType.TO, to);
+        message.setSubject("Confirmation d'inscription sur Kwa2Bo !");
+        message.setContent("Pour comfirmer votre inscription veuillez suivez ce lien : "+
+        "<a href="+ lien +">" + "Lien de confirmation" + "</a>", "text/plain");
+        Transport.send(message);
+      } catch (Exception e) {
+        throw new ServletException("Error : "+e);
+      }
+
+      request.setAttribute("message","Un mail pour confirmer votre inscription vous à été envoyé");
       rd = getServletContext().getRequestDispatcher("/confirmation.jsp");
       rd.forward(request, response);
     }catch (Exception e) {
-      throw new ServletException("Mail déjà utilisé.");
+      throw new ServletException("Mail déjà utilisé." + e);
     }finally {
       try {
         ps.close();

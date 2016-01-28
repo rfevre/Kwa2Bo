@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_utilisateur(
 	mdp TEXT NOT NULL,
 	pseudo TEXT NOT NULL,
 	role TEXT NOT NULL DEFAULT 'undef',
+	codeVerif TEXT,
 	idProfil INTEGER,
 	CONSTRAINT pk_utilisateur
 	PRIMARY KEY(mail),
@@ -89,10 +90,10 @@ INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Fevre','Rémy');
 INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Leleu','Julien');
 INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Cattez','Edouard');
 
-INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role) VALUES ('ferrot@gmail.com',md5('rocher'),'Ferrot',1,'logged');
-INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role) VALUES ('fevrer@gmail.com',md5('rocher'),'Psycos',2,'logged');
-INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role) VALUES ('leleu@gmail.com',md5('rocher'),'A-La-Queue',3,'logged');
-INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role) VALUES ('catez@gmail.com',md5('rocher'),'Le_Maboule',4,'logged');
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('ferrot@gmail.com',md5('rocher'),'Ferrot',1,'logged',md5('Ferrot'));
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('fevrer@gmail.com',md5('rocher'),'Psycos',2,'logged',md5('Psycos'));
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('leleu@gmail.com',md5('rocher'),'A-La-Queue',3,'logged',md5('A-La-Queue'));
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('catez@gmail.com',md5('rocher'),'Le_Maboule',4,'logged',md5('Le_Maboule'));
 
 INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','fevrer@gmail.com');
 INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','leleu@gmail.com');
