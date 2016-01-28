@@ -37,11 +37,20 @@ footer nav div ul li a {
  	padding: 10px;
 }
 
+#conversation .modal-dialog .modal-content {
+ 	background: rgb(180,20,117);
+}
+
+#conversation .modal-dialog .modal-content #contacts {
+	margin-top : 4px;
+	margin-bottom : 4px;
+}
+
 #conversation h3 {
 	color: white;
 }
 
-#formGroupe .container-fluid .row .col-lg-6 .label-danger {
+.label-danger {
 	margin-left: 2px;
 	margin-right: 2px;
 }
