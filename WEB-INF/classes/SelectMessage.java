@@ -64,7 +64,7 @@ public class SelectMessage extends HttpServlet {
       String nomgroupe = null;
       while (rs.next()){
         participants.add(new Utilisateur(rs.getString("mail"), "x", rs.getString("pseudo"), rs.getString("role")));
-        if (nomgroupe != null)
+        if (rs.getString("nomgroupe") != null)
             nomgroupe = rs.getString("nomgroupe");
       }
       Groupe g = new Groupe(idGroupe, nomgroupe, participants, messages);

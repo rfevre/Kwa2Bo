@@ -19,7 +19,21 @@ function displayGroupes(data) {
 
 function displayConversation(data) {
 	$("#messageArea .panel-body").empty();
+
+	$('#myModalLabel').empty();
+	$('#myModalLabel').append(data.Groupe.nom);
+
+	$('#participant').empty();
+
 	var line;
+	for (var i = 0; i < data.Groupe.participants.length; i++) {
+		line = "<div class=\"label label-danger\">";
+		line += "<a onclick=\"\$(this).parent().remove()\">";
+		line += "<span class=\"btn-danger glyphicon glyphicon glyphicon-remove-sign\"></span></a>";
+		line += "<label>"+data.Groupe.participants[i].pseudo+"</label>";
+		line += "</div>";
+		$('#participant').append(line);
+	}
 	for (var i = 0; i < data.Groupe.messages.length; i++) {
 		if (data.Groupe.messages[i].expediteur.email === data.remoteUser) {
 			line = "<div class=\"bubbledRight\">";
