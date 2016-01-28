@@ -168,15 +168,15 @@
 				                    </li>
 				                </ul>
 							</div>
-							<div class="col-lg-6">
+							<div id="membres" class="col-lg-6">
 								<div class="label label-danger">
-									<a onclick="console.log('lol')">
+									<a onclick="$(this).parent().remove()">
 										<span class="btn-danger glyphicon glyphicon glyphicon-remove-sign"></span>
 									</a>
 									Alexandre Vastra
 								</div>
 								<div class="label label-danger">
-									<a>
+									<a onclick="$(this).parent().remove()">
 										<span class="btn-danger glyphicon glyphicon glyphicon-remove-sign"></span>
 									</a>
 									Remy Fevre
