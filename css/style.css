@@ -40,3 +40,12 @@ footer nav div ul li a {
 #conversation h3 {
 	color: white;
 }
+
+#formGroupe .container-fluid .row .col-lg-6 .label-danger {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+#formGroupe {
+	/*background: rgb(180,20,117);*/
+}

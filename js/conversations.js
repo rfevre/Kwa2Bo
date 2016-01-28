@@ -9,7 +9,7 @@ function displayGroupes(data) {
 		line = "<tr>\n";
 		line += "\t<td class=\"row\">\n";
 		line += "\t\t<a onclick=\"majConversation(" + data.Groupes[i].idGroupe + ")\" class=\"btn\" data-toggle=\"modal\" data-target=\"#conversation\">\n";
-		line += "\t\t\t<h3>" + data.Groupes[i].nom + "</h3>\n";
+		line += "\t\t\t<h4>" + data.Groupes[i].nom + "</h4>\n";
 		line += "\t\t</a>\n";
 		line += "\t</td>\n";
 		line += "</tr>\n";

@@ -92,7 +92,7 @@
 				</div>
 			</div>
 		</section>-->
-		<section class="row">
+		<section class="row panel">
 			<aside class="col-md-6">
 				<h3>Discussions</h3>
 				<div id="discussions">
@@ -131,7 +131,7 @@
 					</div>
 				</div>
 			</div>
-			<aside id="formGroupe" class="col-md-6">
+			<aside id="formGroupe" class="panel panel-default col-md-6">
 				<h3>Nouveau groupe</h3>
 				<form>
 					<div class="form-group">
