@@ -26,13 +26,13 @@ function displayConversation(data) {
 	var line;
 	for (var i = 0; i < data.Groupe.participants.length; i++) {
 		line = "<div class=\"label label-danger\">";
-		line += "<a onclick=\"\$(this).parent().remove()\">";
+		line += "<a onclick=\"\$(this).parent().remove(); removeUserToGroup(\'"+data.Groupe.participants[i].email+"\',"+data.Groupe.idGroupe+");\">";
 		line += "<span class=\"btn-danger glyphicon glyphicon glyphicon-remove-sign\"></span></a> ";
 		line += "<label>"+data.Groupe.participants[i].pseudo+"</label>";
 		line += "</div>";
 		$('#participants').append(line);
 	}
-	
+
 	for (var i = 0; i < data.Groupe.messages.length; i++) {
 		if (data.Groupe.messages[i].expediteur.email === data.remoteUser) {
 			line = "<div class=\"bubbledRight\">";
@@ -81,4 +81,8 @@ function delArea() {
 	if (event.keyCode == 13) {
 		$("#formConversation textarea").val('');
 	}
+}
+
+function removeUserToGroup(mail,idGroupe) {
+	requeteAjaxParam("servlet/DeleteUtilisateurGroupe", { "idGroupe" : idGroupe, "mail" : mail });
 }

@@ -67,7 +67,7 @@ public class Inscription extends HttpServlet {
       ps.setString(1, mail1);
       rs = ps.executeQuery();
       rs.next();
-      
+
       String codeVerif = rs.getString("codeVerif");
       String lien = "http://localhost:8080/Kwa2Bo/confirmation.jsp?codeVerif="+codeVerif;
 
