@@ -17,7 +17,7 @@
 	<title>Groupe - Kwa2Bo</title>
 </head>
 <body>
-  <form method="POST" action="${pageContext.request.contextPath}/servlet/testUpload" enctype="multipart/form-data" >
+  <form method="POST" action="${pageContext.request.contextPath}/servlet/UploadImage" enctype="multipart/form-data" >
     File:
     <input type="file" name="image" id="image" />
     <br>
