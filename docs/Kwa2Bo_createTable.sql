@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_utilisateur(
 CREATE TABLE IF NOT EXISTS Kwa2Bo_contacts(
 	mail1 VARCHAR(16),
 	mail2 VARCHAR(16),
+	status INTEGER,
 	CONSTRAINT pk_contacts
 	PRIMARY KEY(mail1,mail2),
 	CONSTRAINT fk_contacts FOREIGN KEY(mail1)
@@ -95,8 +96,8 @@ INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES (
 INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('leleu@gmail.com',md5('rocher'),'A-La-Queue',3,'logged',md5('A-La-Queue'));
 INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('catez@gmail.com',md5('rocher'),'Le_Maboule',4,'logged',md5('Le_Maboule'));
 
-INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','fevrer@gmail.com');
-INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','leleu@gmail.com');
+INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','fevrer@gmail.com',0);
+INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','leleu@gmail.com',0);
 
 INSERT INTO Kwa2Bo_groupe (nomGroupe) VALUES ('Le paradis sur Terre');
 INSERT INTO Kwa2Bo_groupe (nomGroupe) VALUES ('Ici c est Paris');
