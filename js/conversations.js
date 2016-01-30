@@ -43,9 +43,8 @@ function displayConversation(data) {
 		}
 		line += data.Groupe.messages[i].expediteur.pseudo + " : \n";
 		line += data.Groupe.messages[i].contenu;
-		// TODO : ICI aussi ça bug, meme si dans la base, la colonne IMAGE est vide, il l'a charge quand même
 		if (data.Groupe.messages[i].image != "" && data.Groupe.messages[i].image != "null") {
-			line += "<img width=50 height=50 src=" + data.Groupe.messages[i].image + ' alt="" />';
+			line += "<br/><img width=50 height=50 src=" + data.Groupe.messages[i].image + ' alt="" />';
 		}
 		line += "</div>\n";
 		$('#messageArea .panel-body').append(line);
@@ -60,6 +59,13 @@ function majConversation(parameter) {
 	requeteAjaxParam('servlet/SelectMessage', { idGroupe : parameter },  displayConversation);
 	timer = setInterval("requeteAjaxParam('servlet/SelectMessage', { idGroupe : " + parameter + "},  displayConversation)", 1000);
 }
+
+$('#formConversation textarea').keypress(function (e) {
+  if (e.which == 13) {
+    $('#formConversation').submit();
+    return false;    //<---- Add this line
+  }
+});
 
 $(function () {
     $('#formConversation').on('submit', function (e) {
@@ -84,36 +90,13 @@ $(function () {
 
 		$("#formConversation textarea").val('');
 		$('#formConversation input[name="image"]').val('');
+		scrollDown();
     });
 });
-
-// TODO : essayé de retirer cette fonction lorsque le gars appuie sur entré
-function doInsert(form) {
-	parameters = {
-		idGroupe : $(form + ' input[name="idGroupe"]').val(),
-		texte : $(form + ' textarea').val(),
-		image : ''
-	}
-	requeteAjaxParam("servlet/InsertMessage", parameters);
-	$("#formConversation textarea").val('');
-}
 
 function scrollDown() {
 	var scrollBar = document.getElementById("messageArea");
 	scrollBar.scrollTop = scrollBar.scrollHeight;
-}
-
-// TODO : idem qu'avec le doInsert()
-function checkEnter(form) {
-	if (event.keyCode == 13) {
-		doInsert(form);
-	}
-}
-
-function delArea() {
-	if (event.keyCode == 13) {
-		$("#formConversation textarea").val('');
-	}
 }
 
 function removeUserToGroup(mail,idGroupe) {

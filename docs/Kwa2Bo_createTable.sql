@@ -30,8 +30,8 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_utilisateur(
 );
 
 CREATE TABLE IF NOT EXISTS Kwa2Bo_contacts(
-	mail1 VARCHAR(16),
-	mail2 VARCHAR(16),
+	mail1 TEXT,
+	mail2 TEXT,
 	status INTEGER,
 	CONSTRAINT pk_contacts
 	PRIMARY KEY(mail1,mail2),
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_groupe (
 );
 
 CREATE TABLE IF NOT EXISTS Kwa2Bo_appartient(
-	mail VARCHAR(16),
+	mail TEXT,
 	idGroupe INTEGER,
 	CONSTRAINT pk_appartient
 	PRIMARY KEY(mail, idGroupe),
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_appartient(
 CREATE TABLE IF NOT EXISTS Kwa2Bo_message(
 	idMessage SERIAL,
 	idGroupe INTEGER,
-	mail VARCHAR(16),
+	mail TEXT,
 	dateMessage TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	image TEXT,
 	texte TEXT,

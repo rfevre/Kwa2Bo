@@ -125,8 +125,8 @@
 						<input type="hidden" value="" name="idGroupe"/>
 						<input type="submit" value="Envoyer" class="btn btn-default"/>
 					</form> --%>
-					<form id="formConversation" method="post" action="${pageContext.request.contextPath}/servlet/testEnvoieImage" enctype="multipart/form-data">
-					    <textarea class="form-control" placeholder="Tapez votre message ici ..." name="content" onKeyDown="checkEnter('#formConversation');scrollDown()" onKeyUp="delArea();"></textarea>
+					<form id="formConversation" method="post" action="${pageContext.request.contextPath}/servlet/InsertMessage" enctype="multipart/form-data">
+					    <textarea class="form-control" placeholder="Tapez votre message ici ..." name="content"></textarea>
 					    <span class="btn btn-default btn-file">
 					    	<span class="glyphicon glyphicon-camera"></span>
 					    	<input type="file" name="image" accept="image/*"/>
