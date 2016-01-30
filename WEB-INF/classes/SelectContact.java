@@ -26,6 +26,7 @@ public class SelectContact extends HttpServlet {
 
     List<Utilisateur> contacts= new ArrayList<Utilisateur>();
     String mail = request.getRemoteUser();
+    String critere = request.getParameter("critere");
 
     try {
       initCtx = new InitialContext();
@@ -37,7 +38,7 @@ public class SelectContact extends HttpServlet {
     }
 
     try {
-      String selectSQL = "SELECT mail1,mail2 FROM Kwa2Bo_contacts WHERE mail1 = ? OR mail2 = ?";
+      String selectSQL = "SELECT mail1,mail2 FROM Kwa2Bo_contacts WHERE mail1 = ? OR mail2 = ? AND status = 0";
 
       ps = con.prepareStatement(selectSQL);
 
@@ -57,9 +58,9 @@ public class SelectContact extends HttpServlet {
         st = con.createStatement();
 
         if (!mail1.equals(mail)) {
-          rs2=st.executeQuery("select mail,pseudo,role from kwa2bo_utilisateur where mail='"+mail1+"';");
+          rs2=st.executeQuery("select mail,pseudo,role from kwa2bo_utilisateur where mail='"+mail1+"' AND pseudo LIKE '" + critere + "%';");
         } else {
-          rs2=st.executeQuery("select mail,pseudo,role from kwa2bo_utilisateur where mail='"+mail2+"';");
+          rs2=st.executeQuery("select mail,pseudo,role from kwa2bo_utilisateur where mail='"+mail2+"' AND pseudo LIKE '" + critere + "%';");
         }
         rs2.next();
         contacts.add(new Utilisateur(rs2.getString("mail"),null,rs2.getString("pseudo"),rs2.getString("role")));
@@ -78,14 +79,14 @@ public class SelectContact extends HttpServlet {
       out.print("]");
       out.print("}");
     }catch (Exception e) {
-      throw new ServletException("Erreur lors de la requête SQL.");
+      throw new ServletException("Erreur lors de la requête SQL." + e);
     }finally {
       try {
         st.close();
         ps.close();
         con.close();
       }catch(Exception e) {
-        throw new ServletException("Erreur lors de la fermeture de connection à la BDD.");
+        throw new ServletException("Erreur lors de la fermeture de connection à la BDD." + e);
       }
     }
   }
