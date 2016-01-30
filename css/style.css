@@ -23,10 +23,6 @@
 	color: white;
 }
 
-section table tr td .btn {
-	text-align: left;
-}
-
 footer nav div ul li a {
 	background: rgb(180,20,117);
 	color: white;
@@ -34,25 +30,14 @@ footer nav div ul li a {
 
 #conversation .modal-dialog .modal-content {
  	background: rgb(180,20,117);
- 	padding: 10px;
 }
 
 #conversation .modal-dialog .modal-content {
  	background: rgb(180,20,117);
 }
 
-#conversation .modal-dialog .modal-content #contacts {
-	margin-top : 4px;
-	margin-bottom : 4px;
-}
-
 #conversation h3 {
 	color: white;
-}
-
-.label-danger {
-	margin-left: 2px;
-	margin-right: 2px;
 }
 
 #formGroupe {

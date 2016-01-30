@@ -21,6 +21,10 @@ section table tr td a {
   width: 100%;
 }
 
+section table tr td .btn {
+  text-align: left;
+}
+
 #discussions {
   height: 550px;
   overflow-x: hidden;
@@ -39,12 +43,26 @@ section table tr td a {
   overflow-y: auto;
 }
 
+#conversation #messageArea .panel-body img {
+  width: 100px;
+  height: auto;
+}
+
 #conversation .panel .panel-body .alert-success{
   text-align: right;
 }
 
 #conversation form textarea {
   resize:none;
+}
+
+#conversation .modal-dialog .modal-content {
+  padding: 10px;
+}
+
+#conversation .modal-dialog .modal-content #contacts {
+  margin-top : 4px;
+  margin-bottom : 4px;
 }
 
 @media only screen and (max-device-width:800px) {
@@ -66,6 +84,35 @@ section table tr td a {
 #log button
 {
   margin-bottom: 0px;
+}
+
+.label-danger {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#formConversation textarea {
+  margin-bottom: 5px;
 }
 /*
 body {

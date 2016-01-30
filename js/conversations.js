@@ -18,6 +18,7 @@ function displayGroupes(data) {
 }
 
 function displayConversation(data) {
+	console.log(data);
 	$("#messageArea .panel-body").empty();
 	$('#myModalLabel').empty();
 	$('#myModalLabel').append(data.Groupe.nom);
@@ -43,8 +44,8 @@ function displayConversation(data) {
 		line += data.Groupe.messages[i].expediteur.pseudo + " : \n";
 		line += data.Groupe.messages[i].contenu;
 		// TODO : ICI aussi ça bug, meme si dans la base, la colonne IMAGE est vide, il l'a charge quand même
-		if (data.Groupe.messages[i].image !== "null" ) {
-			line += "<img src=" + data.Groupe.messages[i].image + ' alt="" />';
+		if (data.Groupe.messages[i].image != "" && data.Groupe.messages[i].image != "null") {
+			line += "<img width=50 height=50 src=" + data.Groupe.messages[i].image + ' alt="" />';
 		}
 		line += "</div>\n";
 		$('#messageArea .panel-body').append(line);
