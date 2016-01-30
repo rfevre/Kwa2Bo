@@ -8,7 +8,7 @@ function displayGroupes(data) {
 	for (var i = 0; i < data.Groupes.length; i++) {
 		line = "<tr>\n";
 		line += "\t<td class=\"row\">\n";
-		line += "\t\t<a onclick=\"majConversation(" + data.Groupes[i].idGroupe + ")\" class=\"btn\" data-toggle=\"modal\" data-target=\"#conversation\">\n";
+		line += "\t\t<a onclick=\"majConversation(" + data.Groupes[i].idGroupe + ")\" class=\"btn btn-default\" data-toggle=\"modal\" data-target=\"#conversation\">\n";
 		line += "\t\t\t<h4>" + data.Groupes[i].nom + "</h4>\n";
 		line += "\t\t</a>\n";
 		line += "\t</td>\n";
@@ -82,8 +82,8 @@ $(function () {
             }
         });
 
-				$("#formConversation textarea").val('');
-				$('#formConversation input[name="image"]').val('');
+		$("#formConversation textarea").val('');
+		$('#formConversation input[name="image"]').val('');
     });
 });
 

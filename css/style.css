@@ -23,6 +23,11 @@
 	color: white;
 }
 
+/*#discussions table tbody tr td .btn {
+	background: rgb(180,20,117);
+	color: white;
+}*/
+
 footer nav div ul li a {
 	background: rgb(180,20,117);
 	color: white;
