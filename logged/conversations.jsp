@@ -120,15 +120,17 @@
 						<div class="panel-body">
 						</div>
 					</div>
-					<form id="formConversation" class="form-horizontal" action="javascript:doInsert('#formConversation')">
+					<%-- <form id="formConversation" class="form-horizontal" action="javascript:doInsert('#formConversation')">
 						<textarea class="form-control" placeholder="Tapez votre message ici ..." name="contenu" onKeyDown="checkEnter('#formConversation');scrollDown()" onKeyUp="delArea();"></textarea>
-						<br/>
-						<button class="btn btn-default">
-							<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-						</button>
 						<input type="hidden" value="" name="idGroupe"/>
 						<input type="submit" value="Envoyer" class="btn btn-default"/>
-					</form>
+					</form> --%>
+					<form id="formConversation" method="post" action="${pageContext.request.contextPath}/servlet/testEnvoieImage" enctype="multipart/form-data">
+				    <textarea class="form-control" placeholder="Tapez votre message ici ..." name="content" onKeyDown="checkEnter('#formConversation');scrollDown()" onKeyUp="delArea();"></textarea>
+				    <input type="file" name="image" accept="image/*">
+						<input type="hidden" value="" name="idGroupe"/>
+				    <button type="submit">OK</button>
+				</form>
 				</div>
 			</div>
 		</div>

@@ -42,6 +42,10 @@ function displayConversation(data) {
 		}
 		line += data.Groupe.messages[i].expediteur.pseudo + " : \n";
 		line += data.Groupe.messages[i].contenu;
+		// TODO : ICI aussi ça bug, meme si dans la base, la colonne IMAGE est vide, il l'a charge quand même
+		if (data.Groupe.messages[i].image !== "null" ) {
+			line += "<img src=" + data.Groupe.messages[i].image + ' alt="" />';
+		}
 		line += "</div>\n";
 		$('#messageArea .panel-body').append(line);
 	}
@@ -56,6 +60,33 @@ function majConversation(parameter) {
 	timer = setInterval("requeteAjaxParam('servlet/SelectMessage', { idGroupe : " + parameter + "},  displayConversation)", 1000);
 }
 
+$(function () {
+    $('#formConversation').on('submit', function (e) {
+        // On empêche le navigateur de soumettre le formulaire
+        e.preventDefault();
+
+        var $form = $(this);
+        var formdata = (window.FormData) ? new FormData($form[0]) : null;
+        var data = (formdata !== null) ? formdata : $form.serialize();
+
+        $.ajax({
+            url: $form.attr('action'),
+            type: $form.attr('method'),
+            contentType: false, // obligatoire pour de l'upload
+            processData: false, // obligatoire pour de l'upload
+            dataType: 'json', // selon le retour attendu
+            data: data,
+            success: function (response) {
+                // La réponse du serveur
+            }
+        });
+
+				$("#formConversation textarea").val('');
+				$('#formConversation input[name="image"]').val('');
+    });
+});
+
+// TODO : essayé de retirer cette fonction lorsque le gars appuie sur entré
 function doInsert(form) {
 	parameters = {
 		idGroupe : $(form + ' input[name="idGroupe"]').val(),
@@ -71,6 +102,7 @@ function scrollDown() {
 	scrollBar.scrollTop = scrollBar.scrollHeight;
 }
 
+// TODO : idem qu'avec le doInsert()
 function checkEnter(form) {
 	if (event.keyCode == 13) {
 		doInsert(form);

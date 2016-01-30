@@ -50,7 +50,7 @@ public class SelectMessage extends HttpServlet {
       List<Message> messages = new ArrayList<Message>();
       while (rs.next()){
         Utilisateur u = new Utilisateur(rs.getString("mail"), "", rs.getString("pseudo"), "");
-        messages.add(new Message(u, rs.getString("texte"), "lol", rs.getDate("datemessage")));
+        messages.add(new Message(u, rs.getString("texte"), rs.getString("image"), rs.getDate("datemessage")));
       }
 
       query = "SELECT nomgroupe, u.* FROM kwa2bo_groupe as g INNER JOIN kwa2bo_appartient as a " +
