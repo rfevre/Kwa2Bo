@@ -44,7 +44,7 @@
 								</a>
 							</li>
 							<li>
-								<a href="${pageContext.request.contextPath}/logged/parametres.jsp">
+								<a href="${pageContext.request.contextPath}/servlet/SelectProfil">
 									<span class="glyphicon glyphicon-cog"></span>
 								</a>
 							</li>
@@ -65,14 +65,26 @@
 			</nav>
 		</header>
 		<section class="row">
-			<h3>Paramètres</h3>
-			<section id="discussions" class="col-md-5">
-				<table class="table">
-					<tbody>
-					</tbody>
-				</table>
-			</section>
-		</section>
+			<div class="container-fluid">
+				<div class="col-lg-6">
+					<h4>Ajouter des amis</h4>
+					<div class="input-group">
+						<input type="text" id="searchBar" class="form-control" placeholder="Chercher un ami..." onKeyUp="searchContact()">
+						<span class="input-group-btn">
+							<a class="btn btn-default" onclick="searchContact()">
+								<span class="glyphicon glyphicon-search text-muted"></span>
+							</a>
+						</span>
+					</div>
+					<ul class="list-group" id="contact-list">
+					</ul>
+				</div>
+				<div id="membres" class="col-lg-6 panel ">
+					<h4>Demande d'ajout en attente</h4>
+					<ul class="list-inline">
+					</ul>
+				</div>
+			</div>
 	</div>
 </body>
 </html>

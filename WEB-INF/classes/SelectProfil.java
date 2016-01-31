@@ -29,7 +29,7 @@ public class SelectProfil extends HttpServlet {
     }
 
     try {
-      String query = "SELECT nom,prenom,photo" +
+      String query = "SELECT pseudo, nom, prenom, role, photo" +
                           " FROM kwa2bo_profil AS profil " +
                           " INNER JOIN kwa2bo_utilisateur AS utilisateur " +
                           " ON profil.idProfil = utilisateur.idProfil " +
@@ -41,22 +41,21 @@ public class SelectProfil extends HttpServlet {
       ResultSet rs = ps.executeQuery();
       rs.next();
       Profil profil = new Profil(rs.getString("nom"),rs.getString("prenom"),rs.getString("photo"));
+      Utilisateur user = new Utilisateur(mail, "", rs.getString("pseudo"), rs.getString("role"));
+      user.setProfil(profil);
 
-      //réponse en format JSON
-      response.setContentType("application/json");
-      out.print("{");
-      out.print("\"Profil\" : [");
-      out.print(profil.getJSON());
-      out.print("]");
-      out.print("}");
+      request.setAttribute("utilisateur", user);
+      ServletContext servletContext = getServletContext();
+      RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/logged/parametres.jsp");
+      dispatcher.forward(request, response);
     }catch (Exception e) {
-      throw new ServletException("Erreur lors de la requête SQL.");
+      throw new ServletException("Erreur lors de la requête SQL " + e);
     }finally {
       try {
         ps.close();
         con.close();
       }catch(Exception e) {
-        throw new ServletException("Erreur lors de la fermeture de connection à la BDD.");
+        throw new ServletException("Erreur lors de la fermeture de connection à la BDD " + e);
       }
     }
   }

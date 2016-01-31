@@ -10,9 +10,11 @@ public class Utilisateur {
 	private String pseudo;
 	private String role;
 	private List<Utilisateur> contacts;
+	private Profil profil;
 
 	public Utilisateur() {
 		contacts = new ArrayList<Utilisateur>();
+		profil = new Profil();
 	}
 
 	public Utilisateur(String email, String password, String pseudo, String role) {
@@ -68,6 +70,14 @@ public class Utilisateur {
 		return this.contacts;
 	}
 
+	public void setProfil(Profil p) {
+		this.profil = p;
+	}
+
+	public Profil getProfil() {
+		return this.profil;
+	}
+
 	public String getJSON() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("{");
@@ -82,7 +92,8 @@ public class Utilisateur {
 				builder.append(",");
 			}
 		}
-		builder.append("]");
+		builder.append("], ");
+		builder.append("\"profil\" : " + profil.getJSON());
 		builder.append("}");
 		return builder.toString();
 	}
