@@ -56,7 +56,7 @@ public class InsertGroupe extends HttpServlet {
         query = "INSERT INTO kwa2bo_appartient(mail, idGroupe) " +
               "VALUES (?,(SELECT MAX(idGroupe) AS idGroupe FROM kwa2bo_groupe));";
         ps = con.prepareStatement(query);
-        ps.setString(1, membres[i]);
+        ps.setString(1, StringEscapeUtils.escapeHtml4(membres[i]));
         ps.executeUpdate();
       }
     }catch (Exception e) {
