@@ -26,7 +26,10 @@ public class SelectContact extends HttpServlet {
 
     List<Utilisateur> contacts= new ArrayList<Utilisateur>();
     String mail = request.getRemoteUser();
-    String critere = request.getParameter("critere");
+    String critere = "";
+    if (request.getParameter("critere") != null) {
+      critere = request.getParameter("critere");
+    }
 
     try {
       initCtx = new InitialContext();
@@ -74,9 +77,8 @@ public class SelectContact extends HttpServlet {
       //réponse en format JSON
       response.setContentType("application/json");
       out.print("{");
-      out.print("\"Utilisateur\" : [");
+      out.print("\"Utilisateur\" : ");
       out.print(utilisateur.getJSON());
-      out.print("]");
       out.print("}");
     }catch (Exception e) {
       throw new ServletException("Erreur lors de la requête SQL." + e);

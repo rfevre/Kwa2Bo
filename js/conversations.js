@@ -18,7 +18,6 @@ function displayGroupes(data) {
 }
 
 function displayConversation(data) {
-	console.log(data);
 	$("#messageArea .panel-body").empty();
 	$('#myModalLabel').empty();
 	$('#myModalLabel').append(data.Groupe.nom);
@@ -101,4 +100,52 @@ function scrollDown() {
 
 function removeUserToGroup(mail,idGroupe) {
 	requeteAjaxParam("servlet/DeleteUtilisateurGroupe", { "idGroupe" : idGroupe, "mail" : mail });
+}
+
+function addSuggestContact(data) {
+	$("#contact-list").empty();
+	var line = "";
+	for (var i = 0; i < data.Utilisateur.contacts.length; i++) {
+		/*console.log(data.Utilisateur.contacts[0].pseudo);*/
+		line = "<li class=\"list-group-item\">\n";
+		line +=	"\t<div class=\"col-sm-3\">\n";
+		line +=	"\t\t<img src=\"res/profil/default.jpg\" class=\"img-responsive img-circle hidden-xs\"/>\n";
+		line += "\t</div>\n";
+		line += "\t<div class=\"col-xs-10 col-sm-7\">\n";
+		line += "\t\t<label>"+ data.Utilisateur.contacts[i].pseudo +"</label>\n";
+		line += "\t</div>\n";
+		line += "\t<div>\n";
+		line += "\t\t<a class=\"btn btn-success btn-sm col-xs-2 col-sm-2\" onclick=\"addMembre('" + data.Utilisateur.contacts[i].email + "', '" + data.Utilisateur.contacts[i].pseudo + "')\">\n";
+		line += "\t\t\t<span class=\"glyphicon glyphicon-plus-sign\"/>\n";
+		line += "\t\t</a>\n";
+		line += "\t</div>\n";
+		line += "\t<div class=\"clearfix\"></div>\n";
+		line += "</li>\n";
+		console.log(data.Utilisateur.contacts[i]);
+		$("#contact-list").append(line);
+	}
+}
+
+function searchContact() {
+	var parameter = $("input[id=searchBar]").val();
+	requeteAjaxParam("servlet/SelectContact", { critere : parameter }, addSuggestContact);
+}
+
+function addMembre(email, pseudo) {
+	for (var i = 0; i < $("input[type=hidden][name=membre]").length; i++) {
+		if ($("input[type=hidden][name=membre]")[i].value === email) {
+			return null;
+		}
+	}
+	var line = "";
+	line = "<li>\n";
+	line += "<div class=\"label label-danger\">\n";
+	line += "<input type=hidden value=" + email + " name=\"membre\"/>\n";
+	line +=	"<a onclick=\"$(this).parent().parent().remove()\">\n";
+	line += "<span class=\"btn-danger glyphicon glyphicon glyphicon-remove-sign\"></span>\n";
+	line += "</a>\n";
+	line += pseudo;
+	line += "</div>\n";
+	line += "</li>\n";
+	$("#membres ul").append(line);
 }

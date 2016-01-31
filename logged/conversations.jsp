@@ -143,57 +143,33 @@
 		<form>
 			<div class="form-group">
 				<label for="exampleInputEmail1">Nom du groupe</label>
-				<input type="email" class="form-control" placeholder="Exemple : La dream-team"/>
+				<input type="text" class="form-control" name="nomGroupe" placeholder="Exemple : La dream-team"/>
 			</div>
 			<label for="exampleInputEmail1">Ajouter des membres</label>
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="input-group">
-							<input type="text" class="form-control" placeholder="Chercher un ami...">
-								<span class="input-group-btn">
-									<button class="btn btn-default" type="button">
-										<span class="glyphicon glyphicon-search text-muted"></span>
-									</button>
-								</span>
-							</div>
-							<ul class="list-group" id="contact-list">
-								<li class="list-group-item">
-									<div class="col-sm-3">
-										<img src="res/profil/default.jpg" class="img-responsive img-circle hidden-xs" />
-									</div>
-									<div class="col-xs-10 col-sm-7">
-										<label>Alexandre</label>
-										<label>Fevre</label>
-									</div>
-									<div>
-										<button class="btn btn-success btn-sm col-xs-2 col-sm-2">
-											<span class="glyphicon glyphicon-plus-sign"/>
-										</button>
-									</div>
-									<div class="clearfix"></div>
-								</li>
-							</ul>
-						</div>
-						<div id="membres" class="col-lg-6">
-							<div class="label label-danger">
-								<a onclick="$(this).parent().remove()">
-									<span class="btn-danger glyphicon glyphicon glyphicon-remove-sign"></span>
+							<input type="text" id="searchBar" class="form-control" placeholder="Chercher un ami..." onKeyUp="searchContact()">
+							<span class="input-group-btn">
+								<a class="btn btn-default" onclick="searchContact()">
+									<span class="glyphicon glyphicon-search text-muted"></span>
 								</a>
-								Alexandre Vastra
-							</div>
-							<div class="label label-danger">
-								<a onclick="$(this).parent().remove()">
-									<span class="btn-danger glyphicon glyphicon glyphicon-remove-sign"></span>
-								</a>
-								Remy Fevre
-							</div>
+							</span>
 						</div>
+						<ul class="list-group" id="contact-list">
+						</ul>
+					</div>
+					<div id="membres" class="col-lg-6 panel ">
+						<ul class="list-inline">
+						</ul>
 					</div>
 				</div>
-			</form>
-		</aside>
-	</section>
+			</div>
+			<input class="btn btn-success" type="submit" value="Créer"/>
+		</form>
+	</aside>
+</section>
 </div>
 </body>
 </html>
