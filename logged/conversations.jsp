@@ -140,7 +140,7 @@
 	</div>
 	<aside id="formGroupe" class="panel panel-default col-md-6">
 		<h3>Nouveau groupe</h3>
-		<form>
+		<form action="${pageContext.request.contextPath}/servlet/InsertGroupe" method="GET">
 			<div class="form-group">
 				<label for="exampleInputEmail1">Nom du groupe</label>
 				<input type="text" class="form-control" name="nomGroupe" placeholder="Exemple : La dream-team"/>
