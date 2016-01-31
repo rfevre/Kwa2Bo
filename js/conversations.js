@@ -1,6 +1,13 @@
+$('#formConversation textarea').keypress(function (e) {
+  if (e.which == 13) {
+    $('#formConversation').submit();
+    return false;    //<---- Add this line
+  }
+});
+
 timer = undefined;
 requeteAjax("servlet/SelectGroupe", displayGroupes);
-setInterval("requeteAjax('servlet/SelectGroupe', displayGroupes)", 10000);
+setInterval("requeteAjax('servlet/SelectGroupe', displayGroupes)", 2000);
 
 function displayGroupes(data) {
 		var line;
@@ -58,13 +65,6 @@ function majConversation(parameter) {
 	requeteAjaxParam('servlet/SelectMessage', { idGroupe : parameter },  displayConversation);
 	timer = setInterval("requeteAjaxParam('servlet/SelectMessage', { idGroupe : " + parameter + "},  displayConversation)", 1000);
 }
-
-$('#formConversation textarea').keypress(function (e) {
-  if (e.which == 13) {
-    $('#formConversation').submit();
-    return false;    //<---- Add this line
-  }
-});
 
 $(function () {
     $('#formConversation').on('submit', function (e) {

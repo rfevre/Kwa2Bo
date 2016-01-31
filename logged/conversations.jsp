@@ -111,8 +111,8 @@
 					<h3>Nouveau groupe</h3>
 					<form action="${pageContext.request.contextPath}/servlet/InsertGroupe" method="GET">
 						<div class="form-group">
-							<label for="exampleInputEmail1">Nom du groupe</label>
-							<input type="text" class="form-control" name="nomGroupe" placeholder="Exemple : La dream-team"/>
+							<label for="inputNomGroupe">Nom du groupe</label>
+							<input type="text" class="form-control" name="nomGroupe" placeholder="Exemple : La dream-team" id="inputNomGroupe"/>
 						</div>
 						<label for="exampleInputEmail1">Ajouter des membres</label>
 						<div class="container-fluid">

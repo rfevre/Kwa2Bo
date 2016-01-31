@@ -16,6 +16,7 @@ public class UpdateProfil extends HttpServlet {
     PrintWriter out = response.getWriter();
     Connection con = null;
     PreparedStatement ps = null;
+    RequestDispatcher rd = null;
 
     String nom = StringEscapeUtils.escapeHtml4(request.getParameter("nom"));
     String prenom = StringEscapeUtils.escapeHtml4(request.getParameter("prenom"));
@@ -36,7 +37,7 @@ public class UpdateProfil extends HttpServlet {
     try {
       // Update de la table profil avec jointure sur utilisateur
       String query = "UPDATE kwa2bo_profil AS p " +
-                      "SET nom=?,prenom=?,photo=?" +
+                      "SET nom=?,prenom=?,photo=? " +
                       "FROM kwa2bo_utilisateur AS u " +
                       "WHERE p.idProfil=u.idProfil AND mail=?";
 
@@ -49,14 +50,18 @@ public class UpdateProfil extends HttpServlet {
       ps.executeUpdate();
 
       query = "UPDATE kwa2bo_utilisateur " +
-                "SET pseudo=?" +
+                "SET pseudo=? " +
                 "WHERE mail=?";
 
       ps = con.prepareStatement(query);
       ps.setString(1,pseudo);
       ps.setString(2,mail);
-
       ps.executeUpdate();
+
+      request.setAttribute("message","Les informations ont bien été prises en compte.");
+      ServletContext servletContext = getServletContext();
+      RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/servlet/SelectProfil");
+      dispatcher.forward(request, response);
     }catch (Exception e) {
       throw new ServletException("Erreur lors de la requête SQL." + e);
     }finally {

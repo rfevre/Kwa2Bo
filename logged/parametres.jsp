@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/lib/bootstrap/css/bootstrap.min.css"/>
@@ -68,23 +69,23 @@
 		<section class="row">
 			<h3>Paramètres</h3>
 			<section id="discussions" class="col-md-5">
-				<form action="servlet/UpdateProfil" method="POST">
+				<form action="${pageContext.request.contextPath}/servlet/UpdateProfil" method="POST" id="updateProfil">
 					<div class="form-group">
-						<label for="exampleInputEmail1">Pseudo</label>
-						<input type="email" class="form-control" placeholder="Exemple : MichouDu59" value="${utilisateur.pseudo}"/>
+						<label for="inputPseudo">Pseudo</label>
+						<input type="text" class="form-control" placeholder="Exemple : MichouDu59" value="${utilisateur.pseudo}" name="pseudo" id="inputPseudo"/>
 					</div>
 					<div class="form-group">
-						<label for="exampleInputEmail1">Nom</label>
-						<input type="email" class="form-control" placeholder="Exemple : Jacquie" value="${utilisateur.profil.nom}"/>
+						<label for="inputNom">Nom</label>
+						<input type="text" class="form-control" placeholder="Exemple : Jacquie" value="${utilisateur.profil.nom}" name="nom" id="inputNom"/>
 					</div>
 					<div class="form-group">
-						<label for="exampleInputEmail1">Prénom</label>
-						<input type="email" class="form-control" placeholder="Exemple : Michel" value="${utilisateur.profil.prenom}"/>
+						<label for="inputPrenom">Prénom</label>
+						<input type="text" class="form-control" placeholder="Exemple : Michel" value="${utilisateur.profil.prenom}" name="prenom" id="inputPrenom"/>
 					</div>
-					<div class="form-group">
-						<label for="exampleInputEmail1">Adresse email</label>
-						<input type="email" class="form-control" placeholder="Exemple : JacquieMichel@XXX.com" value="${utilisateur.email}">
-					</div>
+					<!-- <div class="form-group">
+						<label for="inputEmail">Adresse email</label>
+						<input type="email" class="form-control" placeholder="Exemple : JacquieMichel@XXX.com" value="${utilisateur.email}" name="mail" id="inputEmail"/>
+					</div> -->
 					<div class="form-group">
 						<button type="button" data-toggle="modal" data-target="#formMdp">
 							Modifier le mot de passe
@@ -96,31 +97,31 @@
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 										<h4 class="modal-title" id="myModalLabel">Nouveau mot de passe</h4>
 									</div>
-									<form action="servlet/InsertGroupe" method="POST" class="form-group">
+									<form action="servlet/InsertGroupe" method="POST" class="form-group" id="updateMdp">
 										<div class="modal-body">
 										<div class="form-group">
-											<label for="exampleInputEmail1">Mot de passe actuel</label>
-											<input type="password" class="form-control"/>
+											<label for="inputMdp">Mot de passe actuel</label>
+											<input type="password" class="form-control" name="mdp" id="inputMdp" />
 										</div>
 										<div class="form-group">
-											<label for="exampleInputEmail1">Nouveau mot de passe</label>
-											<input type="password" class="form-control">
+											<label for="inputMdp1">Nouveau mot de passe</label>
+											<input type="password" class="form-control" name="mdp1" id="inputMdp1" />
 										</div>
 										<div class="form-group">
-											<label for="exampleInputEmail1">Confirmez nouveau mot de passe</label>
-											<input type="password" class="form-control">
+											<label for="inputMdp2">Confirmez nouveau mot de passe</label>
+											<input type="password" class="form-control" name="mdp2" id="inputMdp2" />
 										</div>
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-											<input type="submit" class="btn btn-success" value="Enregistrer les modifications"/>
+											<input type="submit" class="btn btn-success" value="Enregistrer les modifications" form="updateMdp"/>
 										</div>
 									</form>
 								</div>
 							</div>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-success">Enregistrer les modifications</button>
+					<input type="submit" class="btn btn-success" value="Enregistrer les modifications" form="updateProfil"/>
 				</form>
 			</section>
 		</section>
