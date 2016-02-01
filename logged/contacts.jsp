@@ -76,8 +76,24 @@
 							</a>
 						</span>
 					</div>
-					<ul class="list-group" id="contact-list">
-					</ul>
+					<div id="membres" class="panel">
+						<ul class="list-inline">
+							<li class="list-group-item">
+								<div class="col-sm-2">
+									<img src="${pageContext.request.contextPath}/res/profil/default.jpg" class="img-responsive img-circle hidden-xs">
+								</div>
+								<div class="col-xs-10 col-sm-7">
+									<label>Ferroterzefeth</label>
+								</div>
+								<div>
+									<a class="btn btn-success btn-sm col-xs-2 col-sm-2">
+										<span class="glyphicon glyphicon-plus-sign"></span>
+									</a>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+						</ul>
+					</div>
 				</div>
 				<div id="membres" class="col-lg-6 panel ">
 					<h4>Demande d'ajout en attente</h4>
