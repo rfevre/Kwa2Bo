@@ -20,14 +20,17 @@ public class InsertGroupe extends HttpServlet {
     RequestDispatcher rd = null;
 
     String nomGroupe;
+    String[] membres = null;
     try{
       nomGroupe = StringEscapeUtils.escapeHtml4(request.getParameter("nomGroupe"));
+      nomGroupe = StringEscapeUtils.escapeJava(nomGroupe);
     }catch(Exception e) {
       throw new ServletException("Champs du nom de groupe vide.");
     }
 
     String mail = StringEscapeUtils.escapeHtml4(request.getRemoteUser());
-    String[] membres = request.getParameterValues("membre");
+    mail = StringEscapeUtils.escapeJava(mail);
+    membres = request.getParameterValues("membre");
 
     try {
       initCtx = new InitialContext();
@@ -51,13 +54,14 @@ public class InsertGroupe extends HttpServlet {
       ps = con.prepareStatement(query);
       ps.setString(1, mail);
       ps.executeUpdate();
-
-      for (int i = 0; i < membres.length; i++) {
-        query = "INSERT INTO kwa2bo_appartient(mail, idGroupe) " +
-              "VALUES (?,(SELECT MAX(idGroupe) AS idGroupe FROM kwa2bo_groupe));";
-        ps = con.prepareStatement(query);
-        ps.setString(1, StringEscapeUtils.escapeHtml4(membres[i]));
-        ps.executeUpdate();
+      if (membres != null) {
+        for (int i = 0; i < membres.length; i++) {
+          query = "INSERT INTO kwa2bo_appartient(mail, idGroupe) " +
+                "VALUES (?,(SELECT MAX(idGroupe) AS idGroupe FROM kwa2bo_groupe));";
+          ps = con.prepareStatement(query);
+          ps.setString(1, StringEscapeUtils.escapeHtml4(membres[i]));
+          ps.executeUpdate();
+        }
       }
     }catch (Exception e) {
       throw new ServletException("Erreur lors de la requête SQL.");

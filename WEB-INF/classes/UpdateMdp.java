@@ -22,7 +22,9 @@ public class UpdateMdp extends HttpServlet {
     String mdp = StringEscapeUtils.escapeHtml4(request.getParameter("mdp"));
     if (mdp.equals("") || mdp==null) throw new ServletException("Champs de mot de passe vide.");
     String mdp1 = StringEscapeUtils.escapeHtml4(request.getParameter("mdp1"));
+    mdp1 = StringEscapeUtils.escapeJava(mdp1);
     String mdp2 = StringEscapeUtils.escapeHtml4(request.getParameter("mdp2"));
+    mdp2 = StringEscapeUtils.escapeJava(mdp2);
     if (mdp1.equals("") || mdp1==null) throw new ServletException("Champs de mot de passe vide.");
     if (mdp2.equals("") || mdp2==null) throw new ServletException("Champs de mot de passe vide.");
     if (!mdp1.equals(mdp2)) throw new ServletException("Les deux mots de passe renseigné ne sont pas identiques.");

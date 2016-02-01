@@ -26,6 +26,7 @@ function displayGroupes(data) {
 }
 
 function displayConversation(data) {
+  console.log(data);
 	$("#messageArea .panel-body").empty();
 	$('#myModalLabel').empty();
 	$('#myModalLabel').append(data.Groupe.nom);

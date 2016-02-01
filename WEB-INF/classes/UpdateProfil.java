@@ -19,8 +19,11 @@ public class UpdateProfil extends HttpServlet {
     RequestDispatcher rd = null;
 
     String nom = StringEscapeUtils.escapeHtml4(request.getParameter("nom"));
+    nom = StringEscapeUtils.escapeJava(nom);
     String prenom = StringEscapeUtils.escapeHtml4(request.getParameter("prenom"));
+    prenom = StringEscapeUtils.escapeJava(prenom);
     String pseudo = StringEscapeUtils.escapeHtml4(request.getParameter("pseudo"));
+    pseudo = StringEscapeUtils.escapeJava(pseudo);
     String photo = "/ressources/default.jpg";
     if (request.getParameter("photo") != null) { photo = StringEscapeUtils.escapeHtml4(request.getParameter("photo")); }
     String mail = StringEscapeUtils.escapeHtml4(request.getRemoteUser());

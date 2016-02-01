@@ -22,18 +22,23 @@ public class Inscription extends HttpServlet {
     RequestDispatcher rd = null;
 
     String mail1 = StringEscapeUtils.escapeHtml4(request.getParameter("mail1"));
+    mail1 = StringEscapeUtils.escapeJava(mail1);
     String mail2 = StringEscapeUtils.escapeHtml4(request.getParameter("mail2"));
+    mail2 = StringEscapeUtils.escapeJava(mail2);
     if (mail1.equals("") || mail1==null) throw new ServletException("Champs de mail vide.");
     if (mail2.equals("") || mail2==null) throw new ServletException("Champs de mail vide.");
     if (!mail1.equals(mail2)) throw new ServletException("Les deux mails renseigné ne sont pas identiques.");
 
     String mdp1 = StringEscapeUtils.escapeHtml4(request.getParameter("mdp1"));
+    mdp1 = StringEscapeUtils.escapeJava(mdp1);
     String mdp2 = StringEscapeUtils.escapeHtml4(request.getParameter("mdp2"));
+    mdp2 = StringEscapeUtils.escapeJava(mdp2);
     if (mdp1.equals("") || mdp1==null) throw new ServletException("Champs de mot de passe vide.");
     if (mdp2.equals("") || mdp2==null) throw new ServletException("Champs de mot de passe vide.");
     if (!mdp1.equals(mdp2)) throw new ServletException("Les deux mots de passe renseigné ne sont pas identiques.");
 
     String pseudo = StringEscapeUtils.escapeHtml4(request.getParameter("pseudo"));
+    pseudo = StringEscapeUtils.escapeJava(pseudo);
     if (pseudo.equals("") || pseudo==null) throw new ServletException("Champs de pseudo vide.");
 
     try {

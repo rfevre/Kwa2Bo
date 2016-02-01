@@ -19,7 +19,9 @@ public class InsertMessage extends HttpServlet {
     ResultSet rs = null;
 
     String mail = StringEscapeUtils.escapeHtml4(request.getRemoteUser());
+    mail = StringEscapeUtils.escapeJava(mail);
     String texte = StringEscapeUtils.escapeHtml4(request.getParameter("content"));
+    texte = StringEscapeUtils.escapeJava(texte);
     Integer idGroupe;
 
     try {
