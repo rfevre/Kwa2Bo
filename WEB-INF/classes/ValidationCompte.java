@@ -49,7 +49,7 @@ public class ValidationCompte extends HttpServlet {
 
       request.setAttribute("message","Compte validé.");
       ServletContext servletContext = getServletContext();
-      RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/confirmation.jsp");
+      RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/login.jsp");
       dispatcher.forward(request, response);
     }catch (Exception e) {
       throw new ServletException("Erreur lors de la requête SQL." + e);

@@ -14,7 +14,7 @@
 	<script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
 	<title>Connexion - Kwa2Bo</title>
   <%
-    if (request.getRemoteUser() != null) {
+    if (request.isUserInRole("logged")) {
       RequestDispatcher rd = null;
       rd = getServletContext().getRequestDispatcher("/logged/conversations.jsp");
       rd.forward(request, response);
