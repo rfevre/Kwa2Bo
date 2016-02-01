@@ -12,6 +12,8 @@
 
 	<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
 	<script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/requetesAjax.js"></script>
+	<script src="${pageContext.request.contextPath}/js/contacts.js"></script>
 	<title>Conversation - Kwa2Bo</title>
 </head>
 <body>
@@ -76,23 +78,11 @@
 							</a>
 						</span>
 					</div>
-					<div id="membres" class="panel">
-						<ul class="list-inline">
-							<li class="list-group-item">
-								<div class="col-sm-2">
-									<img src="${pageContext.request.contextPath}/res/profil/default.jpg" class="img-responsive img-circle hidden-xs">
-								</div>
-								<div class="col-xs-10 col-sm-7">
-									<label>Ferroterzefeth</label>
-								</div>
-								<div>
-									<a class="btn btn-success btn-sm col-xs-2 col-sm-2">
-										<span class="glyphicon glyphicon-plus-sign"></span>
-									</a>
-								</div>
-								<div class="clearfix"></div>
-							</li>
-						</ul>
+					<div id="amis" class="panel">
+						<table class="table" id="contact-list">
+							<tbody>
+							</tbody>
+						</table>
 					</div>
 				</div>
 				<div id="membres" class="col-lg-6 panel ">

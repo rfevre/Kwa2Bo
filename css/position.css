@@ -114,6 +114,17 @@ section table tr td .btn {
 #formConversation textarea {
   margin-bottom: 5px;
 }
+
+#amis table tr td img {
+  max-width: 150px;
+  max-height: 50px;
+}
+
+#amis table tr td .btn {
+  width: 40px;
+  text-align: center;
+}
+
 /*
 body {
   padding-top: 10px;
