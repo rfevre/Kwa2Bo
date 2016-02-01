@@ -46,6 +46,11 @@ public class ValidationCompte extends HttpServlet {
       ps = con.prepareStatement(query);
       ps.setString(1,codeVerif);
       ps.executeUpdate();
+
+      request.setAttribute("message","Compte validé.");
+      ServletContext servletContext = getServletContext();
+      RequestDispatcher dispatcher = servletContext.getRequestDispatcher("/confirmation.jsp");
+      dispatcher.forward(request, response);
     }catch (Exception e) {
       throw new ServletException("Erreur lors de la requête SQL." + e);
     }finally {

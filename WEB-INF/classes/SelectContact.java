@@ -61,9 +61,9 @@ public class SelectContact extends HttpServlet {
         st = con.createStatement();
 
         if (!mail1.equals(mail)) {
-          rs2=st.executeQuery("select mail,pseudo,role from kwa2bo_utilisateur where mail='"+mail1+"' AND pseudo LIKE '" + critere + "%';");
+          rs2=st.executeQuery("select mail,pseudo,role from kwa2bo_utilisateur where mail='"+mail1+"' AND pseudo LIKE '" + critere + "%' ORDER BY pseudo ASC;");
         } else {
-          rs2=st.executeQuery("select mail,pseudo,role from kwa2bo_utilisateur where mail='"+mail2+"' AND pseudo LIKE '" + critere + "%';");
+          rs2=st.executeQuery("select mail,pseudo,role from kwa2bo_utilisateur where mail='"+mail2+"' AND pseudo LIKE '" + critere + "%' ORDER BY pseudo ASC;");
         }
         while (rs2.next()){
           contacts.add(new Utilisateur(rs2.getString("mail"),null,rs2.getString("pseudo"),rs2.getString("role")));

@@ -5,6 +5,7 @@ $('#formConversation textarea').keypress(function (e) {
   }
 });
 
+searchContact();
 timer = undefined;
 requeteAjax("servlet/SelectGroupe", displayGroupes);
 setInterval("requeteAjax('servlet/SelectGroupe', displayGroupes)", 2000);

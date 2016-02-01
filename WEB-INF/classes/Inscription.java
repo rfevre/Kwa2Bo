@@ -79,8 +79,7 @@ public class Inscription extends HttpServlet {
         to[0] = new InternetAddress(mail1);
         message.setRecipients(Message.RecipientType.TO, to);
         message.setSubject("Confirmation d'inscription sur Kwa2Bo !");
-        message.setContent("Pour comfirmer votre inscription veuillez suivez ce lien : "+
-        "<a href="+ lien +">" + "Lien de confirmation" + "</a>", "text/plain");
+        message.setContent("Pour comfirmer votre inscription veuillez suivez ce lien : " + lien , "text/plain");
         Transport.send(message);
       } catch (Exception e) {
         throw new ServletException("Error : "+e);

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<meta charset="utf-8"/>
+		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/lib/bootstrap/css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bubble.css"/>
@@ -28,7 +28,7 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>
-							<a class="navbar-brand" href="#">
+							<a class="navbar-brand" href="${pageContext.request.contextPath}/">
 								<span>Koi2Bo</span>
 							</a>
 						</div>
@@ -109,7 +109,7 @@
 				</div>
 				<aside id="formGroupe" class="panel panel-default col-md-6">
 					<h3>Nouveau groupe</h3>
-					<form action="${pageContext.request.contextPath}/servlet/InsertGroupe" method="GET">
+					<form action="${pageContext.request.contextPath}/servlet/InsertGroupe" method="GET"  autocomplete="off" >
 						<div class="form-group">
 							<label for="inputNomGroupe">Nom du groupe</label>
 							<input type="text" class="form-control" name="nomGroupe" placeholder="Exemple : La dream-team" id="inputNomGroupe"/>
@@ -119,7 +119,7 @@
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="input-group">
-										<input type="text" id="searchBar" class="form-control" placeholder="Pseudo" onKeyUp="searchContact()">
+										<input type="text" id="searchBar" class="form-control" placeholder="Pseudo" onKeyUp="searchContact()" />
 										<span class="input-group-btn">
 											<a class="btn btn-default" onclick="searchContact()">
 												<span class="glyphicon glyphicon-search text-muted"></span>
