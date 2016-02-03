@@ -7,10 +7,10 @@
     maxActive="8"
     maxIdle="4"
     maxWait="10000"
-    username="leleuj"
+    username="julien"
     password="moi"
     driverClassName="org.postgresql.Driver"
-    url="jdbc:postgresql://psqlserv/da2i"
+    url="jdbc:postgresql:kwa2bo"
   />
   	<!-- Définition des mails -->
    	<Resource name="mail/Session" auth="Container" type="javax.mail.Session"
@@ -40,4 +40,9 @@
     userRoleTable="kwa2bo_utilisateur"
     roleNameCol="role"
   />
+
+  <Valve className="org.apache.catalina.valves.AccessLogValve"
+    prefix="Kwa2Bo"
+    suffix=".txt"
+    pattern="common"/>
 </Context>
