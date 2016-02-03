@@ -50,7 +50,7 @@ public class InsertContacts extends HttpServlet {
       try {
         ps.close();
         con.close();
-        response.sendRedirect("..");
+        response.sendRedirect("../logged/contacts.jsp");
       }catch(Exception e) {
         throw new ServletException("Erreur lors de la fermeture de connection à la BDD.");
       }

@@ -9,23 +9,20 @@ function addSuggestContact(data) {
 		line = "<tr>";
 		line += "<td><img src=\"../res/profil/default.jpg\" class=\"img-responsive img-circle hidden-xs\"/></td>";
 		line += "<td><label>"+ data.Utilisateurs[i].pseudo +"</label></td>\n";
-		line += "<td><a class=\"btn btn-success\"><span class=\"glyphicon glyphicon-plus-sign\"></span></a></td>\n";
+		line += "<td><a href=\"../servlet/InsertContacts?contact=" + data.Utilisateurs[i].email +"\" class=\"btn btn-success\"><span class=\"glyphicon glyphicon-plus-sign\"></span></a></td>\n";
 		line += "</tr>\n";
-		/*console.log(data.Utilisateur.contacts[i]);*/
 		$("#searchContact-list tbody").append(line);
 	}
 }
 
 function addListContact(data) {
 	$("#contact-list tbody").empty();
-			console.log(data);
 	var line = "";
 	for (var i = 0; i < data.Utilisateur.contacts.length; i++) {
 		line = "<tr>";
 		line += "<td><img src=\"../res/profil/default.jpg\" class=\"img-responsive img-circle hidden-xs\"/></td>";
 		line += "<td><label>"+ data.Utilisateur.contacts[i].pseudo +"</label></td>\n";
 		line += "</tr>\n";
-		/*console.log(data.Utilisateur.contacts[i]);*/
 		$("#contact-list tbody").append(line);
 	}
 }
@@ -38,5 +35,4 @@ function searchContact() {
 function searchListContact() {
 	var parameter = $("input[id=searchBarContact]").val();
 	requeteAjaxParam("../servlet/SelectContact", { critere : parameter }, addListContact);
-	console.log('bite');
 }
