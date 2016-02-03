@@ -44,27 +44,32 @@ public class InsertGroupe extends HttpServlet {
     try {
       // On insére le groupe dans la table
       String query = "INSERT INTO kwa2bo_groupe(nomGroupe) " +
-                      "VALUES (?);";
+                      "VALUES (?) RETURNING idGroupe;";
       ps = con.prepareStatement(query);
       ps.setString(1, nomGroupe);
-      ps.executeUpdate();
+      ps.execute();
+      rs = ps.getResultSet();
+      rs.next();
+      Integer idGroupe = rs.getInt("idGroupe");
       // On enregistre l'utilisateur courant dans ce groupe
       query = "INSERT INTO kwa2bo_appartient(mail, idGroupe) " +
-              "VALUES (?,(SELECT MAX(idGroupe) AS idGroupe FROM kwa2bo_groupe));";
+              "VALUES (?,?);";
       ps = con.prepareStatement(query);
       ps.setString(1, mail);
+      ps.setInt(2, idGroupe);
       ps.executeUpdate();
       if (membres != null) {
         for (int i = 0; i < membres.length; i++) {
           query = "INSERT INTO kwa2bo_appartient(mail, idGroupe) " +
-                "VALUES (?,(SELECT MAX(idGroupe) AS idGroupe FROM kwa2bo_groupe));";
+                "VALUES (?,?);";
           ps = con.prepareStatement(query);
           ps.setString(1, StringEscapeUtils.escapeHtml4(membres[i]));
+          ps.setInt(2, idGroupe);
           ps.executeUpdate();
         }
       }
     }catch (Exception e) {
-      throw new ServletException("Erreur lors de la requête SQL.");
+      throw new ServletException("Erreur lors de la requête SQL." + e);
     }finally {
       try {
         ps.close();
