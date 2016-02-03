@@ -26,12 +26,11 @@ function displayGroupes(data) {
 }
 
 function displayConversation(data) {
-  console.log(data);
+	console.log(data);
 	$("#messageArea .panel-body").empty();
 	$('#myModalLabel').empty();
 	$('#myModalLabel').append(data.Groupe.nom);
 	$('#participants').empty();
-
 	var line;
 	for (var i = 0; i < data.Groupe.participants.length; i++) {
 		line = "<div class=\"label label-danger\">";
@@ -108,7 +107,6 @@ function addSuggestContact(data) {
 	$("#contact-list").empty();
 	var line = "";
 	for (var i = 0; i < data.Utilisateur.contacts.length; i++) {
-		/*console.log(data.Utilisateur.contacts[0].pseudo);*/
 		line = "<li class=\"list-group-item\">\n";
 		line +=	"\t<div class=\"col-sm-3\">\n";
 		line +=	"\t\t<img src=\"res/profil/default.jpg\" class=\"img-responsive img-circle hidden-xs\"/>\n";
@@ -123,7 +121,6 @@ function addSuggestContact(data) {
 		line += "\t</div>\n";
 		line += "\t<div class=\"clearfix\"></div>\n";
 		line += "</li>\n";
-		console.log(data.Utilisateur.contacts[i]);
 		$("#contact-list").append(line);
 	}
 }

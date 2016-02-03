@@ -78,7 +78,7 @@
 							</a>
 						</span>
 					</div>
-					<div id="amis" class="panel">
+					<div id="amis" class="panel amis">
 						<table class="table" id="searchContact-list">
 							<tbody>
 							</tbody>
@@ -87,20 +87,20 @@
 				</div>
 				<div id="membres" class="col-lg-6 panel ">
 					<h4>Liste de contacts</h4>
-          <div class="input-group">
-						<input type="text" id="searchBarContact" class="form-control" placeholder="Chercher un ami..." onKeyUp="searchListContact()" autocomplete="off">
+          			<div class="input-group">
+						<input type="text" id="searchBarContact" class="form-control" placeholder="Chercher un ami..." onKeyUp="searchListContact()" autocomplete="off"/>
 						<span class="input-group-btn">
 							<a class="btn btn-default" onclick="searchListContact()">
 								<span class="glyphicon glyphicon-search text-muted"></span>
 							</a>
 						</span>
 					</div>
-          <div id="amisList" class="panel">
-            <table class="table" id="contact-list">
-              <tbody>
-              </tbody>
-            </table>
-          </div>
+					<div id="amisList" class="panel amis">
+						<table class="table" id="contact-list">
+							<tbody>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 	</div>
