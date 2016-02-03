@@ -20,7 +20,7 @@ public class InsertMessage extends HttpServlet {
 
     String mail = StringEscapeUtils.escapeHtml4(request.getRemoteUser());
     mail = StringEscapeUtils.escapeJava(mail);
-    String texte = StringEscapeUtils.escapeHtml4(request.getParameter("content"));
+    String texte = StringEscapeUtils.escapeHtml4(new String (request.getParameter("content").getBytes("iso-8859-1"), "UTF-8"));
     texte = StringEscapeUtils.escapeJava(texte);
     Integer idGroupe;
 

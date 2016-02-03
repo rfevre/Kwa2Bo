@@ -26,7 +26,6 @@ function displayGroupes(data) {
 }
 
 function displayConversation(data) {
-	console.log(data);
 	$("#messageArea .panel-body").empty();
 	$('#myModalLabel').empty();
 	$('#myModalLabel').append(data.Groupe.nom);
@@ -75,7 +74,6 @@ $(function () {
         var $form = $(this);
         var formdata = (window.FormData) ? new FormData($form[0]) : null;
         var data = (formdata !== null) ? formdata : $form.serialize();
-
         $.ajax({
             url: $form.attr('action'),
             type: $form.attr('method'),

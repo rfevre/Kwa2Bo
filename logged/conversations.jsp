@@ -94,7 +94,7 @@
 									<div class="panel-body">
 									</div>
 								</div>
-								<form id="formConversation" method="post" action="${pageContext.request.contextPath}/servlet/InsertMessage" enctype="multipart/form-data">
+								<form id="formConversation" method="post" action="${pageContext.request.contextPath}/servlet/InsertMessage" enctype="multipart/form-data; charset=UTF-8">
 								    <textarea class="form-control" placeholder="Tapez votre message ici ..." name="content"></textarea>
 								    <span class="btn btn-default btn-file">
 								    	<span class="glyphicon glyphicon-camera"></span>
