@@ -11,29 +11,21 @@ base donné doit nécessiter le moins de travail possible.
 
 ---
 
-### TODO :
+### DONE :
 
-- [x] Faire le MCD/MLD
+- [x] MCD/MLD
 - [x] Créer la base de donnée
 - [x] Maquettes du site
 - [ ] Technologies utilisé :
-  - [ ] AJAX
+  - [x] AJAX
   - [x] JSP
   - [x] Servlet
-  - [ ] MAIL
+  - [x] MAIL
   - [x] EL expression
   - [x] pool
   - [x] realm
   - [ ] Logger
-  - [ ] Valve
-- [ ] Page JSP/HTML
-  - [x] Page de login
-  - [ ] Page d'inscription
-  - [ ] Page validation du compte
-- [ ] Servlets
-  - [ ] Servlet controller
-  - [ ] Servlet identification
-  - [x] Servlet inscription
+  - [x] Valve
 
 
 ---
