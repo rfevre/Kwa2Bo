@@ -94,14 +94,14 @@ INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Cattez','Edouard');
 
 INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('ferrot@gmail.com',md5('rocher'),'Ferrot',1,'logged',md5('Ferrot'));
 INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('fevrer@gmail.com',md5('rocher'),'Psycos',2,'logged',md5('Psycos'));
-INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('leleu@gmail.com',md5('rocher'),'A-La-Queue',3,'logged',md5('A-La-Queue'));
-INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('catez@gmail.com',md5('rocher'),'Le_Maboule',4,'logged',md5('Le_Maboule'));
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('leleu@gmail.com',md5('rocher'),'Leleuj',3,'logged',md5('Leleuj'));
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('cattez@gmail.com',md5('rocher'),'Catteze',4,'logged',md5('Catteze'));
 
 INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','fevrer@gmail.com',0);
 INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','leleu@gmail.com',0);
 
 INSERT INTO Kwa2Bo_groupe (nomGroupe) VALUES ('Le paradis sur Terre');
-INSERT INTO Kwa2Bo_groupe (nomGroupe) VALUES ('Ici c est Paris');
+INSERT INTO Kwa2Bo_groupe (nomGroupe) VALUES ('Ici c est Lille');
 
 INSERT INTO Kwa2Bo_appartient VALUES ('ferrot@gmail.com',1);
 INSERT INTO Kwa2Bo_appartient VALUES ('fevrer@gmail.com',1);
