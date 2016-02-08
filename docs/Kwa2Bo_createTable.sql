@@ -109,8 +109,8 @@ INSERT INTO Kwa2Bo_appartient VALUES ('ferrot@gmail.com',2);
 INSERT INTO Kwa2Bo_appartient VALUES ('fevrer@gmail.com',2);
 INSERT INTO Kwa2Bo_appartient VALUES ('leleu@gmail.com',2);
 
-INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (1,'fevrer@gmail.com','Thomas tu pue');
-INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (1,'ferrot@gmail.com','Non c est toi qui pue');
+INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (1,'fevrer@gmail.com','MySQL est génial !');
+INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (1,'ferrot@gmail.com','Moi je préfére PHPmyAdmin !');
 INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (2,'ferrot@gmail.com','Bonjour');
 INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (2,'leleu@gmail.com','Oui bonjour ?');
 INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (2,'ferrot@gmail.com','Non toi bonjour!');
