@@ -18,63 +18,15 @@
     <body>
       <jsp:useBean id="utilisateur" class="beans.Utilisateur" scope="request"/>
       <div class="container">
-        <header class="row">
-          <script type="text/javascript">
-          function open_infos()
-          {
-            alert('${message}');
-          }
-          </script>
-          <c:if test="${not empty message}">
-            <script type="text/javascript"> open_infos(); </script>
-          </c:if>
-          <nav class="navbar navbar-default">
-            <div class="container-fluid">
-              <!-- Pour les ecrans de telephone-->
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-1">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="${pageContext.request.contextPath}/">
-                  <span>Koi2Bo</span>
-                </a>
-              </div>
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <a href="${pageContext.request.contextPath}/logged/contacts.jsp">
-                      <span class="glyphicon glyphicon-user"></span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="${pageContext.request.contextPath}">
-                      <span class="glyphicon glyphicon-comment"></span>
-                    </a>
-                  </li>
-                  <li class="active">
-                    <a href="${pageContext.request.contextPath}/servlet/SelectProfil">
-                      <span class="glyphicon glyphicon-cog"></span>
-                    </a>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                      <span>${pageContext.request.remoteUser}</span>
-                      <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li>
-                        <a href="${pageContext.request.contextPath}/servlet/Logout">Déconnexion</a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </header>
+        <jsp:include page="../header.jsp">
+            <jsp:param name="page" value="parametres"/>
+        </jsp:include>
+        <script type="text/javascript">
+        function open_infos()
+        {
+          alert('${message}');
+        }
+        </script>
         <section class="row">
           <h3>Paramètres</h3>
           <section id="discussions" class="col-md-5">
@@ -91,10 +43,6 @@
                 <label for="inputPrenom">Prénom</label>
                 <input type="text" class="form-control" placeholder="Exemple : Michel" value="${utilisateur.profil.prenom}" name="prenom" id="inputPrenom"/>
               </div>
-              <!-- <div class="form-group">
-              <label for="inputEmail">Adresse email</label>
-              <input type="email" class="form-control" placeholder="Exemple : JacquieMichel@XXX.com" value="${utilisateur.email}" name="mail" id="inputEmail"/>
-            </div> -->
             <div class="form-group">
               <button type="button" data-toggle="modal" data-target="#formMdp">
                 Modifier le mot de passe
