@@ -26,7 +26,7 @@ section table tr td .btn {
 }
 
 #discussions {
-  height: 550px;
+  height: 350px;
   overflow-x: hidden;
   overflow-y: auto;
   word-wrap: break-word;
@@ -130,6 +130,14 @@ section table tr td .btn {
   text-align: center;
 }
 
+#formGroupe form {
+  margin-bottom: 10px;
+}
+
+footer .panel-body img {
+  max-height: 50px;
+  margin-right: 5px;
+}
 /*
 body {
   padding-top: 10px;

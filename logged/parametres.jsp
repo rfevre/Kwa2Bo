@@ -29,7 +29,7 @@
         </script>
         <section class="row">
           <h3>Paramètres</h3>
-          <section id="discussions" class="col-md-5">
+          <section class="col-md-5">
             <form action="${pageContext.request.contextPath}/servlet/UpdateProfil" method="POST" id="updateProfil">
               <div class="form-group">
                 <label for="inputPseudo">Pseudo</label>
@@ -82,6 +82,7 @@
           </div>
         </div>
       </section>
+      <%@include file="../footer.jsp" %>
     </div>
   </body>
 </html>

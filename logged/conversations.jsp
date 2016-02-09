@@ -94,6 +94,7 @@
 					</form>
 				</aside>
 			</section>
+			<%@include file="../footer.jsp" %>
 		</div>
 	</body>
 </html>

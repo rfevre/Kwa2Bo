@@ -45,6 +45,7 @@ footer nav div ul li a {
 	color: white;
 }
 
-#formGroupe {
-	/*background: rgb(180,20,117);*/
+footer .panel-body {
+	background: rgb(180,20,117);
+	color: white;
 }

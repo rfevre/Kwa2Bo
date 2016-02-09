@@ -7,6 +7,15 @@
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
   version="3.0">
 
+<context-param>
+  <param-name>logoLille1</param-name>
+  <param-value>/res/img/logoLille1.jpg</param-value>
+</context-param>
+<context-param>
+  <param-name>logoDa2i</param-name>
+  <param-value>/res/img/logoDa2i.jpg</param-value>
+</context-param>
+
 <servlet>
   <servlet-name>invoker</servlet-name>
   <servlet-class>org.apache.catalina.servlets.InvokerServlet</servlet-class>
