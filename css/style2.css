@@ -1,0 +1,59 @@
+.container header nav div
+{
+	background-color: #2b4170;
+  background: -moz-linear-gradient(top, #3b5998, #2b4170);
+  background: -ms-linear-gradient(top, #3b5998, #2b4170);
+  background: -webkit-linear-gradient(top, #3b5998, #2b4170);
+}
+
+.container header nav div div :focus span
+{
+	color: rgb(180,20,117);
+}
+
+.container header nav div div span
+{
+	color: white;
+}
+
+.container header nav div div .active span
+{
+	color: rgb(180,20,117);
+}
+
+#log a
+{
+	color: white;
+}
+
+/*#discussions table tbody tr td .btn {
+	background: rgb(180,20,117);
+	color: white;
+}*/
+
+footer nav div ul li a {
+	background-color: #2b4170;
+  background: -moz-linear-gradient(top, #3b5998, #2b4170);
+  background: -ms-linear-gradient(top, #3b5998, #2b4170);
+  background: -webkit-linear-gradient(top, #3b5998, #2b4170);
+	color: white;
+}
+
+#conversation .modal-dialog .modal-content {
+	background-color: #2b4170;
+  background: -moz-linear-gradient(top, #3b5998, #2b4170);
+  background: -ms-linear-gradient(top, #3b5998, #2b4170);
+  background: -webkit-linear-gradient(top, #3b5998, #2b4170);
+}
+
+#conversation h3 {
+	color: white;
+}
+
+footer .panel-body {
+	background-color: #2b4170;
+  background: -moz-linear-gradient(top, #3b5998, #2b4170);
+  background: -ms-linear-gradient(top, #3b5998, #2b4170);
+  background: -webkit-linear-gradient(top, #3b5998, #2b4170);
+	color: white;
+}

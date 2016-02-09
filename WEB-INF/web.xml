@@ -15,6 +15,10 @@
   <param-name>logoDa2i</param-name>
   <param-value>/res/img/logoDa2i.jpg</param-value>
 </context-param>
+<context-param>
+  <param-name>style</param-name>
+  <param-value>/css/style.css</param-value>
+</context-param>
 
 <servlet>
   <servlet-name>invoker</servlet-name>

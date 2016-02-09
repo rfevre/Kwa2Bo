@@ -5,7 +5,7 @@
 
 .container header nav div div :focus span
 {
-	color: rgb(180,20,117);
+	color: #2b4170;
 }
 
 .container header nav div div span
@@ -15,7 +15,7 @@
 
 .container header nav div div .active span
 {
-	color: rgb(180,20,117);
+	color: #2b4170;
 }
 
 #log a
@@ -31,10 +31,6 @@
 footer nav div ul li a {
 	background: rgb(180,20,117);
 	color: white;
-}
-
-#conversation .modal-dialog .modal-content {
- 	background: rgb(180,20,117);
 }
 
 #conversation .modal-dialog .modal-content {
