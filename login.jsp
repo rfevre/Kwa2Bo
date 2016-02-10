@@ -47,8 +47,8 @@
 		<section class="row">
 			<img src="${pageContext.request.contextPath}/res/img/logoUniv.svg" alt="logo de l'université de Lille 1" class="col-md-7 hidden-xs"/>
 			<div id="inscription" class="col-md-5">
-				<legend><h1>Inscription</h1></legend>
-				<form action="${pageContext.request.contextPath}/servlet/Inscription" method="POST" id="inscription" class="form-group">
+				<h1>Inscription</h1>
+				<form action="${pageContext.request.contextPath}/servlet/Inscription" method="POST" id="formInscription" class="form-group">
 					<div id="divPseudo" class="">
 						<p>
 							<input type="text" class="form-control" placeholder="Pseudo" name="pseudo" onKeyUp="updateStateOf(divPseudo, 'Pseudo trop court');"/>
@@ -83,6 +83,7 @@
 				</form>
 			</div>
 		</section>
+    <%@include file="../footer.jsp" %>
 	</div>
 </body>
 </html>

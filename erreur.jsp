@@ -26,10 +26,12 @@ pageEncoding="UTF-8" isErrorPage="true"%>
             </a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div id = "acceuil" class="pull-right">
-            <form method="POST" action="${pageContext.request.contextPath}/">
-              <input type="submit" class="btn btn-success" value="Accueil Kwa2Bo"/>
-            </form>
+          <div id="collapse-1" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <a href="${pageContext.request.contextPath}/">Accueil Kwa2Bo</a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
@@ -45,6 +47,7 @@ pageEncoding="UTF-8" isErrorPage="true"%>
         "</B> est survenu.
       </div>
     </section>
+    <%@include file="../footer.jsp" %>
   </div>
 </body>
 </html>

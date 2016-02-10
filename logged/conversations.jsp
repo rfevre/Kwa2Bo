@@ -11,8 +11,8 @@
 		<link rel="stylesheet" type="text/css" href=${pageContext.request.contextPath}${pageContext.servletContext.getInitParameter("style")} />
 
 		<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
-		<script src="${pageContext.request.contextPath}/js/requetesAjax.js" async="false"></script>
-		<script src="${pageContext.request.contextPath}/js/conversations.js" async="false"></script>
+		<script src="${pageContext.request.contextPath}/js/requetesAjax.js" async ></script>
+		<script src="${pageContext.request.contextPath}/js/conversations.js" async ></script>
 		<script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
 		<title>Conversation - Kwa2Bo</title>
 	</head>
@@ -49,7 +49,7 @@
 									<div class="panel-body">
 									</div>
 								</div>
-								<form id="formConversation" method="post" action="${pageContext.request.contextPath}/servlet/InsertMessage" enctype="multipart/form-data; charset=UTF-8">
+								<form id="formConversation" method="post" action="${pageContext.request.contextPath}/servlet/InsertMessage" enctype="multipart/form-data">
 								    <textarea class="form-control" placeholder="Tapez votre message ici ..." name="content"></textarea>
 								    <span class="btn btn-default btn-file">
 								    	<span class="glyphicon glyphicon-camera"></span>
@@ -69,7 +69,7 @@
 							<label for="inputNomGroupe">Nom du groupe</label>
 							<input type="text" class="form-control" name="nomGroupe" placeholder="Exemple : La dream-team" id="inputNomGroupe"/>
 						</div>
-						<label for="exampleInputEmail1">Ajouter des membres</label>
+						<label>Ajouter des membres</label>
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-lg-6">
