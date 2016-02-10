@@ -46,7 +46,6 @@
 		</header>
 		<section class="row">
       <div id="info">
-        test
       </div>
 			<img src="${pageContext.request.contextPath}/res/img/logoUniv.svg" alt="logo de l'université de Lille 1" class="col-md-7 hidden-xs"/>
 			<div id="inscription" class="col-md-5">
@@ -92,13 +91,14 @@
     function open_infos()
     {
       $("#info").empty();
-      $("#info").append("<div class=\"alert alert-warning\">${message}");
+      $("#info").append("<div class=\"alert alert-danger\">");
+      $("#info .alert").append("<strong>${param.message}</strong>");
       $("#info").append("</div>");
     }
   </script>
-  <c:if test="${not empty message}">
+  <c:if test="${not empty param.message}">
     <script type="text/javascript">
-      console.log("test");
+      open_infos();
     </script>
   </c:if>
 </body>
