@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS Kwa2Bo_contacts(
 
 CREATE TABLE IF NOT EXISTS Kwa2Bo_groupe (
 	idGroupe SERIAL,
-	nomGroupe TEXT,
+	nomGroupe TEXT NOT NULL DEFAULT 'Unnamed',
 	CONSTRAINT pk_groupe
 	PRIMARY KEY(idGroupe)
 );

@@ -7,5 +7,6 @@
     </div>
     <a href="https://www-iut.univ-lille1.fr/" class="pull-right"><img src=${pageContext.request.contextPath}${pageContext.servletContext.getInitParameter("logoLille1")} alt="Logo IUT" class="img-rounded"/></a>
     <a href="http://da2i.univ-lille1.fr/" class="pull-right"><img src=${pageContext.request.contextPath}${pageContext.servletContext.getInitParameter("logoDa2i")} alt="Logo Da2i" class="pull-right img-rounded md-hidden"/></a>
+    <a href="https://validator.w3.org/check/referer" class="pull-right"><img src=${pageContext.request.contextPath}${pageContext.servletContext.getInitParameter("logoW3C")} alt="Logo IUT" class="img-rounded"/></a>
   </div>
 </footer>

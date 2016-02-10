@@ -19,6 +19,10 @@
   <param-name>style</param-name>
   <param-value>/css/style2.css</param-value>
 </context-param>
+<context-param>
+  <param-name>logoW3C</param-name>
+  <param-value>/res/img/w3c_validate.png</param-value>
+</context-param>
 
 <servlet>
   <servlet-name>invoker</servlet-name>
