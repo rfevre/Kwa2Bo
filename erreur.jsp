@@ -37,17 +37,25 @@ pageEncoding="UTF-8" isErrorPage="true"%>
     </header>
     <section class="row">
       <img src="${pageContext.request.contextPath}/res/img/Panneau_attention.svg" alt="panneau attention" class="col-md-7 hidden-xs" width="500" height="400" />
-      <div id="inscription" class="col-md-5">
-        <h1>Page de gestion d'erreur</h1>
-        Erreur : <strong>"${message}${param.message}
-        <%
-          if (exception!=null) out.print(exception.getMessage());
-          if (request.isUserInRole("undef")) {
-            out.print("Vérifiez vos mails");
-            session.invalidate();
-          }
-        %>
-        "</strong>
+      <div class="col-md-5">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+              <h1 class="panel-title">
+                <strong>Page de gestion d'erreur</strong>
+              </h1>
+          </div>
+          <div class="panel-body">
+          Erreur : <strong>"${message}${param.message}
+          <%
+            if (exception!=null) out.print(exception.getMessage());
+            if (request.isUserInRole("undef")) {
+              out.print("Vérifiez vos mails");
+              session.invalidate();
+            }
+          %>
+          "</strong>
+          </div>
+        </div>
       </div>
     </section>
     <%@include file="../footer.jsp" %>
