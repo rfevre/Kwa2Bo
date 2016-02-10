@@ -46,11 +46,25 @@ function updateStateMail(div, errorMsg) {
 }
 
 function verifForm() {
-	var inputsNotEmpty = isNotEmpty(divPseudo) && isNotEmpty(divMdp1.firstElementChild.firstElementChild);
+	var inputsNotEmpty = isNotEmpty(divPseudo) && isNotEmpty(divMail1.firstElementChild.firstElementChild) && isNotEmpty(divMail2.firstElementChild.firstElementChild) && isNotEmpty(divMdp1.firstElementChild.firstElementChild) && isNotEmpty(divMdp2.firstElementChild.firstElementChild);
 	var isMail1 = isMail(divMail1.firstElementChild.firstElementChild);
 	var isMail2 = isMail(divMail2.firstElementChild.firstElementChild);
 	var mailsEquals = (divMail1.firstElementChild.firstElementChild.value == divMail2.firstElementChild.firstElementChild.value);
 	var passwordsEquals = (divMdp1.firstElementChild.firstElementChild.value == divMdp2.firstElementChild.firstElementChild.value);
-
+	var errorMsg = "";
+	if (!inputsNotEmpty) {
+		errorMsg += "Un ou plusieurs champs sont vides<br/>";
+	}
+	if (!mailsEquals) {
+		errorMsg += "Les adresses mails sont différentes<br/>";
+	}
+	if (!passwordsEquals) {
+		errorMsg += "Les mots de passes sont différents<br/>";
+	}
+	console.log(errorMsg);
+	$("#inscription").children(".alert-danger").remove();
+	if (errorMsg != "") {
+		$("#inscription").append("<div class=\"alert alert-danger\" role=\"alert\"><strong>"+ errorMsg +"</strong></div>");
+	}
 	return (inputsNotEmpty && isMail1 && isMail2 && mailsEquals && passwordsEquals);
 }
