@@ -14,7 +14,6 @@ pageEncoding="UTF-8" isErrorPage="true"%>
   <title>Page d'erreur - Kwa2Bo</title>
 </head>
 <body>
-
   <div class="container">
     <header class="row">
       <nav class="navbar navbar-default">
@@ -27,7 +26,7 @@ pageEncoding="UTF-8" isErrorPage="true"%>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div id="collapse-1" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right" id="menu">
               <li>
                 <a href="${pageContext.request.contextPath}/">Accueil Kwa2Bo</a>
               </li>
@@ -40,7 +39,7 @@ pageEncoding="UTF-8" isErrorPage="true"%>
       <img src="${pageContext.request.contextPath}/res/img/Panneau_attention.svg" alt="panneau attention" class="col-md-7 hidden-xs" width="500" height="400" />
       <div id="inscription" class="col-md-5">
         <h1>Page de gestion d'erreur</h1>
-        Un probleme de type <B>"${message}
+        Erreur : <strong>"${message}${param.message}
         <%
           if (exception!=null) out.print(exception.getMessage());
           if (request.isUserInRole("undef")) {
@@ -48,7 +47,7 @@ pageEncoding="UTF-8" isErrorPage="true"%>
             session.invalidate();
           }
         %>
-        "</B> est survenu.
+        "</strong>
       </div>
     </section>
     <%@include file="../footer.jsp" %>

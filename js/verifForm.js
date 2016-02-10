@@ -26,7 +26,7 @@ function updateStateOf(div,errorMsg) {
 }
 
 function isMail(input) {
-	var mail = input.value; 
+	var mail = input.value;
 	var regex = new RegExp('^[0-9a-z._-]+@{1}[0-9a-z.-]{2,}[.]{1}[a-z]{2,5}$','i');
 	return regex.test(mail);
 }
@@ -43,4 +43,8 @@ function updateStateMail(div, errorMsg) {
 		removeInfo(div);
 		addInfo(div, errorMsg);
 	}
+}
+
+function verifForm() {
+	return true;
 }
