@@ -45,6 +45,9 @@
 			</nav>
 		</header>
 		<section class="row">
+      <div id="info">
+        test
+      </div>
 			<img src="${pageContext.request.contextPath}/res/img/logoUniv.svg" alt="logo de l'université de Lille 1" class="col-md-7 hidden-xs"/>
 			<div id="inscription" class="col-md-5">
 				<h1>Inscription</h1>
@@ -74,10 +77,10 @@
 						<span class="" aria-hidden="true"></span>
 					</div>
 					<div id="divMdp2" class="">
-	          			<p>
-	          				<input type="password" class="form-control" placeholder="Confirmez mot de passe" name="mdp2" onKeyUp="updateStateOf(divMdp2, 'Mot de passe trop court');"/>
-	          			</p>
-	          			<span class="" aria-hidden="true"></span>
+      			<p>
+      				<input type="password" class="form-control" placeholder="Confirmez mot de passe" name="mdp2" onKeyUp="updateStateOf(divMdp2, 'Mot de passe trop court');"/>
+      			</p>
+      			<span class="" aria-hidden="true"></span>
 					</div>
 					<input type="submit" value="Inscription" class="btn btn-success"/>
 				</form>
@@ -85,5 +88,18 @@
 		</section>
     <%@include file="../footer.jsp" %>
 	</div>
+  <script type="text/javascript">
+    function open_infos()
+    {
+      $("#info").empty();
+      $("#info").append("<div class=\"alert alert-warning\">${message}");
+      $("#info").append("</div>");
+    }
+  </script>
+  <c:if test="${not empty message}">
+    <script type="text/javascript">
+      console.log("test");
+    </script>
+  </c:if>
 </body>
 </html>

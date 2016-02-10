@@ -21,16 +21,9 @@
         <jsp:include page="../header.jsp">
             <jsp:param name="page" value="parametres"/>
         </jsp:include>
-        <script type="text/javascript">
-        function open_infos()
-        {
-          alert('${message}');
-        }
-        </script>
-        <c:if test="${not empty message}">
-          <script type="text/javascript"> open_infos(); </script>
-        </c:if>
         <section class="row">
+          <div id="info">
+          </div>
           <h3>Paramètres</h3>
           <section class="col-md-5">
             <form action="${pageContext.request.contextPath}/servlet/UpdateProfil" method="POST" id="updateProfil">
@@ -87,5 +80,18 @@
       </section>
       <%@include file="../footer.jsp" %>
     </div>
+    <script type="text/javascript">
+      function open_infos()
+      {
+        $("#info").empty();
+        $("#info").append("<div class=\"alert alert-warning\">${message}");
+        $("#info").append("</div>");
+      }
+    </script>
+    <c:if test="${not empty message}">
+      <script type="text/javascript">
+        open_infos();
+      </script>
+    </c:if>
   </body>
 </html>
