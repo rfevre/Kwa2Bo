@@ -34,7 +34,6 @@ public class InsertMessage extends HttpServlet {
     String cheminImage = "";
     Part filePart = request.getPart("image");
     String fileName = getFileName(filePart);
-    // TODO : je pense que le bug viens d'ici, je ne sais pas quoi test, pour pas rentré dans cette boucle
     if (!fileName.equals("")){
       String path = getServletContext().getRealPath("/img/")+mail;
 
