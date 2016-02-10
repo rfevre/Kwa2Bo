@@ -22,6 +22,7 @@ function addListContact(data) {
 		line = "<tr>";
 		line += "<td><img src=\"../res/profil/default.jpg\" class=\"img-responsive img-circle hidden-xs\"/></td>";
 		line += "<td><label>"+ data.Utilisateur.contacts[i].pseudo +"</label></td>\n";
+		line += "<td><a href=\"../servlet/DeleteContacts?contact=" + data.Utilisateur.contacts[i].email +"\" class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-trash\"></span></a></td>\n";
 		line += "</tr>\n";
 		$("#contact-list tbody").append(line);
 	}
