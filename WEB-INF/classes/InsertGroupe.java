@@ -21,11 +21,11 @@ public class InsertGroupe extends HttpServlet {
 
     String nomGroupe;
     String[] membres = null;
-    try{
+    if (request.getParameter("nomGroupe")==null || request.getParameter("nomGroupe").equals("")) {
+      nomGroupe = "Unnamed";
+    } else {
       nomGroupe = StringEscapeUtils.escapeHtml4(request.getParameter("nomGroupe"));
       nomGroupe = StringEscapeUtils.escapeJava(nomGroupe);
-    }catch(Exception e) {
-      throw new ServletException("Champs du nom de groupe vide.");
     }
 
     String mail = StringEscapeUtils.escapeHtml4(request.getRemoteUser());
