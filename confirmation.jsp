@@ -39,7 +39,7 @@
       <section class="row">
       <img src="${pageContext.request.contextPath}/res/img/logoUniv.svg" alt="logo de l'université de Lille 1" class="col-md-7 hidden-xs"/>
   		<div id="inscription" class="col-md-5">
-  		<legend><h1>Confirmation d'inscription</h1></legend>
+  		<h1>Confirmation d'inscription</h1>
       <%
         String codeVerif = request.getParameter("codeVerif");
         if (codeVerif!=null) { %>

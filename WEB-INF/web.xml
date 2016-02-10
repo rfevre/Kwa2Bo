@@ -61,7 +61,7 @@
 </resource-ref> -->
 
 <session-config>
-  <session-timeout>15</session-timeout>
+  <session-timeout>5</session-timeout>
 </session-config>
 
 <welcome-file-list>
@@ -82,26 +82,26 @@
     <url-pattern>/res/*</url-pattern>
     <url-pattern>/js/*</url-pattern>
     <url-pattern>/lib/*</url-pattern>
+    <url-pattern>/login.jsp</url-pattern>
     <url-pattern>/erreur.jsp</url-pattern>
     <url-pattern>/confirmation.jsp</url-pattern>
     <url-pattern>/servlet/Inscription</url-pattern>
     <url-pattern>/servlet/ValidationCompte</url-pattern>
-    <url-pattern>/servlet/Test</url-pattern>
   </web-resource-collection>
 </security-constraint>
 
 <security-constraint>
   <web-resource-collection>
-    <web-resource-name>autorisationAll</web-resource-name>
+    <web-resource-name>autorisationUndef</web-resource-name>
     <url-pattern>/css/*</url-pattern>
     <url-pattern>/res/*</url-pattern>
     <url-pattern>/js/*</url-pattern>
     <url-pattern>/lib/*</url-pattern>
+    <url-pattern>/login.jsp</url-pattern>
     <url-pattern>/erreur.jsp</url-pattern>
     <url-pattern>/confirmation.jsp</url-pattern>
     <url-pattern>/servlet/Inscription</url-pattern>
     <url-pattern>/servlet/ValidationCompte</url-pattern>
-    <url-pattern>/servlet/Test</url-pattern>
   </web-resource-collection>
   <auth-constraint>
     <role-name>undef</role-name>
@@ -130,8 +130,6 @@
 <!-- La liste des differents roles -->
 <security-role>
   <role-name>logged</role-name>
-</security-role>
-<security-role>
   <role-name>undef</role-name>
 </security-role>
 </web-app>

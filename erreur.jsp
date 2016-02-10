@@ -42,7 +42,11 @@ pageEncoding="UTF-8" isErrorPage="true"%>
         <h1>Page de gestion d'erreur</h1>
         Un probleme de type <B>"${message}
         <%
-        if (exception!=null) out.print(exception.getMessage());
+          if (exception!=null) out.print(exception.getMessage());
+          if (request.isUserInRole("undef")) {
+            out.print("Vérifiez vos mails");
+            session.invalidate();
+          }
         %>
         "</B> est survenu.
       </div>
