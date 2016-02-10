@@ -9,11 +9,6 @@
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bubble.css"/>
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/position.css"/>
 		<link rel="stylesheet" type="text/css" href=${pageContext.request.contextPath}${pageContext.servletContext.getInitParameter("style")} />
-
-		<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
-		<script src="${pageContext.request.contextPath}/js/requetesAjax.js" async ></script>
-		<script src="${pageContext.request.contextPath}/js/conversations.js" async ></script>
-		<script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
 		<title>Conversation - Kwa2Bo</title>
 	</head>
 	<body>
@@ -96,5 +91,9 @@
 			</section>
 			<%@include file="../footer.jsp" %>
 		</div>
+		<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+		<script src="${pageContext.request.contextPath}/js/requetesAjax.js" async ></script>
+		<script src="${pageContext.request.contextPath}/js/conversations.js" async ></script>
+		<script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
 	</body>
 </html>
