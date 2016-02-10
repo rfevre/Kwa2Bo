@@ -91,26 +91,35 @@ INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Ferro','Thomas');
 INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Fevre','Rémy');
 INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Leleu','Julien');
 INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Cattez','Edouard');
+INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Deplanque','Tony');
+INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Couture','Jordy');
+INSERT INTO Kwa2Bo_profil (nom,prenom) VALUES ('Mathieu','Philippe');
 
 INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('ferrot@gmail.com',md5('rocher'),'Ferrot',1,'logged',md5('Ferrot'));
 INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('fevrer@gmail.com',md5('rocher'),'Psycos',2,'logged',md5('Psycos'));
 INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('leleu@gmail.com',md5('rocher'),'Leleuj',3,'logged',md5('Leleuj'));
 INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('cattez@gmail.com',md5('rocher'),'Catteze',4,'logged',md5('Catteze'));
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('deplanquet@gmail.com',md5('rocher'),'Deplanquet',5,'logged',md5('Deplanquet'));
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('couturej@gmail.com',md5('rocher'),'Couturej',4,'logged',md5('Couturej'));
+INSERT INTO Kwa2Bo_utilisateur(mail,mdp,pseudo,idProfil,role,codeVerif) VALUES ('mathieup@gmail.com',md5('rocher'),'Mathieup',4,'logged',md5('Mathieup'));
 
 INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','fevrer@gmail.com',0);
 INSERT INTO Kwa2Bo_contacts VALUES ('ferrot@gmail.com','leleu@gmail.com',0);
 
-INSERT INTO Kwa2Bo_groupe (nomGroupe) VALUES ('Le paradis sur Terre');
-INSERT INTO Kwa2Bo_groupe (nomGroupe) VALUES ('Ici c est Lille');
+INSERT INTO Kwa2Bo_groupe (nomGroupe) VALUES ('Discussion PHP vs JAVA J2EE');
+INSERT INTO Kwa2Bo_groupe (nomGroupe) VALUES ('Débat: MySQL ou PostgreSQL ?');
 
 INSERT INTO Kwa2Bo_appartient VALUES ('ferrot@gmail.com',1);
 INSERT INTO Kwa2Bo_appartient VALUES ('fevrer@gmail.com',1);
 INSERT INTO Kwa2Bo_appartient VALUES ('ferrot@gmail.com',2);
 INSERT INTO Kwa2Bo_appartient VALUES ('fevrer@gmail.com',2);
 INSERT INTO Kwa2Bo_appartient VALUES ('leleu@gmail.com',2);
+INSERT INTO Kwa2Bo_appartient VALUES ('mathieup@gmail.com',2);
 
-INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (1,'fevrer@gmail.com','MySQL est génial !');
-INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (1,'ferrot@gmail.com','Moi je préfére PHPmyAdmin !');
+INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (1,'fevrer@gmail.com','PHP est génial !');
+INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (1,'ferrot@gmail.com','Moi je préfére le JAVA J2EE !');
 INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (2,'ferrot@gmail.com','Bonjour');
 INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (2,'leleu@gmail.com','Oui bonjour ?');
-INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (2,'ferrot@gmail.com','Non toi bonjour!');
+INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (2,'ferrot@gmail.com','Je pense que PHPMyAdmin est pas mal comme SGBD');
+INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (2,'mathieup@gmail.com','PHPMyAdmin un SGBD ? Qui tas fait passé lentretien ???');
+INSERT INTO Kwa2Bo_message(idGroupe,mail,texte) VALUES (2,'ferrot@gmail.com','Euuuh bah j ai pas passé dentretiens ...');
