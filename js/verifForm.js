@@ -46,5 +46,11 @@ function updateStateMail(div, errorMsg) {
 }
 
 function verifForm() {
-	return true;
+	var inputsNotEmpty = isNotEmpty(divPseudo) && isNotEmpty(divMdp1.firstElementChild.firstElementChild);
+	var isMail1 = isMail(divMail1.firstElementChild.firstElementChild);
+	var isMail2 = isMail(divMail2.firstElementChild.firstElementChild);
+	var mailsEquals = (divMail1.firstElementChild.firstElementChild.value == divMail2.firstElementChild.firstElementChild.value);
+	var passwordsEquals = (divMdp1.firstElementChild.firstElementChild.value == divMdp2.firstElementChild.firstElementChild.value);
+
+	return (inputsNotEmpty && isMail1 && isMail2 && mailsEquals && passwordsEquals);
 }

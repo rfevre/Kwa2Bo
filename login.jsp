@@ -47,7 +47,7 @@
 			<img src="${pageContext.request.contextPath}/res/img/logoUniv.svg" alt="logo de l'université de Lille 1" class="col-md-7 hidden-xs"/>
 			<div id="inscription" class="col-md-5">
 				<h1>Inscription</h1>
-				<form action="${pageContext.request.contextPath}/servlet/Inscription" method="POST" id="formInscription" class="form-group">
+				<form action="${pageContext.request.contextPath}/servlet/Inscription" method="POST" id="formInscription" class="form-group" onSubmit="return verifForm()">
 					<div id="divPseudo" class="">
 						<p>
 							<input type="text" class="form-control" placeholder="Pseudo" name="pseudo" onKeyUp="updateStateOf(divPseudo, 'Pseudo trop court');"/>
@@ -62,7 +62,7 @@
 					</div>
 					<div id="divMail2" class="">
 						<p>
-							<input type="text" id="mail2" class="form-control" placeholder="Confirmez l'adresse mail" name="mail2" onKeyUp="updateStateMail(divMail2, 'Adresse mail incorrecte');checkMail1EqualsMail2(mail1,mail2)"/>
+							<input type="text" id="mail2" class="form-control" placeholder="Confirmez l'adresse mail" name="mail2" onKeyUp="updateStateMail(divMail2, 'Adresse mail incorrecte');"/>
 						</p>
 						<span class="" aria-hidden="true"></span>
 					</div>
