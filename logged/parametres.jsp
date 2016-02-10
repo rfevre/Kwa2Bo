@@ -9,7 +9,7 @@
       <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/lib/bootstrap/css/bootstrap.min.css"/>
       <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bubble.css"/>
       <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/position.css"/>
-      <link rel="stylesheet" type="text/css" href=${pageContext.request.contextPath}${pageContext.servletContext.getInitParameter("style")} />
+      <link rel="stylesheet" type="text/css" href='${pageContext.request.contextPath}${pageContext.servletContext.getInitParameter("style")}' />
 
       <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
       <script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
@@ -27,6 +27,9 @@
           alert('${message}');
         }
         </script>
+        <c:if test="${not empty message}">
+          <script type="text/javascript"> open_infos(); </script>
+        </c:if>
         <section class="row">
           <h3>Paramètres</h3>
           <section class="col-md-5">

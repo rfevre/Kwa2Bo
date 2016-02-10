@@ -37,9 +37,9 @@ pageEncoding="UTF-8" isErrorPage="true"%>
       </nav>
     </header>
     <section class="row">
-      <img src="${pageContext.request.contextPath}/res/img/Panneau_attention.svg" alt="panneau attention" class="col-md-7 hidden-xs" width=500 height=400/>
+      <img src="${pageContext.request.contextPath}/res/img/Panneau_attention.svg" alt="panneau attention" class="col-md-7 hidden-xs" width="500" height="400" />
       <div id="inscription" class="col-md-5">
-        <legend><h1>Page de gestion d'erreur</h1></legend>
+        <h1>Page de gestion d'erreur</h1>
         Un probleme de type <B>"${message}
         <%
         if (exception!=null) out.print(exception.getMessage());
