@@ -9,9 +9,6 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/lib/bootstrap/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/position.css"/>
 	<link rel="stylesheet" type="text/css" href=${pageContext.request.contextPath}${pageContext.servletContext.getInitParameter("style")} />
-	<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
-	<script src="${pageContext.request.contextPath}/js/verifForm.js"></script>
-	<script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
 	<title>Connexion - Kwa2Bo</title>
   <%
     if (request.isUserInRole("logged")) {
@@ -87,6 +84,9 @@
 		</section>
     <%@include file="../footer.jsp" %>
 	</div>
+  <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+  <script src="${pageContext.request.contextPath}/js/verifForm.js"></script>
+  <script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript">
     function open_infos()
     {

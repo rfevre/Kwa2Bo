@@ -8,9 +8,6 @@ pageEncoding="UTF-8" isErrorPage="true"%>
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/lib/bootstrap/css/bootstrap.min.css"/>
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/position.css"/>
   <link rel="stylesheet" type="text/css" href=${pageContext.request.contextPath}${pageContext.servletContext.getInitParameter("style")} />
-  <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
-  <script src="${pageContext.request.contextPath}/js/verifForm.js"></script>
-  <script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
   <title>Page d'erreur - Kwa2Bo</title>
 </head>
 <body>
@@ -60,5 +57,8 @@ pageEncoding="UTF-8" isErrorPage="true"%>
     </section>
     <%@include file="../footer.jsp" %>
   </div>
+  <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+  <script src="${pageContext.request.contextPath}/js/verifForm.js"></script>
+  <script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

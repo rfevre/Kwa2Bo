@@ -8,9 +8,6 @@
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/lib/bootstrap/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/position.css"/>
 	<link rel="stylesheet" type="text/css" href=${pageContext.request.contextPath}${pageContext.servletContext.getInitParameter("style")} />
-	<script src="${pageContext.request.contextPath}/js/jquery.js"></script>
-	<script src="${pageContext.request.contextPath}/js/verifForm.js"></script>
-	<script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
       <title>Confirmation - Kwa2Bo</title>
     </head>
     <body>
@@ -54,5 +51,8 @@
       </div>
       </section>
     </div>
+    <script src="${pageContext.request.contextPath}/js/jquery.js"></script>
+    <script src="${pageContext.request.contextPath}/js/verifForm.js"></script>
+    <script src="${pageContext.request.contextPath}/lib/bootstrap/js/bootstrap.min.js"></script>
     </body>
   </html>
