@@ -123,7 +123,7 @@
   <auth-method>FORM</auth-method>
   <form-login-config>
     <form-login-page>/login.jsp</form-login-page>
-    <form-error-page>/login.jsp?message=La connexion a echouée</form-error-page>
+    <form-error-page>/login.jsp?message=Nom de compte ou mot de passe incorrect</form-error-page>
   </form-login-config>
 </login-config>
 
