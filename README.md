@@ -47,6 +47,7 @@ base donné doit nécessiter le moins de travail possible.
 ==> Driver PostgreSQL et modif META-INF/context.xml
 ==> Librairies et CLASSPATH
 ==> Spécification du CSS dans WEB-INF/web.xml
+
 ---
 
 ### Synthèse :
