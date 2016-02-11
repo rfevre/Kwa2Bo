@@ -48,6 +48,9 @@ base donné doit nécessiter le moins de travail possible.
 ==> Librairies et CLASSPATH
 ==> Spécification du CSS dans WEB-INF/web.xml
 
+Pour commencer, placez le fichier `Kwa2Bo.war` dans le dossier `/webapps/` de votre tomcat.
+
+
 ---
 
 ### Synthèse :
