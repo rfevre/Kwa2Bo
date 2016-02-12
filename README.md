@@ -62,8 +62,11 @@ Pour commencer, placez le fichier `Kwa2Bo.war` dans le dossier `/webapps/` de vo
     - [x] MCD/MLD
     - [x] Créer la base de données
     - [x] Maquette du site
+
 - #### III/ Les améliorations à apporter
+
 - #### IV/ En quoi ce projet était difficile
+
 - #### V/ Conclusion
 
 ---
@@ -71,8 +74,11 @@ Pour commencer, placez le fichier `Kwa2Bo.war` dans le dossier `/webapps/` de vo
 ### Description technique du projet :
 
 - #### I/ Objectif techniques du travail
+
 - #### II/ Principe de réalisation
+
 - #### III/ Difficultés techniques rencontrées et solutions apportées
+
 - #### IV/ Conclusion
 
 ---
@@ -80,4 +86,5 @@ Pour commencer, placez le fichier `Kwa2Bo.war` dans le dossier `/webapps/` de vo
 ### Documentation utilisateur :
 
 - #### I/ Objectif de cette application
+
 - #### II/ Du point de vue de l’utilisateur
