@@ -37,3 +37,37 @@ function searchListContact() {
 	var parameter = $("input[id=searchBarContact]").val();
 	requeteAjaxParam("../servlet/SelectContact", { critere : parameter }, addListContact);
 }
+
+// easter-egg
+var colors = ["yellow", "pink", "black", "white", "blue", "green","Aqua","blueviolet","chartreuse","cyan","darkgray","darkmagenta","deeppink","firebrick","gold","indigo"];
+var i = 0;
+function changeColor(){
+    $("body").css("background-color", colors[i]);
+    if(i === colors.length-1){
+      i = -1;
+    }
+    i++;
+}
+//Haut, haut, bas, bas, gauche, droite, gauche, droite, B, A
+//var k = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65],n = 0;
+// AMAZING
+var k = [65, 77, 65, 90, 73, 78, 71],n = 0;
+var int = undefined;
+$(document).keydown(function (e) {
+    if (e.keyCode === k[n++]) {
+        if (n === k.length) {
+            if (int == undefined){
+              int = setInterval("changeColor()", 5);
+            }else{
+              clearInterval(int);
+              int = undefined;
+              $("body").css("background-color", "white");
+            }
+            n = 0;
+            return false;
+        }
+    }
+    else {
+        n = 0;
+    }
+});
