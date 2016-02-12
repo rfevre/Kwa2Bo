@@ -152,6 +152,10 @@ var colors = ["yellow", "pink", "black", "white", "blue", "green","Aqua","bluevi
 var i = 0;
 function changeColor(){
     $("body").css("background-color", colors[i]);
+    $("footer .panel-body").css("background-color", colors[colors.length - (1+i)]);
+    $(".container header nav div").css("background-color", colors[colors.length - (1+i)]);
+    $(".panel").css("background-color", colors[colors.length - (1+i)]);
+
     if(i === colors.length-1){
       i = -1;
     }
@@ -162,6 +166,7 @@ function changeColor(){
 // AMAZING
 var k = [65, 77, 65, 90, 73, 78, 71],n = 0;
 var int = undefined;
+var colordef = $("footer .panel-body").css("background-color");
 $(document).keydown(function (e) {
     if (e.keyCode === k[n++]) {
         if (n === k.length) {
@@ -171,6 +176,9 @@ $(document).keydown(function (e) {
               clearInterval(int);
               int = undefined;
               $("body").css("background-color", "white");
+              $("footer .panel-body").css("background", colordef);
+              $(".container header nav div").css("background", colordef);
+              $(".panel").css("background-color", "white");
             }
             n = 0;
             return false;
