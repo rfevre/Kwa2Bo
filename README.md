@@ -58,6 +58,7 @@ Ensuite, placez le fichier `Kwa2Bo.war` dans le dossier `/webapps/` de votre tom
 Accèdez au dossier `/tomcat/webapps/Kwa2Bo/WEB-INF/lib` et vérifiez la présence des librairies `commons-lang.jar` et `jstl-1.2.jar`.
 Modifiez votre variable d'environnement `CLASSPATH` directement dans le fichier `~/.bashrc` en ajoutant les lignes suivantes (adaptez le chemin à votre environnement) :
 
+  - `export CLASSPATH=$CLASSPATH:.`
   - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/webapps/Kwa2Bo/WEB-INF/lib/commons-lang.jar`
   - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/webapps/Kwa2Bo/WEB-INF/lib/jstl-1.2.jar`
 
@@ -69,7 +70,27 @@ Ajoutez les lignes suivantes dans le fichier `~/.bashrc` :
   - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/lib/servlet-api.jar`
   - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/lib/mail.jar`
 
+#### Configurer sa base de données
+Pour configurer et se connecter avec sa propre base de données, munissez-vous du driver JDBC correspondant(Ici dans l'exemple : Postgresql.jar).
+Placez votre driver dans le dossier `/tomcat/lib` et ajoutez au fichier `~/.bashrc` la ligne suivante :
+  - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/lib/postgresql.jar`
 
+Modifiez les lignes suivantes du contexte de l'application dans le fichier `Kwa2Bo/META-INF/context.xml` par vos informations pour la connexion à la base de données :
+
+
+*- Exemple avec Postgresql*
+  <Resource**
+    name="mabase"
+    auth="Container"
+    type="javax.sql.DataSource"
+    maxActive="8"
+    maxIdle="4"
+    maxWait="10000"
+    username="julien"
+    password="moi"
+    driverClassName="org.postgresql.Driver"
+    url="jdbc:postgresql:kwa2bo"
+  />
 
 ---
 
