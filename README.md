@@ -43,9 +43,6 @@ Décrit l’installation et le déploiement de ce projet. Plus cette documentati
 ce sera. Notamment, le déploiement sur une machine donnée, avec un nom de contexte donné et un nom de
 base donné doit nécessiter le moins de travail possible.
 
-==> Driver PostgreSQL,MAIL et modif META-INF/context.xml
-==> Spécification du CSS dans WEB-INF/web.xml
-==> initialiser BDD
 #### Les APIS nécessaires
 Pour commencer, munissez-vous des apis suivantes :
   - [postgresql.jar](https://jdbc.postgresql.org/download.html)
@@ -55,7 +52,9 @@ Pour commencer, munissez-vous des apis suivantes :
 
 #### la variable CLASSPATH
 Ensuite, placez le fichier `Kwa2Bo.war` dans le dossier `/webapps/` de votre tomcat.
+
 Accèdez au dossier `/tomcat/webapps/Kwa2Bo/WEB-INF/lib` et vérifiez la présence des librairies `commons-lang.jar` et `jstl-1.2.jar`.
+
 Modifiez votre variable d'environnement `CLASSPATH` directement dans le fichier `~/.bashrc` en ajoutant les lignes suivantes (adaptez le chemin à votre environnement) :
 
   - `export CLASSPATH=$CLASSPATH:.`
@@ -77,21 +76,40 @@ Placez votre driver dans le dossier `/tomcat/lib` et ajoutez au fichier `~/.bash
 
 Modifiez les lignes suivantes du contexte de l'application dans le fichier `Kwa2Bo/META-INF/context.xml` par vos informations pour la connexion à la base de données :
 
-
 *- Exemple avec Postgresql*
-  <Resource**
+
+Modifiez les paramètres suivants de la balise Resource:
+```
+<Resource
     name="mabase"
     auth="Container"
     type="javax.sql.DataSource"
     maxActive="8"
     maxIdle="4"
     maxWait="10000"
-    username="julien"
-    password="moi"
-    driverClassName="org.postgresql.Driver"
-    url="jdbc:postgresql:kwa2bo"
-  />
+    username="<Votre login>"
+    password="<Votre password>"
+    driverClassName="<Votre driver>"
+    url="<Url de la BDD>"
+/>
+```
+Votre base de données est configurée.
 
+#### Initialisation des données
+Pour créer les tables nécessaire au fonctionnement de l'application avec des exemples de données, chargez le fichier tomcat/webapps/Kwa2Bo/docs/Kwa2Bo_createTable.sql
+
+**Votre application est théoriquement prête à fonctionner**
+
+#### [Optionnel] Personnaliser le style de la page
+L'application vous offre la possibilité de personnaliser facilement les couleurs du site. Pour cela, deux fichiers CSS sont à votre disposition, le fichier `Kwa2Bo/css/style.css` et le fichier `Kwa2Bo/css/style2.css`. Pour modifier le CSS, modifiez dans le fichier `Kwa2Bo/WEB-INF/web.xml` la valeur du chemin du paramètre(param-value) de la balise suivante :
+
+```
+<context-param>
+  <param-name>style</param-name>
+  <!-- Le chemin à modifier -->
+  <param-value>/css/style.css</param-value>
+</context-param>
+```
 ---
 
 ### Synthèse :
