@@ -53,11 +53,11 @@ Pour commencer, munissez-vous des APIs suivantes :
   - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/webapps/Kwa2Bo/WEB-INF/lib/commons-lang.jar`
   - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/webapps/Kwa2Bo/WEB-INF/lib/jstl-1.2.jar`
 
-Ensuite, placez les fichiers suivants(s'ils ne sont pas déjà présents) dans le dossier `tomcat/lib` :
+- Ensuite, placez les fichiers suivants(s'ils ne sont pas déjà présents) dans le dossier `tomcat/lib` :
   - servlet-api.jar
   - mail.jar
 
-Ajoutez les lignes suivantes dans le fichier `~/.bashrc` :
+- Ajoutez les lignes suivantes dans le fichier `~/.bashrc` :
   - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/lib/servlet-api.jar`
   - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/lib/mail.jar`
 
