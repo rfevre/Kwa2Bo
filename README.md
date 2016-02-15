@@ -85,16 +85,12 @@ Pour commencer, placez le fichier `Kwa2Bo.war` dans le dossier `/webapps/` de vo
 
 ### Documentation utilisateur :
 
-
 - #### I/ Qu'es acò Kwa2Bo ?
-
 
 Kwa2Bo, tu ne sais pas ce que c'est !? et bien très chère, c'est **LA** messagerie de l'université !
 Pour rentré dans les détails, Kwa2Bo c'est une messagerie (ou plus précisément un salon de discussion) simple, rapide et efficace, qui permet de se retrouver afin de discuter et s'envoyer des images. Tout cela de façon sécurisé bien sûr et dans la gratuité la plus totale.
 
-
 - #### II/ Comment ça marche ?
-
 
 Cette histoire vous sera conté ici en plusieurs actes.
 
