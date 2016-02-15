@@ -110,13 +110,13 @@ Vous voyez la barre en haut de l'image précédente, et bien grâce au champs qu
 
 Ici aussi c'est un peu magique, si vous rentrez des informations incorrect, vous aurez le droit à un message de la sorte afin de vous prévenir :
 
-![Alt text](/home/fevrer/tomcat/webapps/Kwa2Bo/docs/screen/Login_Kwa2Bo.png "Se connecter au site Kwa2Bo")
+![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Login_Kwa2Bo.png)
 
 #### Acte 3 - Les discussions
 
 C'est votre 1ére connexion sur Kwa2Bo, vous êtes tout excité et vous vous dites : "Wouaw le designer de ce site à vraiment fait du bon boulot, je m'y retrouve parfaitement et je sais très clairement ou je doit cliquer pour créer une conversation ou discuter sur une conversation déjà existante !" et c'est normal. Mais je vais tout de même expliqué comment tout cela fonctionne (après tout on est bien ici dans le manuel utilisateur).
 
-![Alt text](/home/fevrer/tomcat/webapps/Kwa2Bo/docs/screen/Discussion_Kwa2Bo.png "Discussion sur le site Kwa2Bo")
+![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Discussion_Kwa2Bo.png)
 
 - La barre en haut à changé ! grâce à elle vous allez pouvoir naviguer sur le site et vous déconnecter en cliquant sur votre adresse mail tout à   droite.
 
@@ -130,7 +130,7 @@ Comment !? la personne que vous voulez ajouter au groupe n'est pas présente dan
 
 Vous vous souvenez de la barre de navigation dont je vous ai parlé précédement, et bien cliquez sur l'image en forme de bonhomme. Et pouf ! vous voila sur la page de gestion des contacts :
 
-![Alt text](/home/fevrer/tomcat/webapps/Kwa2Bo/docs/screen/Contacts_Kwa2Bo.png "Gestion des contacts du site Kwa2Bo")
+![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Contacts_Kwa2Bo.png)
 
 - Sur votre gauche, vous pouvez rechercher dans la liste de tous les utilisateurs du site, une personne à ajouter a votre liste de contacts, par ce que vous la trouvez "cool".
 
@@ -142,7 +142,7 @@ Vous vous êtes trompé de "Pseudo" lors de l'inscription, ou alors vous êtes d
 
 Encore une fois dans la barre de navigation que vous devez à présent connaitre, cliquez sur l'image qui représente un engrenage, et vous voila propulsé vers la page de profil :
 
-![Alt text](/home/fevrer/tomcat/webapps/Kwa2Bo/docs/screen/Profil_Kwa2Bo.png "Page de profil du site Kwa2Bo")
+![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Profil_Kwa2Bo.png)
 
 - Tout est toujours très simple, renseignez les champs que vous voulez modifier puis cliquez sur le bouton "Enregistrer les modifications".
 
