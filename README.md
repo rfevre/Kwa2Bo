@@ -38,11 +38,6 @@
 ---
 
 ### Déploiement :
-
-Décrit l’installation et le déploiement de ce projet. Plus cette documentation sera courte, mieux
-ce sera. Notamment, le déploiement sur une machine donnée, avec un nom de contexte donné et un nom de
-base donné doit nécessiter le moins de travail possible.
-
 #### Les APIs nécessaires
 Pour commencer, munissez-vous des APIs suivantes :
   - [postgresql.jar](https://jdbc.postgresql.org/download.html)
