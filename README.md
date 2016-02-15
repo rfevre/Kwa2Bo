@@ -98,7 +98,7 @@ Cette histoire vous sera conté ici en plusieurs actes.
 
 Comme tout bon site web de messagerie qui se respecte, la partie inscription est bien évidement obligatoire. Mais ici tout est très simple ! Lors de votre arrivé sur la page d'accueil du site, vous allez tout de suite pouvoir remarquer le formulaire d'inscription :
 
-![Alt text](/home/fevrer/tomcat/webapps/Kwa2Bo/docs/screen/Accueil_Kwa2Bo.png "Accueil du site Kwa2Bo")
+![Alt text](https://github.com/rfevre/Kwa2Bo/edit/master/docs/screen/Accueil_Kwa2Bo.png) "Accueil du site Kwa2Bo")
 
 Ici, il ne reste plus qu'a faire appel à vos petites mimines afin de remplir ce jolie formulaire d'inscription. Mais il n'est pas simplement jolie ! Il vous informera aussi si vous ne respectez pas ce qui est attendu dans chacun des champs.
 
