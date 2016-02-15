@@ -85,12 +85,16 @@ Pour commencer, placez le fichier `Kwa2Bo.war` dans le dossier `/webapps/` de vo
 
 ### Documentation utilisateur :
 
+
 - #### I/ Qu'es acò Kwa2Bo ?
+
 
 Kwa2Bo, tu ne sais pas ce que c'est !? et bien très chère, c'est **LA** messagerie de l'université !
 Pour rentré dans les détails, Kwa2Bo c'est une messagerie (ou plus précisément un salon de discussion) simple, rapide et efficace, qui permet de se retrouver afin de discuter et s'envoyer des images. Tout cela de façon sécurisé bien sûr et dans la gratuité la plus totale.
 
+
 - #### II/ Comment ça marche ?
+
 
 Cette histoire vous sera conté ici en plusieurs actes.
 
@@ -104,7 +108,7 @@ Ici, il ne reste plus qu'a faire appel à vos petites mimines afin de remplir ce
 
 Après avoir validé le formulaire, un mail vous sera envoyé sur l'adresse de messagerie que vous avez indiqué. Ce mail contient un lien qui permettra de valider votre inscription sur Kwa2Bo.
 
-#### Acte 2 - La connexion
+##### Acte 2 - La connexion
 
 Vous voyez la barre en haut de l'image précédente, et bien grâce au champs qui se situe tout à droite, vous allez pouvoir vous connecter sur Kwa2Bo ! Il suffit juste de les remplirs avec le mail et le mot de passe utilisé lors de votre inscription.
 
@@ -112,7 +116,7 @@ Ici aussi c'est un peu magique, si vous rentrez des informations incorrect, vous
 
 ![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Login_Kwa2Bo.png)
 
-#### Acte 3 - Les discussions
+##### Acte 3 - Les discussions
 
 C'est votre 1ére connexion sur Kwa2Bo, vous êtes tout excité et vous vous dites : "Wouaw le designer de ce site à vraiment fait du bon boulot, je m'y retrouve parfaitement et je sais très clairement ou je doit cliquer pour créer une conversation ou discuter sur une conversation déjà existante !" et c'est normal. Mais je vais tout de même expliqué comment tout cela fonctionne (après tout on est bien ici dans le manuel utilisateur).
 
@@ -126,7 +130,7 @@ C'est votre 1ére connexion sur Kwa2Bo, vous êtes tout excité et vous vous dit
 
 Comment !? la personne que vous voulez ajouter au groupe n'est pas présente dans la liste ... hummm ... c'est qu'elle ne doit pas encore être présente dans votre liste de contacts bien sur ! Il vous faut l'ajouter !
 
-#### Acte 4 - Les contacts
+##### Acte 4 - Les contacts
 
 Vous vous souvenez de la barre de navigation dont je vous ai parlé précédement, et bien cliquez sur l'image en forme de bonhomme. Et pouf ! vous voila sur la page de gestion des contacts :
 
@@ -136,7 +140,7 @@ Vous vous souvenez de la barre de navigation dont je vous ai parlé précédemen
 
 - Sur votre droite, vous pouvez rechercher dans votre liste de contacts, une personnes que vous voulez supprimer par ce que vous ne l'aimez plus et que du coup c'est plus votre ami pour la vie.
 
-#### Acte 5 - Le profil
+##### Acte 5 - Le profil
 
 Vous vous êtes trompé de "Pseudo" lors de l'inscription, ou alors vous êtes dans l'obligation de changer de mot de passe, et bien pas de panique ! La page de profil est la pour ça !
 
