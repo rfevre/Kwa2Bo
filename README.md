@@ -43,30 +43,31 @@ Décrit l’installation et le déploiement de ce projet. Plus cette documentati
 ce sera. Notamment, le déploiement sur une machine donnée, avec un nom de contexte donné et un nom de
 base donné doit nécessiter le moins de travail possible.
 
-==> WAR
 ==> Driver PostgreSQL,MAIL et modif META-INF/context.xml
-==> Librairies et CLASSPATH
 ==> Spécification du CSS dans WEB-INF/web.xml
 ==> initialiser BDD
-
+#### Les APIS nécessaires
 Pour commencer, munissez-vous des apis suivantes :
   - [postgresql.jar](https://jdbc.postgresql.org/download.html)
   - [mail.jar](http://www.oracle.com/technetwork/java/index-138643.html)
   - [commons-lang.jar](https://commons.apache.org/proper/commons-lang/)
   - [jstl-1.2.jar](http://search.maven.org/#browse|707331597)
 
+#### la variable CLASSPATH
 Ensuite, placez le fichier `Kwa2Bo.war` dans le dossier `/webapps/` de votre tomcat.
 Accèdez au dossier `/tomcat/webapps/Kwa2Bo/WEB-INF/lib` et vérifiez la présence des librairies `commons-lang.jar` et `jstl-1.2.jar`.
 Modifiez votre variable d'environnement `CLASSPATH` directement dans le fichier `~/.bashrc` en ajoutant les lignes suivantes (adaptez le chemin à votre environnement) :
-`export CLASSPATH=$CLASSPATH:$HOME/tomcat/webapps/Kwa2Bo/WEB-INF/lib/commons-lang.jar`
-`export CLASSPATH=$CLASSPATH:$HOME/tomcat8/webapps/Kwa2Bo/WEB-INF/lib/jstl-1.2.jar`
+
+  - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/webapps/Kwa2Bo/WEB-INF/lib/commons-lang.jar`
+  - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/webapps/Kwa2Bo/WEB-INF/lib/jstl-1.2.jar`
 
 Ensuite, placez les fichiers suivants(s'ils ne sont pas déjà présents) dans le dossier `tomcat/lib` :
   - servlet-api.jar
   - mail.jar
+
 Ajoutez les lignes suivantes dans le fichier `~/.bashrc` :
-`export CLASSPATH=$CLASSPATH:$HOME/tomcat8/lib/servlet-api.jar`
-`export CLASSPATH=$CLASSPATH:$HOME/tomcat8/lib/mail.jar`
+  - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/lib/servlet-api.jar`
+  - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/lib/mail.jar`
 
 
 
