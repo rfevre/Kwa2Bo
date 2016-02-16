@@ -14,21 +14,21 @@
 - Description technique
   - Objectif du travail
   - Technologies utilisées :
-      - [x] CSS
-      - [x] BootStrap
-      - [x] JavaScript
-      - [x] JQuery
-      - [x] AJAX
-      - [x] JSON
-      - [x] JSP
-      - [x] JSTL
-      - [x] Servlet
-      - [x] MAIL
-      - [x] EL expression
-      - [x] Pool
-      - [x] Realm
-      - [x] Valve
-      - [x] SSL
+      - CSS
+      - BootStrap
+      - JavaScript
+      - JQuery
+      - AJAX
+      - JSON
+      - JSP
+      - JSTL
+      - Servlet
+      - MAIL
+      - EL expression
+      - Pool
+      - Realm
+      - Valve
+      - SSL
   - Les améliorations à apporter
   - En quoi ce projet était difficile
   - Conclusion
@@ -103,6 +103,10 @@ L'application vous offre la possibilité de personnaliser facilement les couleur
   <param-value>/css/style.css</param-value>
 </context-param>
 ```
+
+#### Accèder à l'adresse de l'application
+Une fois configuré correctement, lancez votre serveur. Vous avez désormais accès à l'application depuis votre navigateur à l'adresse suivante :
+  `http://<adresse_du_serveur>:8080/Kwa2Bo`
 ---
 
 ### Synthèse :
