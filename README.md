@@ -143,6 +143,13 @@ ou
 ### Synthèse :
 
 #### - I/ Objectif du travail
+Nos principaux objectifs lors de ce projet ont été de proposer une interface à la fois simple, pratique, responsive englobant un maximum de fonctionnalités décrits dans le [cahier des charges](http://moodle.univ-lille1.fr/pluginfile.php/204483/mod_resource/content/2/ProjetWEB1516_WhatsApp.pdf).
+Voici les objectifs(s'apparentant à des tâches) effectuées lors de la réalisation du projet :
+|Objectif|Réalisé par|
+|:-------|:----------|
+|Créer un MCD structuré|Julien et Remy|
+|Réaliser les maquettes|Julien|
+
 
 #### - II/ Ce qui a été fait
   - Ce qui a été fait
