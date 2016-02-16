@@ -5,7 +5,7 @@
 
 ### DONE :
 - Déploiement
-- Synthese
+- Synthèse
   - Objectif du travail
   - Ce qui a été fait
   - Les améliorations à apporter
@@ -47,7 +47,8 @@ Pour commencer, munissez-vous des APIs suivantes :
   - [jstl-1.2.jar](http://search.maven.org/#browse|707331597)
 
 #### La variable $CLASSPATH
-- Placez le fichier `Kwa2Bo.war` dans le dossier `/webapps/` de votre tomcat.
+- Démarrez votre serveur tomcat
+- Placez le fichier `Kwa2Bo.war` dans le dossier `/webapps/` de votre serveur.
 - Accèdez au dossier `/tomcat/webapps/Kwa2Bo/WEB-INF/lib` et vérifiez la présence des librairies `commons-lang.jar` et `jstl-1.2.jar`.
 - Modifiez votre variable d'environnement `CLASSPATH` directement dans le fichier `~/.bashrc` en ajoutant les lignes suivantes (adaptez le chemin à votre environnement) :
 ```
@@ -67,7 +68,7 @@ Pour commencer, munissez-vous des APIs suivantes :
 ```
 
 #### Configurer sa base de données
-- Pour configurer et se connecter avec sa propre base de données, munissez-vous du driver JDBC correspondant(Ici dans l'exemple : postgresql.jar).
+- Pour configurer et se connecter avec sa propre base de données, munissez-vous du driver JDBC correspondant(Ici pour l'exemple : postgresql.jar).
 - Placez votre driver dans le dossier `/tomcat/lib` et ajoutez au fichier `~/.bashrc` la ligne suivante :
   - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/lib/postgresql.jar`
 
@@ -89,27 +90,27 @@ Pour commencer, munissez-vous des APIs suivantes :
 ```
 
 #### Initialisation des données
-Pour créer les tables nécessaire au fonctionnement de l'application avec des exemples de données, chargez le fichier tomcat/webapps/Kwa2Bo/docs/Kwa2Bo_createTable.sql à l'aide de votre SGBD.
+Pour créer les tables nécessaires au fonctionnement de l'application avec des exemples de données, chargez le fichier tomcat/webapps/Kwa2Bo/docs/Kwa2Bo_createTable.sql à l'aide de votre SGBD.
 
 **Votre application est théoriquement prête à fonctionner**
 
 #### Serveur sécurisé SSL
-Pour configurer le SSSL il vous faut une clé privée, pour ce faire, il suffit de créer un Keystore. Un Keystore est un fichier qui va comprendre la clé privée du serveur ainsi que le certificat auto-signé. Pour plus de clarté, il est plus simple de le stocké non loin du répertoire d’installation de Tomcat. Pour le généré, on utilise la commande suivante :
+Pour la configuration du SSL il vous faut une clé privée. Pour ce faire, vous avez besoin de créer un Keystore(Fichier informatique qui stocke des certificats électroniques et éventuellement leurs clefs privées). Pour plus de clarté, il est conseillé de stocker ce dernier dans le répertoire de votre serveur tomcat. Pour le générer, on utilise la commande suivante :
 
 ```
 keytool -genkey -alias tomcat -keyalg RSA -keystore <repertoire_de_votre_tomcat>/keystore
 ```
 
-Vous aurez alors à répondre à plusieurs questions afin de remplir votre Keystore.
+Vous devrez alors répondre à plusieurs questions pour générer votre Keystore.
 
-Maintenant que le Keystore est généré, il faut indiquer à Tomcat quel connecteur utiliser pour communiquer via SSL. Par défaut, il s’agit du port 8443 mais il n’est pas activé. Allez dans votre fichier **"conf/server.xml"** pour modifier la configuration de votre Tomcat.
+Une fois le Keystore généré, vous devez indiquer à tomcat le connecteur qui sera utilisé pour communiquer via SSL. Par défaut, il s’agit du port 8443 mais celui-ci n’est pas activé. Allez dans le fichier **"conf/server.xml"** pour modifier la configuration de votre serveur tomcat.
 
 La configuration du connecteur SSL est déjà présente dans le fichier **"conf/server.xml"** , il faut dé-commenter son paragraphe et y ajouter quelques informations :
 
 ```
 <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
            maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
-           keystoreFile="<le_chemin_de_votre_keystore>" keystorePass="<le_mot_de_passe_choisi>"
+           keystoreFile="<le chemin de votre keystore>" keystorePass="<le mot de passe choisi>"
            clientAuth="false" sslProtocol="TLS" />
 ```
 
@@ -131,8 +132,9 @@ L'application vous offre la possibilité de personnaliser facilement les couleur
 #### Accèder à l'adresse de l'application
 Une fois configuré correctement, lancez votre serveur. Vous avez désormais accès à l'application depuis votre navigateur à l'adresse suivante :
 
-`http://<adresse_du_serveur>:8080/Kwa2Bo`
-
+`http://<adresse du serveur>:8080/Kwa2Bo`
+ou
+`https://<adresse_du_serveur>:8443/Kwa2Bo` en SSL
 ---
 
 ### Synthèse :
@@ -169,8 +171,8 @@ Une fois configuré correctement, lancez votre serveur. Vous avez désormais acc
 
 #### - I/ Qu'es acò Kwa2Bo ?
 
-Kwa2Bo, tu ne sais pas ce que c'est !? et bien très chère, c'est **LA** messagerie de l'université !
-Pour rentré dans les détails, Kwa2Bo c'est une messagerie (ou plus précisément un salon de discussion) simple, rapide et efficace, qui permet de se retrouver afin de discuter et s'envoyer des images. Tout cela de façon sécurisé bien sûr et dans la gratuité la plus totale.
+Kwa2Bo, tu ne sais pas ce que c'est !? et bien c'est **LA** messagerie de l'université !
+Pour rentrer dans les détails, Kwa2Bo c'est une messagerie (plus précisément un salon de discussion). Celle-ci est simple, rapide et efficace. Elle permet aux étudiants de se retrouver afin de discuter et d'illustrer leurs propos avec des images. Tout cela de façon sécurisé et dans la gratuité la plus totale.
 
 #### - II/ Comment ça marche ?
 
@@ -178,17 +180,17 @@ Cette histoire vous sera conté ici en plusieurs actes.
 
 ##### Acte 1 - L'inscription
 
-Comme tout bon site web de messagerie qui se respecte, la partie inscription est bien évidement obligatoire. Mais ici tout est très simple ! Lors de votre arrivé sur la page d'accueil du site, vous allez tout de suite pouvoir remarquer le formulaire d'inscription :
+Comme tout bon site web de messagerie qui se respecte, la partie inscription est bien évidement obligatoire. Ici tout est très simple ! Lors de votre arrivé sur la page d'accueil du site, vous allez tout de suite pouvoir remarquer le formulaire d'inscription :
 
 ![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Accueil_Kwa2Bo.png)
 
-Ici, il ne reste plus qu'a faire appel à vos petites mimines afin de remplir ce jolie formulaire d'inscription. Mais il n'est pas simplement jolie ! Il vous informera aussi si vous ne respectez pas ce qui est attendu dans chacun des champs.
+Il ne reste plus qu'a faire appel à vos petites mimines afin de remplir ce jolie formulaire d'inscription. Mais celui-ci n'est pas simplement jolie ! Il vous tiendra également informé des erreurs survenues dans chacuns des champs.
 
-Après avoir validé le formulaire, un mail vous sera envoyé sur l'adresse de messagerie que vous avez indiqué. Ce mail contient un lien qui permettra de valider votre inscription sur Kwa2Bo.
+Après la validation du formulaire, un mail vous sera envoyé sur l'adresse de messagerie renseignée. Ce mail contient un lien permettant de valider l'inscription sur Kwa2Bo.
 
 ##### Acte 2 - La connexion
 
-Vous voyez la barre en haut de l'image précédente, et bien grâce au champs qui se situe tout à droite, vous allez pouvoir vous connecter sur Kwa2Bo ! Il suffit juste de les remplirs avec le mail et le mot de passe utilisé lors de votre inscription.
+Apercevez-vous la barre en haut de l'image précédente, et bien grâce au champs qui se situe à l'extrème droite (sans opinions politiques ..), vous allez pouvoir vous connecter sur Kwa2Bo ! Il suffit juste de les remplirs avec le mail et le mot de passe utilisé lors de votre inscription.
 
 Ici aussi c'est un peu magique, si vous rentrez des informations incorrect, vous aurez le droit à un message de la sorte afin de vous prévenir :
 
