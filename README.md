@@ -106,7 +106,7 @@ L'application vous offre la possibilité de personnaliser facilement les couleur
 
 #### Accèder à l'adresse de l'application
 Une fois configuré correctement, lancez votre serveur. Vous avez désormais accès à l'application depuis votre navigateur à l'adresse suivante :
-  `http://<adresse_du_serveur>:8080/Kwa2Bo`
+`http://<adresse_du_serveur>:8080/Kwa2Bo`
 ---
 
 ### Synthèse :
