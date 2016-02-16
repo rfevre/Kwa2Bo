@@ -136,8 +136,8 @@ Une fois configuré correctement, lancez votre serveur. Vous avez désormais acc
 
 ou
 
-`https://<adresse_du_serveur>:8443/Kwa2Bo` 
-en SSL
+`https://<adresse_du_serveur>:8443/Kwa2Bo`  en SSL
+
 ---
 
 ### Synthèse :
