@@ -68,7 +68,7 @@ Pour commencer, munissez-vous des APIs suivantes :
 
 - Modifiez les lignes suivantes du contexte de l'application dans le fichier `Kwa2Bo/META-INF/context.xml` par vos informations pour la connexion à la base de données :
 
-*- Exemple avec Postgresql*
+*Exemple avec Postgresql*
 
 Modifiez les paramètres suivants de la balise Resource:
 ```
@@ -88,7 +88,7 @@ Modifiez les paramètres suivants de la balise Resource:
 Votre base de données est configurée.
 
 #### Initialisation des données
-Pour créer les tables nécessaire au fonctionnement de l'application avec des exemples de données, chargez le fichier tomcat/webapps/Kwa2Bo/docs/Kwa2Bo_createTable.sql
+Pour créer les tables nécessaire au fonctionnement de l'application avec des exemples de données, chargez le fichier tomcat/webapps/Kwa2Bo/docs/Kwa2Bo_createTable.sql à l'aide de votre SGBD.
 
 **Votre application est théoriquement prête à fonctionner**
 
@@ -106,42 +106,42 @@ L'application vous offre la possibilité de personnaliser facilement les couleur
 
 ### Synthèse :
 
-- #### I/ Objectif du travail
+#### - I/ Objectif du travail
 
-- #### II/ Ce qui a été fait
+#### - II/ Ce qui a été fait
   - Ce qui a été fait
     - [x] MCD/MLD
     - [x] Créer la base de données
     - [x] Maquette du site
 
-- #### III/ Les améliorations à apporter
+#### - III/ Les améliorations à apporter
 
-- #### IV/ En quoi ce projet était difficile
+#### - IV/ En quoi ce projet était difficile
 
-- #### V/ Conclusion
+#### - V/ Conclusion
 
 ---
 
 ### Description technique du projet :
 
-- #### I/ Objectif techniques du travail
+#### - I/ Objectif techniques du travail
 
-- #### II/ Principe de réalisation
+#### - II/ Principe de réalisation
 
-- #### III/ Difficultés techniques rencontrées et solutions apportées
+#### - III/ Difficultés techniques rencontrées et solutions apportées
 
-- #### IV/ Conclusion
+#### - IV/ Conclusion
 
 ---
 
 ### Documentation utilisateur :
 
-- #### I/ Qu'es acò Kwa2Bo ?
+#### - I/ Qu'es acò Kwa2Bo ?
 
 Kwa2Bo, tu ne sais pas ce que c'est !? et bien très chère, c'est **LA** messagerie de l'université !
 Pour rentré dans les détails, Kwa2Bo c'est une messagerie (ou plus précisément un salon de discussion) simple, rapide et efficace, qui permet de se retrouver afin de discuter et s'envoyer des images. Tout cela de façon sécurisé bien sûr et dans la gratuité la plus totale.
 
-- #### II/ Comment ça marche ?
+#### - II/ Comment ça marche ?
 
 Cette histoire vous sera conté ici en plusieurs actes.
 
