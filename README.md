@@ -171,38 +171,38 @@ ou
 
 #### - I/ Qu'es acò Kwa2Bo ?
 
-Kwa2Bo, tu ne sais pas ce que c'est !? et bien c'est **LA** messagerie de l'université !
-Pour rentrer dans les détails, Kwa2Bo c'est une messagerie (plus précisément un salon de discussion). Celle-ci est simple, rapide et efficace. Elle permet aux étudiants de se retrouver afin de discuter et d'illustrer leurs propos avec des images. Tout cela de façon sécurisé et dans la gratuité la plus totale.
+Kwa2Bo, c'est quoi m'sieur !?? C'est **LA** messagerie de l'université !
+Pour faire simple, Kwa2Bo est une messagerie (plus ou moins) instantanée s'apparentant à un salon de discussion. Kwa2Bo est simple, rapide et efficace. Il permet aux étudiants de se retrouver après ou pendant les cours pour discuter et illustrer leurs propos avec des images. Tout cela de façon sécurisé et dans la gratuité la plus totale.
 
-#### - II/ Comment ça marche ?
+#### - II/ Comment qu'cha marche ?
 
 Cette histoire vous sera conté ici en plusieurs actes.
 
 ##### Acte 1 - L'inscription
 
-Comme tout bon site web de messagerie qui se respecte, la partie inscription est bien évidement obligatoire. Ici tout est très simple ! Lors de votre arrivé sur la page d'accueil du site, vous allez tout de suite pouvoir remarquer le formulaire d'inscription :
+Comme toute bonne appli de messagerie respectable, la partie inscription est bien évidement obligatoire. En plus elle est très simple ! Lors de votre navigation sur la page d'accueil du site, vous remarquerez instantanément le formulaire d'inscription (s'inspirant trés fort de [facebook](http://www.facebook.com)) :
 
 ![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Accueil_Kwa2Bo.png)
 
-Il ne reste plus qu'a faire appel à vos petites mimines afin de remplir ce jolie formulaire d'inscription. Mais celui-ci n'est pas simplement jolie ! Il vous tiendra également informé des erreurs survenues dans chacuns des champs.
+Il ne reste plus qu'a faire appel à vos petites mimines pour remplir vaillamment ce jolie formulaire d'inscription. En plus d'être relativement design, il vous tiendra également informé des erreurs survenues dans chacuns des champs.
 
 Après la validation du formulaire, un mail vous sera envoyé sur l'adresse de messagerie renseignée. Ce mail contient un lien permettant de valider l'inscription sur Kwa2Bo.
 
 ##### Acte 2 - La connexion
 
-Apercevez-vous la barre en haut de l'image précédente, et bien grâce au champs qui se situe à l'extrème droite (sans opinions politiques ..), vous allez pouvoir vous connecter sur Kwa2Bo ! Il suffit juste de les remplirs avec le mail et le mot de passe utilisé lors de votre inscription.
+Apercevez-vous le petit formulaire d'authentification en haut du screenshot précédent ? Et bien grâce à lui, vous allez pouvoir vous connecter sur Kwa2Bo ! Renseignez simplement votre adresse e-mail et le mot de passe utilisé lors de votre inscription.
 
-Ici aussi c'est un peu magique, si vous rentrez des informations incorrect, vous aurez le droit à un message de la sorte afin de vous prévenir :
+Comme avec [Eric Antoine](https://fr.wikipedia.org/wiki/%C3%89ric_Antoine_%28magicien%29) c'est un peu magique. Si vous saisissez des informations fausses ou incorrectes, vous aurez le droit à une petite insulte de ce genre :
 
 ![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Login_Kwa2Bo.png)
 
 ##### Acte 3 - Les discussions
 
-C'est votre 1ére connexion sur Kwa2Bo, vous êtes tout excité et vous vous dites : "Wouaw le designer de ce site à vraiment fait du bon boulot, je m'y retrouve parfaitement et je sais très clairement ou je doit cliquer pour créer une conversation ou discuter sur une conversation déjà existante !" et c'est normal. Mais je vais tout de même expliqué comment tout cela fonctionne (après tout on est bien ici dans le manuel utilisateur).
+C'est votre 1ére connexion sur Kwa2Bo, vous êtes excité et vous vous dites : "Wouaw le designer de ce site à vraiment fait du bon boulot, je m'y retrouve parfaitement et je sais très clairement où cliquer pour créer une conversation et reprendre une conversation déjà existante !" et c'est normal. Mais je vais tout de même vous expliquer le fonctionnement de cette application(après tout on est pas dans le manuel utilisateur pour rien).
 
 ![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Discussion_Kwa2Bo.png)
 
-- La barre en haut à changé ! grâce à elle vous allez pouvoir naviguer sur le site et vous déconnecter en cliquant sur votre adresse mail tout à   droite.
+- La menu du haut à changé ! grâce à lui vous allez pouvoir naviguer sur le site et vous déconnecter en cliquant sur votre adresse e-mail sur la droite.
 
 - Sur votre gauche, les discussions auxquelles vous participez. Cliquez dessus, et hop ! Une fenetre s'ouvre sur la discussion concerné. Dans cette fenetre, vous allez pouvoir envoyer des messages et des photos de façon illimité !
 
