@@ -133,8 +133,11 @@ L'application vous offre la possibilité de personnaliser facilement les couleur
 Une fois configuré correctement, lancez votre serveur. Vous avez désormais accès à l'application depuis votre navigateur à l'adresse suivante :
 
 `http://<adresse du serveur>:8080/Kwa2Bo`
+
 ou
-`https://<adresse_du_serveur>:8443/Kwa2Bo` en SSL
+
+`https://<adresse_du_serveur>:8443/Kwa2Bo` 
+en SSL
 ---
 
 ### Synthèse :
@@ -172,7 +175,7 @@ ou
 #### - I/ Qu'es acò Kwa2Bo ?
 
 Kwa2Bo, c'est quoi m'sieur !?? C'est **LA** messagerie de l'université !
-Pour faire simple, Kwa2Bo est une messagerie (plus ou moins) instantanée s'apparentant à un salon de discussion. Kwa2Bo est simple, rapide et efficace. Il permet aux étudiants de se retrouver après ou pendant les cours pour discuter et illustrer leurs propos avec des images. Tout cela de façon sécurisé et dans la gratuité la plus totale.
+Pour faire simple, Kwa2Bo est une messagerie instantanée(plus ou moins) s'apparentant à un salon de discussion. Kwa2Bo est simple, rapide et efficace. Il permet aux étudiants de se retrouver après ou pendant les cours pour discuter et illustrer leurs propos avec des images. Tout cela de façon sécurisé et dans la gratuité la plus totale.
 
 #### - II/ Comment qu'cha marche ?
 
@@ -180,7 +183,7 @@ Cette histoire vous sera conté ici en plusieurs actes.
 
 ##### Acte 1 - L'inscription
 
-Comme toute bonne appli de messagerie respectable, la partie inscription est bien évidement obligatoire. En plus elle est très simple ! Lors de votre navigation sur la page d'accueil du site, vous remarquerez instantanément le formulaire d'inscription (s'inspirant trés fort de [facebook](http://www.facebook.com)) :
+Comme toute bonne appli de messagerie respectable, la partie inscription est bien évidement obligatoire. En plus elle est très simple ! Lors de votre navigation sur la page d'accueil du site, vous remarquerez instantanément le formulaire d'inscription (s'inspirant trés fortement de [facebook](http://www.facebook.com)) :
 
 ![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Accueil_Kwa2Bo.png)
 
@@ -198,38 +201,38 @@ Comme avec [Eric Antoine](https://fr.wikipedia.org/wiki/%C3%89ric_Antoine_%28mag
 
 ##### Acte 3 - Les discussions
 
-C'est votre 1ére connexion sur Kwa2Bo, vous êtes excité et vous vous dites : "Wouaw le designer de ce site à vraiment fait du bon boulot, je m'y retrouve parfaitement et je sais très clairement où cliquer pour créer une conversation et reprendre une conversation déjà existante !" et c'est normal. Mais je vais tout de même vous expliquer le fonctionnement de cette application(après tout on est pas dans le manuel utilisateur pour rien).
+C'est votre 1ére connexion sur Kwa2Bo, vous êtes excité et vous vous dites : "Wouaw le designer de ce site à vraiment fait du bon boulot! Je m'y retrouve parfaitement et je sais très clairement où cliquer pour démarrer une conversation et reprendre une conversation déjà existante !" et c'est normal. Mais je vais tout de même vous expliquer le fonctionnement de cette application(après tout on est pas dans le manuel utilisateur pour rien).
 
 ![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Discussion_Kwa2Bo.png)
 
 - La menu du haut à changé ! grâce à lui vous allez pouvoir naviguer sur le site et vous déconnecter en cliquant sur votre adresse e-mail sur la droite.
 
-- Sur votre gauche, les discussions auxquelles vous participez. Cliquez dessus, et hop ! Une fenetre s'ouvre sur la discussion concerné. Dans cette fenetre, vous allez pouvoir envoyer des messages et des photos de façon illimité !
+- Sur votre gauche, les discussions auxquelles vous participez. Cliquez dessus, et paf paf paf (Comme dirait Mohammed Nour) : Une fenêtre modal s'ouvre pour la discussion concerné. Dans cette fenetre, vous allez pouvoir envoyer des messages et des photos de manière illimité !
 
-- Sur votre droite, vous allez pouvoir créer un groupe. Un groupe c'est une discussion auquel on rattache un ou plusieurs membre(s). Choissisez un nom pour votre groupe, et les personnes avec lesquels vous voulez discuté. Quand tout est prêt, appuyez sur le bouton "Créer".
+- Sur votre droite, vous allez pouvoir créer un groupe. Un groupe c'est une discussion auquel on implique un ou plusieurs membre(s). Choissisez un nom pour votre groupe et ajoutez les personnes avec lesquels vous voulez discuter. Quand tout est prêt, appuyez sur le bouton "Créer".
 
 Comment !? la personne que vous voulez ajouter au groupe n'est pas présente dans la liste ... hummm ... c'est qu'elle ne doit pas encore être présente dans votre liste de contacts bien sur ! Il vous faut l'ajouter !
 
 ##### Acte 4 - Les contacts
 
-Vous vous souvenez de la barre de navigation dont je vous ai parlé précédement, et bien cliquez sur l'image en forme de bonhomme. Et pouf ! vous voila sur la page de gestion des contacts :
+Vous vous souvenez de la barre de navigation dont je vous ai parlé précédement ? Et bien cliquez sur l'onglet en forme de bonhomme. Et pouf ! vous êtes redirigés vers la page de gestion des contacts :
 
 ![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Contacts_Kwa2Bo.png)
 
-- Sur votre gauche, vous pouvez rechercher dans la liste de tous les utilisateurs du site, une personne à ajouter a votre liste de contacts, par ce que vous la trouvez "cool".
+- Sur votre gauche, vous pouvez rechercher dans la liste de tous les utilisateurs du site, une personne à ajouter dans votre liste de contacts, (pour lui faire des avances peut-être ? :P).
 
-- Sur votre droite, vous pouvez rechercher dans votre liste de contacts, une personnes que vous voulez supprimer par ce que vous ne l'aimez plus et que du coup c'est plus votre ami pour la vie.
+- Sur votre droite, vous pouvez rechercher dans votre liste de contacts, une personnes que vous voulez supprimer parce que vous ne l'aimez plus (parce que vous venez de rompre .. ? :/).
 
 ##### Acte 5 - Le profil
 
-Vous vous êtes trompé de "Pseudo" lors de l'inscription, ou alors vous êtes dans l'obligation de changer de mot de passe, et bien pas de panique ! La page de profil est la pour ça !
+Vous avez commis une erreur de frappe dans votre "Pseudo" lors de l'inscription, ou bien dans l'obligation de changer de mot de passe ? Pas de panique ! La page de profil est faîte pour ça !
 
-Encore une fois dans la barre de navigation que vous devez à présent connaitre, cliquez sur l'image qui représente un engrenage, et vous voila propulsé vers la page de profil :
+Une fois de plus, dans le menu que vous devez à présent connaitre, cliquez sur l'onglet représentant un engrenage, pour vous propulser vers la page de profil :
 
 ![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Profil_Kwa2Bo.png)
 
-- Tout est toujours très simple, renseignez les champs que vous voulez modifier puis cliquez sur le bouton "Enregistrer les modifications".
+- Encore une fois trés simple, renseignez les champs à modifier puis cliquez sur le bouton "Enregistrer les modifications".
 
-- Si par contre vous voulez modifier votre mot de passe, cliquez sur le bouton "Modifier le mot de passe", une fenetre va s'ouvrir en vous demandant votre ancien mot de passe, ainsi que le nouveau.
+- Si vous souhaitez modifier votre mot de passe, cliquez sur le bouton "Modifier le mot de passe". Une fenetre modale s'ouvre en vous demandant de saisir l'ancien mot de passe, ainsi que le nouveau.
 
-Pour chaque modification réussi, un message vous indiquant que tout c'est bien passé s'affichera devant vos yeux ébahis.
+Pour chaque modification effectuée, un message vous informant du succès de la modification s'affichera devant vos yeux ébahis.
