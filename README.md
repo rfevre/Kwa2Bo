@@ -62,11 +62,11 @@ Pour commencer, munissez-vous des APIs suivantes :
   - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/lib/mail.jar`
 
 #### Configurer sa base de données
-Pour configurer et se connecter avec sa propre base de données, munissez-vous du driver JDBC correspondant(Ici dans l'exemple : Postgresql.jar).
-Placez votre driver dans le dossier `/tomcat/lib` et ajoutez au fichier `~/.bashrc` la ligne suivante :
+- Pour configurer et se connecter avec sa propre base de données, munissez-vous du driver JDBC correspondant(Ici dans l'exemple : postgresql.jar).
+- Placez votre driver dans le dossier `/tomcat/lib` et ajoutez au fichier `~/.bashrc` la ligne suivante :
   - `export CLASSPATH=$CLASSPATH:$HOME/tomcat/lib/postgresql.jar`
 
-Modifiez les lignes suivantes du contexte de l'application dans le fichier `Kwa2Bo/META-INF/context.xml` par vos informations pour la connexion à la base de données :
+- Modifiez les lignes suivantes du contexte de l'application dans le fichier `Kwa2Bo/META-INF/context.xml` par vos informations pour la connexion à la base de données :
 
 *- Exemple avec Postgresql*
 
