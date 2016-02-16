@@ -93,6 +93,9 @@ Pour créer les tables nécessaire au fonctionnement de l'application avec des e
 
 **Votre application est théoriquement prête à fonctionner**
 
+#### Serveur sécurisé SSL
+//TODO
+
 #### Personnaliser le style de la page(Optionnel)
 L'application vous offre la possibilité de personnaliser facilement les couleurs du site. Pour cela, deux fichiers CSS sont à votre disposition, le fichier `Kwa2Bo/css/style.css` et le fichier `Kwa2Bo/css/style2.css`. Pour modifier le CSS, modifiez dans le fichier `Kwa2Bo/WEB-INF/web.xml` la valeur du chemin du paramètre(param-value) de la balise suivante :
 
