@@ -94,7 +94,28 @@ Pour créer les tables nécessaire au fonctionnement de l'application avec des e
 **Votre application est théoriquement prête à fonctionner**
 
 #### Serveur sécurisé SSL
-//TODO
+Pour configurer le SSSL il vous faut une clé privée, pour ce faire, il suffit de créer un Keystore. Un Keystore est un fichier qui va comprendre la clé privée du serveur ainsi que le certificat auto-signé. Pour plus de clarté, il est plus simple de le stocké non loin du répertoire d’installation de Tomcat. Pour le généré, on utilise la commande suivante :
+
+```
+keytool -genkey -alias tomcat -keyalg RSA -keystore <repertoire_de_votre_tomcat>/keystore
+```
+
+Vous aurez alors à répondre à plusieurs questions afin de remplir votre Keystore.
+
+Maintenant que le Keystore est généré, il faut indiquer à Tomcat quel connecteur utiliser pour communiquer via SSL. Par défaut, il s’agit du port 8443 mais il n’est pas activé. Allez dans votre fichier **"conf/server.xml"** pour modifier la configuration de votre Tomcat.
+
+La configuration du connecteur SSL est déjà présente dans le fichier **"conf/server.xml"** , il faut dé-commenter son paragraphe et y ajouter quelques informations :
+
+```
+<Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+           maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
+           keystoreFile="<le_chemin_de_votre_keystore>" keystorePass="<le_mot_de_passe_choisi>"
+           clientAuth="false" sslProtocol="TLS" />
+```
+
+Vous pouvez à présent vous connecter en SSL sur l'application grâce à l'adresse suivante :
+
+`https://<adresse_du_serveur>:8443/Kwa2Bo`
 
 #### Personnaliser le style de la page(Optionnel)
 L'application vous offre la possibilité de personnaliser facilement les couleurs du site. Pour cela, deux fichiers CSS sont à votre disposition, le fichier `Kwa2Bo/css/style.css` et le fichier `Kwa2Bo/css/style2.css`. Pour modifier le CSS, modifiez dans le fichier `Kwa2Bo/WEB-INF/web.xml` la valeur du chemin du paramètre(param-value) de la balise suivante :
