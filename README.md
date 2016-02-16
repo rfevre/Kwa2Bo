@@ -69,9 +69,6 @@ Pour commencer, munissez-vous des APIs suivantes :
 
 - Modifiez les lignes suivantes du contexte de l'application dans le fichier `Kwa2Bo/META-INF/context.xml` par vos informations pour la connexion à la base de données :
 
-*Exemple avec Postgresql*
-
-Modifiez les paramètres suivants de la balise Resource:
 ```
 <Resource
     name="mabase"
@@ -86,7 +83,6 @@ Modifiez les paramètres suivants de la balise Resource:
     url="<Url de la BDD>"
 />
 ```
-Votre base de données est configurée.
 
 #### Initialisation des données
 Pour créer les tables nécessaire au fonctionnement de l'application avec des exemples de données, chargez le fichier tomcat/webapps/Kwa2Bo/docs/Kwa2Bo_createTable.sql à l'aide de votre SGBD.
