@@ -142,7 +142,7 @@ ou
 
 ### Synthèse :
 
-#### - I/ Objectif du travail
+#### I) Objectif du travail
 
 Nos principaux objectifs lors de ce projet ont été de proposer une interface à la fois :
   - simple
@@ -159,7 +159,7 @@ avec :
 
 D'un point de vue humain, nous avons choisi de développer ce projet à l'aide de la méthode agile étudiée en cours(Grâce à [trello](http://trello.com), une application web facilitant la gestion de projet de ce type). Celle-ci ayant pour but de réussir à coordonner facilement nos compétences en décomposant finement les tâches. Enfin, notre dernière volontée était de réussir à se familiariser avec de nouvelles technologies et approfondir nos connaissances dans certains langages(tel que JavaScript par exemple).
 
-#### - II/ Ce qui a été fait
+#### II) Ce qui a été fait
 
 Voici les principales tâches effectuées lors de la réalisation du projet :
 
@@ -182,7 +182,7 @@ Voici les principales tâches effectuées lors de la réalisation du projet :
 Nous avons souhaité nous investir dans les domaines dans lesquelles nous étions le plus en difficulté plutôt que ceux dans lesquelles nous étions à l'aise pour pouvoir monter en compétence.
 La cohésion dans notre équipe à toujours été au rendez-vous, le partage globale des tâches avoisine les 50%/50%.
 
-#### - III/ Les améliorations à apporter
+#### III) Les améliorations à apporter
 
 Bien que satisfaits de notre projet, en imaginant une deadline plus reculée, nous aurions pus apporter ces améliorations:
   - Améliorrer la page de profil de l'utilisateur:
@@ -195,7 +195,7 @@ Bien que satisfaits de notre projet, en imaginant une deadline plus reculée, no
   - De gérer les mots de passes oubliés
   - (Un peu plus compliqué) Pouvoir intéragir avec une webcam ...
 
-#### - IV/ En quoi ce projet était difficile
+#### IV) En quoi ce projet était difficile
 
 Au premier abord, ce projet ne nous a pas semblé vraiment difficile. La difficulté s'est fait ressentir après plusieurs semaines, lorsque nous avons réalisé la charge réelle de travail à fournir.
 
@@ -206,30 +206,30 @@ Voici une liste des principales difficultés que nous avons pu rencontrer:
   - Gérer les accés avec le realm(nous avions initialement restreint la racine(/), ce qui nous causait pas mal de soucis ...)
   - Trouver assez de temps pour travailler sur le projet(Nous avions en effet plusieurs projets en simultané)
 
-#### - V/ Conclusion
+#### V) Conclusion
 
 ---
 
 ### Description technique du projet :
 
-#### - I/ Objectif techniques du travail
+#### I) Objectif techniques du travail
 
-#### - II/ Principe de réalisation
+#### II) Principe de réalisation
 
-#### - III/ Difficultés techniques rencontrées et solutions apportées
+#### III) Difficultés techniques rencontrées et solutions apportées
 
-#### - IV/ Conclusion
+#### IV) Conclusion
 
 ---
 
 ### Documentation utilisateur :
 
-#### - I/ Qu'es acò Kwa2Bo ?
+#### I) Qu'es acò Kwa2Bo ?
 
 Kwa2Bo, c'est quoi m'sieur !?? C'est **LA** messagerie de l'université !
 Pour faire simple, Kwa2Bo est une messagerie instantanée(plus ou moins) s'apparentant à un salon de discussion. Kwa2Bo est simple, rapide et efficace. Il permet aux étudiants de se retrouver après ou pendant les cours pour discuter et illustrer leurs propos avec des images. Tout cela de façon sécurisé et dans la gratuité la plus totale.
 
-#### - II/ Comment qu'cha marche ?
+#### II) Comment qu'cha marche ?
 
 Cette histoire vous sera conté ici en plusieurs actes.
 
