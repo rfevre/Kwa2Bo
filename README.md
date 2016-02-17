@@ -177,6 +177,9 @@ Voici les principales tâches effectuées lors de la réalisation du projet :
 |Requêtes ajax|80%|20%|
 |Documentation|50%|50%|
 
+**Pourquoi cette répartition ?**
+
+Nous avons souhaité nous investir dans les domaines dans lesquelles nous étions le plus en difficulté plutôt que ceux dans lesquelles nous étions à l'aise pour pouvoir monter en compétence.
 La cohésion dans notre équipe à toujours été au rendez-vous, le partage globale des tâches avoisine les 50%/50%.
 
 #### - III/ Les améliorations à apporter
@@ -193,6 +196,15 @@ Bien que satisfaits de notre projet, en imaginant une deadline plus reculée, no
   - (Un peu plus compliqué) Pouvoir intéragir avec une webcam ...
 
 #### - IV/ En quoi ce projet était difficile
+
+Au premier abord, ce projet ne nous a pas semblé vraiment difficile. La difficulté s'est fait ressentir après plusieurs semaines, lorsque nous avons réalisé la charge réelle de travail à fournir.
+
+Voici une liste des principales difficultés que nous avons pu rencontrer:
+  - Intégrer un maximum de technologies(se familiariser en peu de temps à divers technologies inhabituelles)
+  - Gérer l'importation des images et du texte en ajax(problème d'encodage etc ...)
+  - Prise de décision commune(divergence de certains points de vues)
+  - Gérer les accés avec le realm(nous avions initialement restreint la racine(/), ce qui nous causait pas mal de soucis ...)
+  - Trouver assez de temps pour travailler sur le projet(Nous avions en effet plusieurs projets en simultané)
 
 #### - V/ Conclusion
 
