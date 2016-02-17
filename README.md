@@ -177,6 +177,8 @@ Voici les principales tâches effectuées lors de la réalisation du projet :
 |Requêtes ajax|80%|20%|
 |Documentation|50%|50%|
 
+![alt tag](https://github.com/rfevre/Kwa2Bo/blob/master/docs/MCD-MLD/MCD_Kwa2Bo.PNG)
+
 **Pourquoi cette répartition ?**
 
 Nous avons souhaité nous investir dans les domaines dans lesquelles nous étions le plus en difficulté plutôt que ceux dans lesquelles nous étions à l'aise pour pouvoir monter en compétence.
@@ -217,6 +219,8 @@ Un projet tel que celui-là nous as paru trés intéressant. De part la multitud
 ### Description technique du projet :
 
 #### I) Objectif techniques du travail
+
+
 
 #### II) Principe de réalisation
 
