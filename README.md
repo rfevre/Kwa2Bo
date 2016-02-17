@@ -149,8 +149,11 @@ Nos principaux objectifs lors de ce projet ont été de proposer une interface �
   - pratique
   - responsive 
   - rapide
-  - avec des technologies variées
-  - respectant au maximum les fonctionnalités décrites dans le [cahier des charges](http://moodle.univ-lille1.fr/pluginfile.php/204483/mod_resource/content/2/ProjetWEB1516_WhatsApp.pdf).
+avec :
+  - des technologies variées
+  - un modèle(MCD) trés structuré et bien décomposé
+  - une séparation du Modèle, du controleur et de la vue
+  - un maximum de respect des fonctionnalités décrites dans le [cahier des charges](http://moodle.univ-lille1.fr/pluginfile.php/204483/mod_resource/content/2/ProjetWEB1516_WhatsApp.pdf).
 
 D'un point de vue humain, nous avons choisi de développer ce projet à l'aide de la méthode agile étudiée en cours(Grâce à [trello](http://trello.com), une application web facilitant la gestion de projet de ce type). Celle-ci ayant pour but de réussir à coordonner facilement nos compétences en décomposant finement les tâches. Enfin, notre dernière volontée était de réussir à se familiariser avec de nouvelles technologies et approfondir nos connaissances dans certains langages(tel que JavaScript par exemple).
 
