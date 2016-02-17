@@ -143,16 +143,25 @@ ou
 ### Synthèse :
 
 #### - I/ Objectif du travail
-Nos principaux objectifs lors de ce projet ont été de proposer une interface à la fois simple, pratique, responsive englobant un maximum de fonctionnalités décrits dans le [cahier des charges](http://moodle.univ-lille1.fr/pluginfile.php/204483/mod_resource/content/2/ProjetWEB1516_WhatsApp.pdf).
-Voici les objectifs(s'apparentant à des tâches) effectuées lors de la réalisation du projet :
 
-|Objectif|Réalisé par|
+Nos principaux objectifs lors de ce projet ont été de proposer une interface à la fois :
+  - simple
+  - pratique
+  - responsive 
+  - rapide
+  - avec des technologies variées
+  - respectant au maximum les fonctionnalités décrites dans le [cahier des charges](http://moodle.univ-lille1.fr/pluginfile.php/204483/mod_resource/content/2/ProjetWEB1516_WhatsApp.pdf).
+
+D'un point de vue humain, nous avons choisi de développer ce projet à l'aide de la méthode agile étudiée en cours(Grâce à [trello](http://trello.com), une application web facilitant la gestion de projet de ce type). Celle-ci ayant pour but de réussir à coordonner facilement nos compétences en décomposant finement les tâches. Enfin, notre dernière volontée était de se familiariser avec de nouvelles technologies et d'approfondir nos connaissances sur certains langages(tel que JavaScript par exemple).
+
+#### - II/ Ce qui a été fait
+
+Voici les principales tâches effectuées lors de la réalisation du projet :
+
+|Tâches|Réalisé par|
 |:-------|:----------|
 |Créer un MCD structuré|Julien et Remy|
 |Réaliser les maquettes|Julien|
-
-
-#### - II/ Ce qui a été fait
   - Ce qui a été fait
     - [x] MCD/MLD
     - [x] Créer la base de données
