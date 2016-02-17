@@ -187,6 +187,9 @@ La cohésion dans notre équipe à toujours été au rendez-vous, le partage glo
 
 ![alt tag](https://github.com/rfevre/Kwa2Bo/blob/master/docs/MCD-MLD/MCD_Kwa2Bo.PNG)
 
+**Le MLD de Kwa2Bo**
+
+![alt tag](https://github.com/rfevre/Kwa2Bo/blob/master/docs/MCD-MLD/MLD_Kwa2Bo.PNG)
 #### III) Les améliorations à apporter
 
 Bien que satisfaits de notre projet, en imaginant une deadline plus reculée, nous aurions pus apporter ces améliorations:
