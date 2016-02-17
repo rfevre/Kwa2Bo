@@ -224,6 +224,9 @@ Un projet tel que celui-là nous as paru trés intéressant. De part la multitud
 //TODO
 
 #### I) Objectifs techniques du travail
+
+//Rajouter des cases à cochers
+
 Pour réaliser ce projet, nous souhaitions intégrer les technologies suivantes :
 - CSS
   - BootStrap
@@ -231,6 +234,7 @@ Pour réaliser ce projet, nous souhaitions intégrer les technologies suivantes 
 - JQuery ou MooTools
 - AJAX
 - JSON
+- XML
 - JSP
 - JSTL
 - Servlet
@@ -244,29 +248,47 @@ Pour réaliser ce projet, nous souhaitions intégrer les technologies suivantes 
 
 #### II) Principe de réalisation
 //A mettre en forme + rédiger
+
   JAVA -> Beans(Objets java issues du modele)
+  
   JSP -> Vues
+  
   JavaScript -> côté client dont ajax pour les rafraichissements(reception des objets sous format JSON)
+  
   JQuery -> manipuler élements DOM plus facilement
+  
   EL Expression -> ...
+  
   JSTL -> ...
+  
   BootStrap -> pour positionnement et responsive, pour le style des tableaux, boutons et font
+  
   CSS -> couleurs du site et positionnement plus précis/bordure
+  
   Realm -> Pour accés aux pages
+  
   Servlet -> réception des données et/ou redirections ou envoie de données en JSON
+  
   Mail -> ...
+  
   Pool -> Connexion à la BDD simplifié et pareil pour toutes les servlets(pas besoins d'entrer les infos de co pour chaque page)
+  
   Valve -> Pour logger les requetes effectués par l'utilisateur dans un fichier
+  
   SSL -> ...
   
 #### III) Difficultés techniques rencontrées et solutions apportées
+
 //A développer
+
  - Gérer l'importation des images et du texte en ajax(problème d'encodage etc ...)
  - Gérer les accés avec le realm(nous avions initialement restreint la racine(/), ce qui nous causait pas mal d'ennuies ...)
  - Rendre le site responsive(Utilisation de bootStrap pour palier à ce problème)
 
 #### IV) Conclusion
+
   Bien que certains problèmes nous aient ralentis, grâce à la communauté de certains FrameWork et de l'aide de certains camarades, nous avons toujours su les résoudre.
+  
 ---
 
 ### Documentation utilisateur :
