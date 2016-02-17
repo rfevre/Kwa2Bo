@@ -207,6 +207,7 @@ Voici une liste des principales difficultés que nous avons pu rencontrer:
   - Gérer les accés avec le realm(nous avions initialement restreint la racine(/), ce qui nous causait pas mal d'ennuies ...)
   - Trouver assez de temps pour travailler sur le projet(Nous avions en effet plusieurs projets en simultané)
   - Rendre le site responsive(Utilisation de bootStrap pour palier à ce problème)
+
 #### V) Conclusion
 
 Un projet tel que celui-là nous as paru trés intéressant. De part la multitude de technologies employées que par les difficultés à surmonter. Bien que certains problèmes nous aient ralentis, grâce à la communauté de certains FrameWork et de l'aide de certains camarades, nous avons toujours su les résoudre. Après 5 semaines de travails en équipe, nous sommes plutôt satisfait de notre efficacité et du rendu de l'application. La prochaine étape ? Le déploiement en ligne qui sait .. ? :)
