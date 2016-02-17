@@ -149,6 +149,8 @@ Nos principaux objectifs lors de ce projet ont été de proposer une interface �
   - pratique
   - responsive 
   - rapide
+  - sécurisée
+
 avec :
   - des technologies variées
   - un modèle(MCD) trés structuré et bien décomposé
@@ -161,14 +163,17 @@ D'un point de vue humain, nous avons choisi de développer ce projet à l'aide d
 
 Voici les principales tâches effectuées lors de la réalisation du projet :
 
-|Tâches|Réalisé par|
-|:-------|:----------|
-|Créer un MCD structuré|Julien et Remy|
-|Réaliser les maquettes|Julien|
-  - Ce qui a été fait
-    - [x] MCD/MLD
-    - [x] Créer la base de données
-    - [x] Maquette du site
+|Tâches|Réalisé par Julien(%)|Réalisé par Remy(%)|
+|:-------|:----------|:----------|
+|Créer un MCD structuré|50%|50%|
+|Générer le MLD|50%|50%|
+|Création des requêtes|-|100%|
+|Réaliser les maquettes|100%|-|
+|Réalisation des vues(JSP, HTML, CSS/BootStrap)|90%|10%|
+|Réalisation des Beans(Java)|40%|60%|
+|Réalisation des Servlet(Java)|40%|60%|
+|Requêtes ajax|80%|20%|
+
 
 #### - III/ Les améliorations à apporter
 
