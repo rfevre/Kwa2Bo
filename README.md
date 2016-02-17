@@ -169,13 +169,28 @@ Voici les principales tâches effectuées lors de la réalisation du projet :
 |Générer le MLD|50%|50%|
 |Création des requêtes|-|100%|
 |Réaliser les maquettes|100%|-|
+|Configuration du contexte|50%|50%|
+|Gestion et configuration des librairies|-|100%|
 |Réalisation des vues(JSP, HTML, CSS/BootStrap)|90%|10%|
 |Réalisation des Beans(Java)|40%|60%|
-|Réalisation des Servlet(Java)|40%|60%|
+|Réalisation des Servlet(Java)|30%|70%|
 |Requêtes ajax|80%|20%|
+|Documentation|50%|50%|
 
+La cohésion dans notre équipe à toujours été au rendez-vous, le partage globale des tâches avoisine les 50%/50%.
 
 #### - III/ Les améliorations à apporter
+
+Bien que satisfaits de notre projet, en imaginant une deadline plus reculée, nous aurions pus apporter ces améliorations:
+  - Améliorrer la page de profil de l'utilisateur:
+    - Avoir la possibilité d'ajouter une photo de profil
+    - Pouvoir consulter le profil de ses amis
+    - Dissocier page de profil des paramètres
+  - Pouvoir changer directement les couleurs de l'interface dans les paramètres
+  - Pouvoir se connecter en SSO avec le CAS Lille 1 (portail de l'université)
+  - Utiliser la technologie WebSocket pour plus de fluidité dans la messagerie instantannée
+  - De gérer les mots de passes oubliés
+  - (Un peu plus compliqué) Pouvoir intéragir avec une webcam ...
 
 #### - IV/ En quoi ce projet était difficile
 
