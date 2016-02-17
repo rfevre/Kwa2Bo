@@ -193,6 +193,7 @@ Bien que satisfaits de notre projet, en imaginant une deadline plus reculée, no
   - Pouvoir se connecter en SSO avec le CAS Lille 1 (portail de l'université)
   - Utiliser la technologie WebSocket pour plus de fluidité dans la messagerie instantannée
   - De gérer les mots de passes oubliés
+  - Avoir un site accessible pour les handicapés et respectant les critères Opquast V2
   - (Un peu plus compliqué) Pouvoir intéragir avec une webcam ...
 
 #### IV) En quoi ce projet était difficile
