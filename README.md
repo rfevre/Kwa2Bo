@@ -177,12 +177,15 @@ Voici les principales tâches effectuées lors de la réalisation du projet :
 |Requêtes ajax|80%|20%|
 |Documentation|50%|50%|
 
-![alt tag](https://github.com/rfevre/Kwa2Bo/blob/master/docs/MCD-MLD/MCD_Kwa2Bo.PNG)
-
 **Pourquoi cette répartition ?**
 
 Nous avons souhaité nous investir dans les domaines dans lesquelles nous étions le plus en difficulté plutôt que ceux dans lesquelles nous étions à l'aise pour pouvoir monter en compétence.
 La cohésion dans notre équipe à toujours été au rendez-vous, le partage globale des tâches avoisine les 50%/50%.
+
+
+**Le MCD de Kwa2Bo**
+
+![alt tag](https://github.com/rfevre/Kwa2Bo/blob/master/docs/MCD-MLD/MCD_Kwa2Bo.PNG)
 
 #### III) Les améliorations à apporter
 
