@@ -23,8 +23,8 @@
       - JSP
       - JSTL
       - Servlet
-      - MAIL
-      - EL expression
+      - JavaMail
+      - EL
       - Pool
       - Realm
       - Valve
@@ -147,7 +147,7 @@ ou
 Nos principaux objectifs lors de ce projet ont été de proposer une interface à la fois :
   - simple
   - pratique
-  - responsive 
+  - responsive
   - rapide
   - sécurisée
 
@@ -201,6 +201,7 @@ Bien que satisfaits de notre projet, en imaginant une deadline plus reculée, no
   - Pouvoir se connecter en SSO avec le CAS Lille 1 (portail de l'université)
   - Utiliser la technologie WebSocket pour plus de fluidité dans la messagerie instantannée
   - De gérer les mots de passes oubliés
+  - Forcer la connexion en SSL
   - Avoir un site accessible pour les handicapés et respectant les critères Opquast V2
   - (Un peu plus compliqué) Pouvoir intéragir avec une webcam ...
 
@@ -221,74 +222,111 @@ Un projet tel que celui-là nous as paru trés intéressant. De part la multitud
 
 ### Description technique du projet :
 
-//TODO
+Le but de se projet n'était pas de se concentrer sur une seule technologie, mais bien d'en utiliser plusieurs, afin d'en apprendre un peu plus sur toute les technologies qui sont disponibles pour le WEB.
 
 #### I) Objectifs techniques du travail
 
-//Rajouter des cases à cochers
-
 Pour réaliser ce projet, nous souhaitions intégrer les technologies suivantes :
-- CSS
-  - BootStrap
-- JavaScript
-- JQuery ou MooTools
-- AJAX
-- JSON
-- XML
-- JSP
-- JSTL
-- Servlet
-- PHP
-- MAIL
-- EL expression
-- Pool
-- Realm
-- Valve
-- SSL
+- [x] CSS
+  - [x] BootStrap
+- [x] JavaScript
+- [x] JQuery (ou MooTools)
+- [x] AJAX
+- [x] JSON
+- [ ] XML
+- [x] JSP
+- [x] JSTL
+- [x] Servlet
+- [ ] PHP
+- [x] JavaMail
+- [x] EL
+- [x] Pool
+- [x] Realm
+- [x] Valve
+- [x] SSL
 
 #### II) Principe de réalisation
-//A mettre en forme + rédiger
 
-  JAVA -> Beans(Objets java issues du modele)
-  
-  JSP -> Vues
-  
-  JavaScript -> côté client dont ajax pour les rafraichissements(reception des objets sous format JSON)
-  
-  JQuery -> manipuler élements DOM plus facilement
-  
-  EL Expression -> ...
-  
-  JSTL -> ...
-  
-  BootStrap -> pour positionnement et responsive, pour le style des tableaux, boutons et font
-  
-  CSS -> couleurs du site et positionnement plus précis/bordure
-  
-  Realm -> Pour accés aux pages
-  
-  Servlet -> réception des données et/ou redirections ou envoie de données en JSON
-  
-  Mail -> ...
-  
-  Pool -> Connexion à la BDD simplifié et pareil pour toutes les servlets(pas besoins d'entrer les infos de co pour chaque page)
-  
-  Valve -> Pour logger les requetes effectués par l'utilisateur dans un fichier
-  
-  SSL -> ...
-  
+  - ##### JavaBeans
+
+  JavaBeans est une technologie de composants logiciels écrits en langage Java, elle est utilisés pour encapsuler plusieurs objets dans un seul objet : le "bean". Le "bean" est un objet java issues du modele. Ces "beans" sont alors facilement accessible dans les JSP grâce aux EL Expression et sont manipulable soit par des JSTL, soit directement en JavaScript.
+
+  - ##### Servlet
+
+  Les servlets s'occupe de la partie "controller" du modele MVC. C'est elles qui on principalement accès à la base de données. Elles sont donc utilisées lors de l'envoie, la modification, ou la récupération de données en format JSON. Dans certain cas, elles sont aussi utilisées pour faire de la redirection.
+
+  - ##### JSP
+
+  Le JavaServer Pages ou JSP est une technique basée sur Java qui nous permet de créer dynamiquement du code HTML. Ainsi, il est très facile de communiquer avec les servlets, et d'agir sur la "vue" en fonction des réponses de celles-ci.
+
+  - ##### EL
+
+  Une EL (Expressions Languages) permet d'accéder simplement aux beans des différents scopes de l'application web (page, request, session et application).
+
+  - ##### JSTL
+
+  JSTL est l'acronyme de Java server page Standard Tag Library. C'est un ensemble de tags personnalisés qui propose des fonctionnalités souvent rencontrées dans les JSP. Beaucoup de choses sont ainsi possible en combinant les JSTL et EL.
+
+  - ##### AJAX
+
+  L'architecture AJAX nous a permis de construire un site web dynamiques et interactifs. En effet AJAX combine JavaScript, les CSS, JSON et le DOM afin d'améliorer maniabilité et confort d'utilisation :
+    - DOM et JavaScript permettent de modifier l'information présentée dans le navigateur en respectant sa structure ;
+    - JSON structure les informations transmises entre serveur Web et navigateur.
+
+  - ##### JQuery
+
+  JQuery est une bibliothèque JavaScript libre et multi-plateforme créée pour faciliter l'écriture de scripts côté client dans le code HTML des pages web. Elle nous à permit principalement de manipuler plus facilement le DOM.
+
+  - ##### BootStrap
+
+  Nous avons choisi d'utiliser BootStrap car c'est un framework CSS, mais pas seulement, puisqu'il embarque également des composants HTML et JavaScript. Il comporte un système de grille simple et efficace pour mettre en ordre l'aspect visuel d'une page web. Il apporte du style pour les boutons, les formulaires, la navigation… Il permet ainsi de concevoir un site web rapidement et avec peu de lignes de code ajoutées.
+
+  - ##### CSS
+
+  Les feuilles de style en cascade (CSS) nous on permis de faire 2 styles différent pour notre site. Il n'y a qu'à changer de feuille de style, et le tour est joué. Les couleurs changes et le positionnement des élèments sur le site peuvent l'être aussi.
+
+  - ##### Realm
+
+  Dans Tomcat, grâce aux Realms, il est possible de protéger l'accès aux ressources du serveur, en demandant aux utilisateurs de s'authentifier. Le principe est simple : lorsque l'utilisateur tente d'accéder à l'URL d'une ressource protégée, on le renvoie vers la page de login.
+
+  - ##### JavaMail
+
+  Pour la confirmation d'inscription nous avons besoin d'envoyer un mail à l'utilisateur, on a donc utilisé l'API JavaMail qui permet d'utiliser le courrier électronique (e-mail) dans une application écrite en Java. Son but est d'être facile à utiliser, de fournir une souplesse qui permette de la faire évoluer et de rester le plus indépendant possible des protocoles utilisés.
+
+  - ##### Pool
+
+  La configuration d'un Pool de connexion dans Tomcat permet de facilité la connexion à la BDD dans le reste de l'application et de restreindre les connexions en fonction de la façon dont le Pool à était configuré. Il n'y a donc pas besoin de rentrer de login et mot de passe pour la connexion à la BDD dans toute les servlets.
+
+  - ##### Valve
+
+  Un élément Valve à été configuré sous tomcat afin de logger les requêtes effectués par l'utilisateur dans un fichier. Cela permet d'avoir une traçabilité de ce que les utilisateurs on effectué derniérement, ce qui permetra de localiser plus rapidement des erreurs.
+
+  - ##### SSL
+
+  Pourquoi une connexion en SSL ?
+  Car c'est un système qui permet d'échanger des informations entre 2 ordinateurs de façon sûre. SSL assure 3 choses:
+    - Confidentialité: Il est impossible d'espionner les informations échangées.
+    - Intégrité: Il est impossible de truquer les informations échangées.
+    - Authentification: Il permet de s'assurer de l'identité du programme, de la personne ou de l'entreprise avec lequelle on communique.
+
 #### III) Difficultés techniques rencontrées et solutions apportées
 
-//A développer
+  - ##### Accés avec le realm
 
- - Gérer l'importation des images et du texte en ajax(problème d'encodage etc ...)
- - Gérer les accés avec le realm(nous avions initialement restreint la racine(/), ce qui nous causait pas mal d'ennuies ...)
- - Rendre le site responsive(Utilisation de bootStrap pour palier à ce problème)
+  Au départ du projet, la restriction d'accès grâce au Realm nous a posé problème. En effet, celle-ci été inéfficace. Le problème venant du fait que certaine ressources indispensable étaient inacesible pour les utilisateur non connecté. Nous avons résolu ce problème en donnant l'accés a tout les utilisateurs à certaine ressources non critique (les images,le css,...).
+
+  - ##### Encodage lors de l'envoie d'une image avec du texte en AJAX
+
+  Le problème qui nous a sans doute pris le plus de temps est celui-ci. Lors de l'envoie d'une image nous voulions en même temps envoyer du texte, le problème qui c'est donc posé à nous été l'encodage. Lors de l'upload d'une image, la requête AJAX envoyé à la servlet ne doit pas préciser de "contentType", nous avons donc dû contourner le problème, en passant le texte d'un format "iso-8859-1" à un format "UTF-8" directement dans la servlet grâce à une fonction JAVA.
+
+  - ##### Rendre le site responsive
+
+  Pour ce projet nous nous sommes donnés la contrainte de rendre toutes les "vues" responsive. A la main, cela aurait pû prendre beaucoup de temps. Mais l'utilisation de bootStrap à permis de palier à ce problème.
 
 #### IV) Conclusion
 
-  Bien que certains problèmes nous aient ralentis, grâce à la communauté de certains FrameWork et de l'aide de certains camarades, nous avons toujours su les résoudre.
-  
+  Bien que certains problèmes nous aient ralentis, grâce à la communauté de certains FrameWork et de l'aide de certains camarades, nous avons toujours su les résoudres.
+
 ---
 
 ### Documentation utilisateur :
