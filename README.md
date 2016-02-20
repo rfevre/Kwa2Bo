@@ -246,7 +246,7 @@ Pour réaliser ce projet, nous souhaitions intégrer les technologies suivantes 
 - [x] Valve
 - [x] SSL
 
-Malheureusement, par manque de temps et parce que nous n'en ressentions pas la nécessité, nous avons choisi de ne pas intégrer de PHP et d'XML. A la place d'XML, nous avons utilisés le format JSON pour la transmission d'objet(qui est plus explicite et ressemble davantage à un "format objet")
+Malheureusement, par manque de temps et parce que nous n'en ressentions pas le besoin, nous avons choisi de ne pas intégrer de PHP ni d'XML. A la place d'XML, nous avons utilisés le format JSON pour la transmission d'objet(qui est plus explicite et ressemble davantage à un "format objet")
 
 #### II) Principe de réalisation
 
