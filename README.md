@@ -252,7 +252,7 @@ Malheureusement, par manque de temps et parce que nous n'en ressentions pas le b
 
   - ##### JavaBeans
 
-  JavaBeans est une technologie de composants logiciels écrits en langage Java, elle est utilisés pour encapsuler plusieurs objets dans un seul objet : le "bean". Le "bean" est un objet java issues du modele. Ces "beans" sont alors facilement accessible dans les JSP grâce aux EL Expression et sont manipulable soit par des JSTL, soit directement en JavaScript.
+  JavaBeans est une technologie qui nous a permis de récupèrer et manipuler trés facilement les objets JAVA transmis par la requête HTTP.
   Nous avons notamment utilisé cette technologie dans la page `Kwa2Bo/logged/parametres.jsp`.
 
   - ##### Servlet
@@ -261,57 +261,62 @@ Malheureusement, par manque de temps et parce que nous n'en ressentions pas le b
 
   - ##### JSP
 
-  Le JavaServer Pages ou JSP est une technique basée sur Java qui nous permet de créer dynamiquement du code HTML. Ainsi, il est très facile de communiquer avec les servlets, et d'agir sur la "vue" en fonction des réponses de celles-ci. Nous avons donc choisis d'utiliser les JSP pour matérialiser la "Vue", qui contiennent à 90% du code HTML. Certaines JSP comme `header.jsp` ou `footer.jsp` contiennent des blocs de code HTML utilisés dans la majorité des JSP. On fait donc appel à ces 2 pages avec des includes pour éviter une redondance de code HTML.
+  Le JavaServer Pages ou JSP nous a permis de gérer dynamiquement le code HTML. Nous avons donc choisis d'utiliser les JSP pour matérialiser la "Vue", qui contiennent 90% de code HTML. Certaines JSP comme `header.jsp` ou `footer.jsp` contiennent des blocs de code HTML utilisés dans la majorité des JSP. On fait donc appel à ces 2 pages avec des includes pour éviter une redondance de code HTML.
 
   - ##### EL
 
-  Une EL (Expressions Languages) permet d'accéder simplement aux beans ou aux variables des différents scopes de l'application web (page, request, session et application).
+  Les EL (Expressions Languages) nous ont servis à accéder simplement aux beans et aux variables des différents scopes de l'application web (page, request, session et application). Elles sont utilisés dans presques toutes les pages JSP.
 
   - ##### JSTL
 
-  JSTL est un ensemble de taglibs personnalisés qui propose des fonctionnalités souvent rencontrées dans les JSP. Beaucoup de choses sont ainsi possible en combinant les JSTL et EL.
+  JSTL est un ensemble de taglibs personnalisés qui propose des fonctionnalités souvent rencontrées dans les JSP. Cette technologie n'est pas omniprésente dans nos pages. En effet, nous avons jugés que les fonctionnalités proposés par ce taglib (faire des boucles, introduire des conditions dans le code html ...) étaient facilement réalisables avec les JSP. Cette technologie est utilisée dans la page `login.jsp`.
 
   - ##### AJAX
 
-  L'architecture AJAX nous a permis de construire un site web dynamiques et interactifs. En effet AJAX combine JavaScript, les CSS, JSON et le DOM afin d'améliorer maniabilité et confort d'utilisation :
-    - DOM et JavaScript permettent de modifier l'information présentée dans le navigateur en respectant sa structure ;
-    - JSON structure les informations transmises entre serveur Web et navigateur.
+  L'architecture AJAX nous a permis de construire un site web dynamique et interactif. En effet AJAX nous permet de modifier dynamiquement le contenu de la page sans réactualiser la page et surtout sans redirections. On peut donc à la suite d'une requête AJAX :
+    - Récupérer des "objets"/informations sous un format de donnée spécifique(ici JSON).
+    - Modifier le DOM et donner une impression de mise à jour instantannée notamment pour le Tchat.
 
   - ##### JQuery
 
-  JQuery est une bibliothèque JavaScript libre et multi-plateforme créée pour faciliter l'écriture de scripts côté client dans le code HTML des pages web. Elle nous à permit principalement de manipuler plus facilement le DOM.
+  JQuery est donc utilisé pour effectuer les requêtes AJAX et modifier les élements du DOM. JQuery simplifie considérablement le code JavaScript pour le rendre minimaliste et plus explicite. Il est également requis pour utiliser certaines fonctionnalités de BootStrap.
+  Cette bibliothéque est utilisée dans quasiment toutes les pages JSP.
 
   - ##### BootStrap
 
-  Nous avons choisi d'utiliser BootStrap car c'est un framework CSS, mais pas seulement, puisqu'il embarque également des composants HTML et JavaScript. Il comporte un système de grille simple et efficace pour mettre en ordre l'aspect visuel d'une page web. Il apporte du style pour les boutons, les formulaires, la navigation… Il permet ainsi de concevoir un site web rapidement et avec peu de lignes de code ajoutées.
+  Nous avons choisi d'utiliser BootStrap comme Framework CSS/JavaScript. Il comporte un système de grille simple qui nous a permis de placer facilement les composants graphiques de notre site et le rendre responsive. Il apporte du style pour les boutons, les formulaires, la navigation... Il permet ainsi de concevoir le style d'un site web facilement sans nécessiter de grandes connaissances en CSS. Chaque page JSP intègre ce Framework.
 
   - ##### CSS
 
-  Les feuilles de style en cascade (CSS) nous on permis de faire 2 styles différent pour notre site. Il n'y a qu'à changer de feuille de style, et le tour est joué. Les couleurs changes et le positionnement des élèments sur le site peuvent l'être aussi.
+  Les feuilles de style nous on surtout servis à affiner le positionnement des élements et personnaliser les couleurs de notre application. Deux styles différents sont proposés pour notre site.
 
   - ##### Realm
 
-  Dans Tomcat, grâce aux Realms, il est possible de protéger l'accès aux ressources du serveur, en demandant aux utilisateurs de s'authentifier. Le principe est simple : lorsque l'utilisateur tente d'accéder à l'URL d'une ressource protégée, on le renvoie vers la page de login.
+  Tomcat intègre une fonctionnalité trés intéressante : les Realm. Grâce à cette fonction, nous avons pu protéger l'accès aux ressources du serveur, en demandant aux utilisateurs de s'authentifier. Le principe est simple : lorsque l'utilisateur tente d'accéder à l'URL d'une ressource protégée, le serveur s'occupe de vérifier le rôle de l'utilisateurs en le redirigeant vers une page de login personnalisée.
+  Ainsi toutes les pages de notre applications sont protégées sauf la page `login.jsp`. Les pages contenues dans le dossier `logged` sont accessibles uniquement par les personnes ayant le rôle `logged` dans la table de notre BDD, c'est à dire aux personnes connectés. Une personne aura un rôle `undef` si la personne est inscrite mais n'a pas validé son compte.
 
   - ##### JavaMail
 
-  Pour la confirmation d'inscription nous avons besoin d'envoyer un mail à l'utilisateur, on a donc utilisé l'API JavaMail qui permet d'utiliser le courrier électronique (e-mail) dans une application écrite en Java. Son but est d'être facile à utiliser, de fournir une souplesse qui permette de la faire évoluer et de rester le plus indépendant possible des protocoles utilisés.
+  Pour la confirmation d'inscription nous avons décidés d'envoyer un e-mail à l'utilisateur. Nous avons donc utilisés l'API JavaMail qui permet d'envoyer un courrier électronique dans une application écrite en Java. L'utilisateur reçoit alors un mail de confirmation contenant un lien d'activation de son compte.
 
   - ##### Pool
 
-  La configuration d'un Pool de connexion dans Tomcat permet de facilité la connexion à la BDD dans le reste de l'application et de restreindre les connexions en fonction de la façon dont le Pool à était configuré. Il n'y a donc pas besoin de rentrer de login et mot de passe pour la connexion à la BDD dans toute les servlets.
+  Nous avons utilisés le pool de connexion pour éviter la redondance d'information et faciliter le déploiement de notre application. Après avoir renseigner les informations dans le fichier `META-INF/context.xml`, il nous a suffit d'utiliser le code suivant pour établir une connexion à la base de données :
+
+  ```
+  Context initCtx = new InitialContext();
+  Context envCtx = (Context) initCtx.lookup("java:comp/env");
+  DataSource ds = (DataSource) envCtx.lookup("mabase");
+  con = ds.getConnection();
+  ```
 
   - ##### Valve
 
-  Un élément Valve à été configuré sous tomcat afin de logger les requêtes effectués par l'utilisateur dans un fichier. Cela permet d'avoir une traçabilité de ce que les utilisateurs on effectué derniérement, ce qui permetra de localiser plus rapidement des erreurs.
+  La valve nous est utile pour avoir une traçabilité des requêtes effectuées par les utilisateurs potentiels, qui permet notamment de repérer les erreurs éventuelles.
 
   - ##### SSL
 
-  Pourquoi une connexion en SSL ?
-  Car c'est un système qui permet d'échanger des informations entre 2 ordinateurs de façon sûre. SSL assure 3 choses:
-    - Confidentialité: Il est impossible d'espionner les informations échangées.
-    - Intégrité: Il est impossible de truquer les informations échangées.
-    - Authentification: Il permet de s'assurer de l'identité du programme, de la personne ou de l'entreprise avec lequelle on communique.
+  La connexion SSL nous permet d'échanger les informations entre plusieurs machines de façon sécurisée. Dans l'hypothése d'un déploiement sur serveur dédié ou de commercialisation de l'application, la connexion SSL serait indispensable.
 
 #### III) Difficultés techniques rencontrées et solutions apportées
 
@@ -358,7 +363,7 @@ Après la validation du formulaire, un mail vous sera envoyé sur l'adresse de m
 
 Apercevez-vous le petit formulaire d'authentification en haut du screenshot précédent ? Et bien grâce à lui, vous allez pouvoir vous connecter sur Kwa2Bo ! Renseignez simplement votre adresse e-mail et le mot de passe utilisé lors de votre inscription.
 
-Comme avec [Eric Antoine](https://fr.wikipedia.org/wiki/%C3%89ric_Antoine_%28magicien%29) c'est un peu magique. Si vous saisissez des informations fausses ou incorrectes, vous aurez le droit à une petite insulte de ce genre :
+Comme dit le célèbre [Eric Antoine](https://fr.wikipedia.org/wiki/%C3%89ric_Antoine_%28magicien%29) c'est un peu magique ! Si vous saisissez des informations fausses ou incorrectes, vous aurez le droit à une petite insulte de ce genre :
 
 ![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/Login_Kwa2Bo.png)
 
