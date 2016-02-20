@@ -170,17 +170,17 @@ Voici les principales tâches effectuées lors de la réalisation du projet :
 |Création des requêtes|-|100%|
 |Réaliser les maquettes|100%|-|
 |Configuration du contexte|50%|50%|
-|Gestion et configuration des librairies|-|100%|
+|Gestion et configuration des librairies|45%|55%|
 |Réalisation des vues(JSP, HTML, CSS/BootStrap)|90%|10%|
-|Réalisation des Beans(Java)|40%|60%|
-|Réalisation des Servlet(Java)|30%|70%|
+|Réalisation des Beans(Java)|50%|50%|
+|Réalisation des Servlet(Java)|35%|65%|
 |Requêtes ajax|80%|20%|
 |Documentation|50%|50%|
 
 **Pourquoi cette répartition ?**
 
-Nous avons souhaité nous investir dans les domaines dans lesquelles nous étions le plus en difficulté plutôt que ceux dans lesquelles nous étions à l'aise pour pouvoir monter en compétence.
-La cohésion dans notre équipe à toujours été au rendez-vous, le partage globale des tâches avoisine les 50%/50%.
+Nous avons souhaité nous investir dans les domaines dans lesquelles nous étions le plus en difficulté plutôt que ceux dans lesquelles nous étions à l'aise pour monter en compétence.
+La cohésion dans notre équipe à toujours été au rendez-vous, le partage globale des tâches avoisine les 50%.
 
 
 **Le MCD de Kwa2Bo**
@@ -194,35 +194,36 @@ La cohésion dans notre équipe à toujours été au rendez-vous, le partage glo
 
 Bien que satisfaits de notre projet, en imaginant une deadline plus reculée, nous aurions pus apporter ces améliorations:
   - Améliorrer la page de profil de l'utilisateur:
-    - Avoir la possibilité d'ajouter une photo de profil
-    - Pouvoir consulter le profil de ses amis
+    - Possibilité d'ajouter une photo de profil
+    - Consulter le profil de ses amis
     - Dissocier page de profil des paramètres
-  - Pouvoir changer directement les couleurs de l'interface dans les paramètres
-  - Pouvoir se connecter en SSO avec le CAS Lille 1 (portail de l'université)
+  - Modifier directement les couleurs de l'interface depuis les paramètres
+  - Se connecter en SSO avec le CAS Lille 1 (portail de l'université)
   - Utiliser la technologie WebSocket pour plus de fluidité dans la messagerie instantannée
-  - De gérer les mots de passes oubliés
+  - Gérer les mots de passes oubliés
   - Forcer la connexion en SSL
-  - Avoir un site accessible pour les handicapés et respectant les critères Opquast V2
-  - (Un peu plus compliqué) Pouvoir intéragir avec une webcam ...
+  - Un site accessible pour les personnes handicapées respectant la norme Opquast V2
+  - (Plus compliqué) Intéragir avec une webcam
+  - ...
 
 #### IV) En quoi ce projet était difficile
 
 Au premier abord, ce projet ne nous a pas semblé vraiment difficile. La difficulté s'est fait ressentir après plusieurs semaines, lorsque nous avons réalisé la charge réelle de travail à fournir.
 
 Voici une liste des principales difficultés que nous avons pu rencontrer:
-  - Intégrer un maximum de technologies(se familiariser en peu de temps à divers technologies inhabituelles)
-  - Prise de décision commune(divergence de certains points de vues)
-  - Trouver assez de temps pour travailler sur le projet(Nous avions en effet plusieurs projets en simultané)
+  - Intégrer un maximum de technologies(se familiariser en peu de temps à des technologies inhabituelles)
+  - Prise de décision commune(divergence de certains points de vues, notamment pour le MCD)
+  - Gérer 4 projets en simultané(Projet d'accessibilité, de réseau, d'Administration Système et de BDD)
 
 #### V) Conclusion
 
-Un projet tel que celui-là nous as paru trés intéressant. De part la multitude de technologies employées que par les difficultés à surmonter. Après 5 semaines de travails en équipe, nous sommes plutôt satisfait de notre efficacité et du rendu de l'application. La prochaine étape ? Le déploiement en ligne qui sait .. ? :)
+Un projet tel que celui-là nous as paru trés intéressant. De part la multitude de technologies employées que par les difficultés à surmonter. Après 5 semaines de travails en équipe, nous sommes plutôt satisfait de notre efficacité et du rendu de l'application. La prochaine étape ? Le déploiement en ligne qui sait .. ?
 
 ---
 
 ### Description technique du projet :
 
-Le but de se projet n'était pas de se concentrer sur une seule technologie, mais bien d'en utiliser plusieurs, afin d'en apprendre un peu plus sur toute les technologies qui sont disponibles pour le WEB.
+Le but de ce projet n'était pas de se contenter d'une seule technologie, mais bien d'en utiliser un maximum. Ceci afin d'en apprendre davantage sur les technologies disponibles pour le WEB.
 
 #### I) Objectifs techniques du travail
 
@@ -245,27 +246,30 @@ Pour réaliser ce projet, nous souhaitions intégrer les technologies suivantes 
 - [x] Valve
 - [x] SSL
 
+Malheureusement, par manque de temps et parce que nous n'en ressentions pas la nécessité, nous avons choisi de ne pas intégrer de PHP et d'XML. A la place d'XML, nous avons utilisés le format JSON pour la transmission d'objet(qui est plus explicite et ressemble davantage à un "format objet")
+
 #### II) Principe de réalisation
 
   - ##### JavaBeans
 
   JavaBeans est une technologie de composants logiciels écrits en langage Java, elle est utilisés pour encapsuler plusieurs objets dans un seul objet : le "bean". Le "bean" est un objet java issues du modele. Ces "beans" sont alors facilement accessible dans les JSP grâce aux EL Expression et sont manipulable soit par des JSTL, soit directement en JavaScript.
+  Nous avons notamment utilisé cette technologie dans la page `Kwa2Bo/logged/parametres.jsp`.
 
   - ##### Servlet
 
-  Les servlets s'occupe de la partie "controller" du modele MVC. C'est elles qui on principalement accès à la base de données. Elles sont donc utilisées lors de l'envoie, la modification, ou la récupération de données en format JSON. Dans certain cas, elles sont aussi utilisées pour faire de la redirection.
+  Dans notre projet, les servlets s'occupent principalement de la partie "controller" du modele MVC. C'est elles qui on principalement accès à la base de données. Elles sont donc utilisées lors de l'envoie, la modification, ou la récupération de données en format JSON. Dans certain cas, elles sont aussi utilisées pour faire de la redirection. Chaque page de notre site fait appel directement ou indirectement(avec AJAX) à des Servlets.
 
   - ##### JSP
 
-  Le JavaServer Pages ou JSP est une technique basée sur Java qui nous permet de créer dynamiquement du code HTML. Ainsi, il est très facile de communiquer avec les servlets, et d'agir sur la "vue" en fonction des réponses de celles-ci.
+  Le JavaServer Pages ou JSP est une technique basée sur Java qui nous permet de créer dynamiquement du code HTML. Ainsi, il est très facile de communiquer avec les servlets, et d'agir sur la "vue" en fonction des réponses de celles-ci. Nous avons donc choisis d'utiliser les JSP pour matérialiser la "Vue", qui contiennent à 90% du code HTML. Certaines JSP comme `header.jsp` ou `footer.jsp` contiennent des blocs de code HTML utilisés dans la majorité des JSP. On fait donc appel à ces 2 pages avec des includes pour éviter une redondance de code HTML.
 
   - ##### EL
 
-  Une EL (Expressions Languages) permet d'accéder simplement aux beans des différents scopes de l'application web (page, request, session et application).
+  Une EL (Expressions Languages) permet d'accéder simplement aux beans ou aux variables des différents scopes de l'application web (page, request, session et application).
 
   - ##### JSTL
 
-  JSTL est l'acronyme de Java server page Standard Tag Library. C'est un ensemble de tags personnalisés qui propose des fonctionnalités souvent rencontrées dans les JSP. Beaucoup de choses sont ainsi possible en combinant les JSTL et EL.
+  JSTL est un ensemble de taglibs personnalisés qui propose des fonctionnalités souvent rencontrées dans les JSP. Beaucoup de choses sont ainsi possible en combinant les JSTL et EL.
 
   - ##### AJAX
 
