@@ -372,6 +372,8 @@ C'est votre 1ére connexion sur Kwa2Bo, vous êtes excité et vous vous dites : 
 
 - Sur votre gauche, les discussions auxquelles vous participez. Cliquez dessus, et paf paf paf (Comme dirait Mohammed Nour) : Une fenêtre modal s'ouvre pour la discussion concerné. Dans cette fenetre, vous allez pouvoir envoyer des messages et des photos de manière illimité !
 
+![alt tag](https://raw.githubusercontent.com/rfevre/Kwa2Bo/master/docs/screen/capture_conversation_en_cours.png)
+
 - Sur votre droite, vous allez pouvoir créer un groupe. Un groupe c'est une discussion auquel on implique un ou plusieurs membre(s). Choissisez un nom pour votre groupe et ajoutez les personnes avec lesquels vous voulez discuter. Quand tout est prêt, appuyez sur le bouton "Créer".
 
 Comment !? la personne que vous voulez ajouter au groupe n'est pas présente dans la liste ... hummm ... c'est qu'elle ne doit pas encore être présente dans votre liste de contacts bien sur ! Il vous faut l'ajouter !
