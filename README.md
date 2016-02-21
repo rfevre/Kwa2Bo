@@ -250,7 +250,7 @@ Malheureusement, par manque de temps et parce que nous n'en ressentions pas le b
 
 #### II) Principe de réalisation
 
-  ##### Les technologies employées
+##### Les technologies employées
 
   - ###### JavaBeans
 
@@ -320,7 +320,7 @@ Malheureusement, par manque de temps et parce que nous n'en ressentions pas le b
 
   La connexion SSL nous permet d'échanger les informations entre plusieurs machines de façon sécurisée. Dans l'hypothése d'un déploiement sur serveur dédié ou de commercialisation de l'application, la connexion SSL serait indispensable.
 
-  ##### Le fonctionnement des pages
+##### Le fonctionnement des pages
 
   Les pages principales seront détaillées ci-dessous :
 
