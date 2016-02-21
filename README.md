@@ -175,7 +175,7 @@ Voici les principales tâches effectuées lors de la réalisation du projet :
 |Réalisation des Beans(Java)|50%|50%|
 |Réalisation des Servlet(Java)|35%|65%|
 |Requêtes ajax|80%|20%|
-|Documentation|50%|50%|
+|Documentation|65%|35%|
 
 **Pourquoi cette répartition ?**
 
@@ -250,56 +250,58 @@ Malheureusement, par manque de temps et parce que nous n'en ressentions pas le b
 
 #### II) Principe de réalisation
 
-  - ##### JavaBeans
+  ##### Les technologies employées
+
+  - ###### JavaBeans
 
   JavaBeans est une technologie qui nous a permis de récupèrer et manipuler trés facilement les objets JAVA transmis par la requête HTTP.
   Nous avons notamment utilisé cette technologie dans la page `Kwa2Bo/logged/parametres.jsp`.
 
-  - ##### Servlet
+  - ###### Servlet
 
   Dans notre projet, les servlets s'occupent principalement de la partie "controller" du modele MVC. C'est elles qui on principalement accès à la base de données. Elles sont donc utilisées lors de l'envoie, la modification, ou la récupération de données en format JSON. Dans certain cas, elles sont aussi utilisées pour faire de la redirection. Chaque page de notre site fait appel directement ou indirectement(avec AJAX) à des Servlets.
 
-  - ##### JSP
+  - ###### JSP
 
   Le JavaServer Pages ou JSP nous a permis de gérer dynamiquement le code HTML. Nous avons donc choisis d'utiliser les JSP pour matérialiser la "Vue", qui contiennent 90% de code HTML. Certaines JSP comme `header.jsp` ou `footer.jsp` contiennent des blocs de code HTML utilisés dans la majorité des JSP. On fait donc appel à ces 2 pages avec des includes pour éviter une redondance de code HTML.
 
-  - ##### EL
+  - ###### EL
 
   Les EL (Expressions Languages) nous ont servis à accéder simplement aux beans et aux variables des différents scopes de l'application web (page, request, session et application). Elles sont utilisés dans presques toutes les pages JSP.
 
-  - ##### JSTL
+  - ###### JSTL
 
   JSTL est un ensemble de taglibs personnalisés qui propose des fonctionnalités souvent rencontrées dans les JSP. Cette technologie n'est pas omniprésente dans nos pages. En effet, nous avons jugés que les fonctionnalités proposés par ce taglib (faire des boucles, introduire des conditions dans le code html ...) étaient facilement réalisables avec les JSP. Cette technologie est utilisée dans la page `login.jsp`.
 
-  - ##### AJAX
+  - ###### AJAX
 
   L'architecture AJAX nous a permis de construire un site web dynamique et interactif. En effet AJAX nous permet de modifier dynamiquement le contenu de la page sans réactualiser la page et surtout sans redirections. On peut donc à la suite d'une requête AJAX :
     - Récupérer des "objets"/informations sous un format de donnée spécifique(ici JSON).
     - Modifier le DOM et donner une impression de mise à jour instantannée notamment pour le Tchat.
 
-  - ##### JQuery
+  - ###### JQuery
 
   JQuery est donc utilisé pour effectuer les requêtes AJAX et modifier les élements du DOM. JQuery simplifie considérablement le code JavaScript pour le rendre minimaliste et plus explicite. Il est également requis pour utiliser certaines fonctionnalités de BootStrap.
   Cette bibliothéque est utilisée dans quasiment toutes les pages JSP.
 
-  - ##### BootStrap
+  - ###### BootStrap
 
   Nous avons choisi d'utiliser BootStrap comme Framework CSS/JavaScript. Il comporte un système de grille simple qui nous a permis de placer facilement les composants graphiques de notre site et le rendre responsive. Il apporte du style pour les boutons, les formulaires, la navigation... Il permet ainsi de concevoir le style d'un site web facilement sans nécessiter de grandes connaissances en CSS. Chaque page JSP intègre ce Framework.
 
-  - ##### CSS
+  - ###### CSS
 
   Les feuilles de style nous on surtout servis à affiner le positionnement des élements et personnaliser les couleurs de notre application. Deux styles différents sont proposés pour notre site.
 
-  - ##### Realm
+  - ###### Realm
 
   Tomcat intègre une fonctionnalité trés intéressante : les Realm. Grâce à cette fonction, nous avons pu protéger l'accès aux ressources du serveur, en demandant aux utilisateurs de s'authentifier. Le principe est simple : lorsque l'utilisateur tente d'accéder à l'URL d'une ressource protégée, le serveur s'occupe de vérifier le rôle de l'utilisateurs en le redirigeant vers une page de login personnalisée.
   Ainsi toutes les pages de notre applications sont protégées sauf la page `login.jsp`. Les pages contenues dans le dossier `logged` sont accessibles uniquement par les personnes ayant le rôle `logged` dans la table de notre BDD, c'est à dire aux personnes connectés. Une personne aura un rôle `undef` si la personne est inscrite mais n'a pas validé son compte.
 
-  - ##### JavaMail
+  - ###### JavaMail
 
   Pour la confirmation d'inscription nous avons décidés d'envoyer un e-mail à l'utilisateur. Nous avons donc utilisés l'API JavaMail qui permet d'envoyer un courrier électronique dans une application écrite en Java. L'utilisateur reçoit alors un mail de confirmation contenant un lien d'activation de son compte.
 
-  - ##### Pool
+  - ###### Pool
 
   Nous avons utilisés le pool de connexion pour éviter la redondance d'information et faciliter le déploiement de notre application. Après avoir renseigner les informations dans le fichier `META-INF/context.xml`, il nous a suffit d'utiliser le code suivant pour établir une connexion à la base de données :
 
@@ -310,31 +312,57 @@ Malheureusement, par manque de temps et parce que nous n'en ressentions pas le b
   con = ds.getConnection();
   ```
 
-  - ##### Valve
+  - ###### Valve
 
   La valve nous est utile pour avoir une traçabilité des requêtes effectuées par les utilisateurs potentiels, qui permet notamment de repérer les erreurs éventuelles.
 
-  - ##### SSL
+  - ###### SSL
 
   La connexion SSL nous permet d'échanger les informations entre plusieurs machines de façon sécurisée. Dans l'hypothése d'un déploiement sur serveur dédié ou de commercialisation de l'application, la connexion SSL serait indispensable.
+
+  ##### Le fonctionnement des pages
+
+  Les pages principales seront détaillées ci-dessous :
+
+  - ##### `/`
+
+  Lorsque l'utilisateur tente d'accèder à l'application via l'url `<adresse_du_serveur>/Kwa2Bo/`, il tente alors d'accèder à la racine de l'application. Grâce au fichier web.xml, nous avons pus definir une "Welcome page" pour cette racine. La page affichée par défaut est donc la page des conversations : `logged/conversations.jsp`.
+  Si l'utilisateur n'est pas identifié, le serveur redirige celui-ci vers la page de login grâce au realm.
+
+  - ##### `conversations.jsp`
+
+  La page conversations.jsp se trouve dans le dossier `logged`, qui est donc accessible uniquement par les personnes ayant un rôle `logged` dans la table kwa2bo_utilisateur.
+  Cette page contient un formulaire de saisie pour la création de groupes de discussions. Lorsque le bouton "Créer" est pressé, une requête AJAX est envoyé à la servlet `InsertGroupe` qui reçoit en paramètres un nom de groupe, ainsi qu'une liste de membres(on renseigne simplement l'adresse mail de chaque membre qui sert d'id).
+  Toutes les 2 secondes, la liste des groupes est actualisée grâce à une nouvelle requête AJAX. Cette dernière reçoit une liste de groupes sous format JSON, puis appel une fonction "callback" qui met en forme la liste des groupes. Ensuite, lorsque l'utilisateur clique sur un des groupes de  conversations listées sur la gauche, une fenêtre modale s'ouvre. Il n'y a en effet qu'une seule fenêtre modale dans le code HTML qui est actualisée en fonction de la conversation désirée (en AJAX).
+
+  - ##### `contacts.jsp`
+  La page de contacts permet de rechercher des utilisateurs et de les ajouter à sa propre liste d'amis.
+  La partie gauche de la page contient une liste des utilisateurs qui peut-être affinée par critères. La partie droite de la page contient la liste des contacts de l'utilisateur courant. Ces deux listes ont tous les deux un principe de fonctionnement similaire. Lorsque l'utilisateur presse une touche dans la zone de recherche, la liste s'actualise grâce à une requête AJAX. L'utilisateur peut ensuite choisir d'ajouter un utilisateur en cliquant sur le bouton avec un "+".
+
+
+  - ##### `parametres.jsp`
+  Avant d'être amené sur cette page, le serveur fait appel à une servlet `SelectProfil`. Cette servlet liste les informations sur l'utilisateur courant, et effectue une redirection vers `parametres.jsp` avec comme parametre un objet utilisateur récupérable grâce aux jspBeans dans la page parametres.jsp. Le changement de mot de passe s'effectue dans une formulaire séparé du formulaire de modification de profil. Ces deux formulaires font tous les deux appels à des servlet qui effectuent un UPDATE sur la table des utilisateurs.
+
+
+Les pages développées ci-dessus font beaucoup d'appels AJAX. L'avantage de cette technologie est qu'elle permet d'éviter les redirections incessantes. Elle apporte donc un confort à l'utilisateur.
 
 #### III) Difficultés techniques rencontrées et solutions apportées
 
   - ##### Accés avec le realm
 
-  Au départ du projet, la restriction d'accès grâce au Realm nous a posé problème. En effet, celle-ci été inéfficace. Le problème venant du fait que certaine ressources indispensable étaient inacesible pour les utilisateur non connecté. Nous avons résolu ce problème en donnant l'accés a tout les utilisateurs à certaine ressources non critique (les images,le css,...).
+  Au début, le contrôle d'accès par le Realm nous a posé problème. Le problème venant du fait que certaines ressources indispensable étaient inaccessibles pour les utilisateurs hors-ligne (notamment les images et le CSS pour la page d'accueil). Nous avons contournés ce problème en autorisant l'accés publiquement à certaines ressources non sensibles (les images,le css).
 
   - ##### Encodage lors de l'envoie d'une image avec du texte en AJAX
 
-  Le problème qui nous a sans doute pris le plus de temps est celui-ci. Lors de l'envoie d'une image nous voulions en même temps envoyer du texte, le problème qui c'est donc posé à nous été l'encodage. Lors de l'upload d'une image, la requête AJAX envoyé à la servlet ne doit pas préciser de "contentType", nous avons donc dû contourner le problème, en passant le texte d'un format "iso-8859-1" à un format "UTF-8" directement dans la servlet grâce à une fonction JAVA.
+  Voici le problème qui nous a sans doute pris le plus de temps à résoudre. Lors de l'upload d'une image nous voulions envoyer en simultané du texte dans un même formulaire. Le problème est alors survenu fut celui de l'encodage du texte. Lors de l'upload d'une image, la requête AJAX envoyée à la servlet ne doit pas préciser de "contentType". Nous avons donc contourné ce problème, en encodant le texte d'un format "iso-8859-1" à un format "UTF-8" directement côté serveur grâce à une fonction JAVA.
 
   - ##### Rendre le site responsive
 
-  Pour ce projet nous nous sommes donnés la contrainte de rendre toutes les "vues" responsive. A la main, cela aurait pû prendre beaucoup de temps. Mais l'utilisation de bootStrap à permis de palier à ce problème.
+  Pour ce projet nous nous sommes imposés une contrainte de taille(sans jeux de mots) : rendre le site 100% responsive. En CSS natif, le développement aurait été long et compliqué à mettre en place. L'utilisation de bootStrap à permis de palier à ce problème.
 
 #### IV) Conclusion
 
-  Bien que certains problèmes nous aient ralentis, grâce à la communauté de certains FrameWork et de l'aide de certains camarades, nous avons toujours su les résoudres.
+  Bien que certains problèmes nous aient ralentis, grâce à la communauté de certains FrameWork et de l'aide de certains camarades, nous avons toujours su les résoudres rapidement. Ce projet nous a donc permis de monter en compétence dans plusieurs technologies qui nous seront certainnement utiles pour notre stage de fin d'année.
 
 ---
 
